@@ -736,6 +736,37 @@ class QuranApp {
     if (this.verseTranslationElem) this.verseTranslationElem.textContent = `"${item.translation}"`;
     if (this.versePhoneticElem) this.versePhoneticElem.textContent = item.audioPhonetic;
 
+    // Topic Illustration Update
+    const topicImg = document.getElementById("topicIllustrationImg");
+    const topicCap = document.getElementById("topicIllustrationCaption");
+    if (topicImg && topicCap) {
+      if (item.illustration) {
+        topicImg.src = item.illustration;
+        topicCap.textContent = item.illustrationCaption || item.title;
+      } else {
+        // Fallback matching
+        if (item.title && item.title.includes("Sina")) {
+          topicImg.src = "images/gambar_6.jpg";
+          topicCap.textContent = "Ilustrasi: Bimaristan & Riset Kedokteran Ibnu Sina";
+        } else if (item.title && item.title.includes("Khawarizmi")) {
+          topicImg.src = "images/gambar_5.jpg";
+          topicCap.textContent = "Ilustrasi: Observatorium Astronomi & Astrolab Al-Khawarizmi";
+        } else if (item.title && (item.title.includes("Hikmah") || item.title.includes("Ma'mun"))) {
+          topicImg.src = "images/gambar_1.jpg";
+          topicCap.textContent = "Ilustrasi: Bayt al-Hikmah & Riset Peradaban Dunia";
+        } else if (item.title && (item.title.includes("Harun") || item.title.includes("Baghdad"))) {
+          topicImg.src = "images/gambar_2.jpg";
+          topicCap.textContent = "Ilustrasi: Istana Khilafah & Diplomasi Era Harun Ar-Rasyid";
+        } else if (item.title && item.title.includes("Bukhari")) {
+          topicImg.src = "images/gambar_1.jpg";
+          topicCap.textContent = "Ilustrasi: Tradisi Kodifikasi Hadits & Manuskrip";
+        } else {
+          topicImg.src = "images/gambar_4.jpg";
+          topicCap.textContent = "Ilustrasi: Perekonomian & Peradaban Emas Abbasiyah";
+        }
+      }
+    }
+
     // Full Card Display
     if (this.fullVerseArabicText) this.fullVerseArabicText.textContent = item.fullArabic;
     if (this.fullVerseSurahRef) this.fullVerseSurahRef.textContent = item.subtitle || item.surahName || item.title;
@@ -1824,6 +1855,26 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
       `;
       this.visualGalleryGrid.appendChild(card);
     });
+  }
+
+  openTopicLightbox() {
+    const topicImg = document.getElementById("topicIllustrationImg");
+    const topicCap = document.getElementById("topicIllustrationCaption");
+    if (!topicImg) return;
+    const modal = document.getElementById("galleryLightboxModal");
+    const img = document.getElementById("lightboxImg");
+    const title = document.getElementById("lightboxTitle");
+    const era = document.getElementById("lightboxEra");
+    const desc = document.getElementById("lightboxDesc");
+    const badge = document.getElementById("lightboxBadge");
+
+    if (img) img.src = topicImg.src;
+    if (title) title.textContent = this.getCurrentTajwidItem() ? this.getCurrentTajwidItem().title : "Ilustrasi Peradaban";
+    if (era) era.textContent = topicCap ? topicCap.textContent : "";
+    if (desc) desc.textContent = this.getCurrentTajwidItem() ? this.getCurrentTajwidItem().translation : "";
+    if (badge) badge.textContent = "Ilustrasi Materi";
+
+    if (modal) modal.classList.add("active");
   }
 
   openLightbox(id) {
