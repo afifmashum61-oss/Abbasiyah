@@ -1525,33 +1525,86 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     const modalBody = document.getElementById("curriculumModalBody");
     if (!modalBody) return;
 
-    let html = `<div class="curriculum-accordion">`;
-    window.APP_DATA.curriculum.levels.forEach(lvl => {
+    const lvl = window.APP_DATA.curriculum.levels.find(l => l.grade.includes("VIII")) || window.APP_DATA.curriculum.levels[0];
+
+    let html = `
+      <div class="curriculum-content-list">
+        <div class="curriculum-level-card is-focus-level">
+          <div class="curriculum-card-header">
+            <div class="curriculum-level-badge">
+              <span>📜</span>
+              <h4>Kelas VIII MTs (Masa Kejayaan Dinasti Abbasiyah)</h4>
+            </div>
+          </div>
+    `;
+
+    lvl.semesters.forEach(sem => {
       html += `
-        <div class="curriculum-card">
-          <h4 class="curriculum-grade-title">📌 ${lvl.grade} MTs</h4>
+        <div class="curriculum-semester-box">
+          <div class="semester-header-title">
+            <span class="semester-dot"></span>
+            <h5>${sem.semester}</h5>
+          </div>
       `;
-      lvl.semesters.forEach(sem => {
+
+      if (sem.ki && sem.ki.length > 0) {
         html += `
-          <div class="ki-kd-block">
-            <h6>${sem.semester}</h6>
+          <div class="competency-section">
+            <div class="competency-header ki-header">
+              <span class="competency-icon">🎯</span>
+              <span class="competency-title">Kompetensi Inti (KI)</span>
+            </div>
+            <div class="competency-items-grid">
         `;
-        if (sem.ki) {
-          html += `<div style="font-weight: 700; font-size: 0.75rem; margin-bottom: 0.2rem; color: var(--primary);">Kompetensi Inti (KI):</div><ul>`;
-          sem.ki.forEach(k => html += `<li>${k}</li>`);
-          html += `</ul>`;
-        }
-        if (sem.kd) {
-          html += `<div style="font-weight: 700; font-size: 0.75rem; margin-top: 0.5rem; margin-bottom: 0.2rem; color: var(--gold-700);">Kompetensi Dasar (KD):</div><ul>`;
-          sem.kd.forEach(k => html += `<li>${k}</li>`);
-          html += `</ul>`;
-        }
-        html += `</div>`;
-      });
+        sem.ki.forEach(k => {
+          const splitIdx = k.indexOf(":");
+          let code = "";
+          let text = k;
+          if (splitIdx > 0 && splitIdx < 10) {
+            code = k.substring(0, splitIdx).trim();
+            text = k.substring(splitIdx + 1).trim();
+          }
+          html += `
+            <div class="competency-item-card ki-card">
+              ${code ? `<span class="competency-code-badge ki-badge">${code}</span>` : ''}
+              <p class="competency-desc-text">${text}</p>
+            </div>
+          `;
+        });
+        html += `</div></div>`;
+      }
+
+      if (sem.kd && sem.kd.length > 0) {
+        html += `
+          <div class="competency-section" style="margin-top: 0.85rem;">
+            <div class="competency-header kd-header">
+              <span class="competency-icon">📚</span>
+              <span class="competency-title">Kompetensi Dasar (KD)</span>
+            </div>
+            <div class="competency-items-grid">
+        `;
+        sem.kd.forEach(k => {
+          const splitIdx = k.indexOf(":");
+          let code = "";
+          let text = k;
+          if (splitIdx > 0 && splitIdx < 10) {
+            code = k.substring(0, splitIdx).trim();
+            text = k.substring(splitIdx + 1).trim();
+          }
+          html += `
+            <div class="competency-item-card kd-card">
+              ${code ? `<span class="competency-code-badge kd-badge">${code}</span>` : ''}
+              <p class="competency-desc-text">${text}</p>
+            </div>
+          `;
+        });
+        html += `</div></div>`;
+      }
+
       html += `</div>`;
     });
-    html += `</div>`;
 
+    html += `</div></div>`;
     modalBody.innerHTML = html;
   }
 
