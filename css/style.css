@@ -189,9 +189,13 @@ body {
 }
 
 .desktop-nav-btn.active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 60%, #047857 100%);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.18),
+              0 6px 18px -2px rgba(16, 185, 129, 0.45),
+              0 2px 6px 0 rgba(4, 120, 87, 0.22);
 }
 
 .desktop-nav-btn.active .nav-svg-icon {
@@ -525,9 +529,13 @@ body {
 }
 
 .segmented-tab-btn.active {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #10b981 0%, #059669 60%, #047857 100%);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.16),
+              0 6px 16px -2px rgba(16, 185, 129, 0.42),
+              0 2px 5px 0 rgba(4, 120, 87, 0.2);
 }
 
 /* Tajwid Sub-Topics Pill Navigation (Mad & Gharib Pills) */
@@ -580,10 +588,13 @@ body {
 }
 
 .topic-pill.active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border-color: transparent;
+  background: linear-gradient(135deg, #10b981 0%, #059669 60%, #047857 100%);
+  border-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.16),
+              0 6px 18px -2px rgba(16, 185, 129, 0.42),
+              0 2px 6px 0 rgba(4, 120, 87, 0.2);
   transform: translateY(-1px);
 }
 
@@ -805,10 +816,10 @@ body {
 }
 
 .btn-listen-ayat {
-  background: #ffffff;
-  border: 1px solid var(--primary-emerald);
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
   border-radius: var(--radius-full);
-  padding: 0.25rem 0.65rem;
+  padding: 0.28rem 0.72rem;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--primary-dark);
@@ -816,14 +827,21 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: all 0.2s ease;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+              inset 0 -1px 1px 0 rgba(16, 185, 129, 0.1),
+              0 3px 8px -1px rgba(0, 0, 0, 0.08),
+              0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-listen-ayat:hover {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: transparent;
   color: #ffffff;
   transform: translateY(-1px);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+              0 6px 14px -2px rgba(16, 185, 129, 0.4),
+              0 2px 4px 0 rgba(4, 120, 87, 0.2);
 }
 
 .full-verse-arabic-text {
@@ -1044,25 +1062,80 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.55),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.2),
+              0 6px 18px -2px rgba(16, 185, 129, 0.45),
+              0 2px 6px 0 rgba(4, 120, 87, 0.25);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
-  background: #059669;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.22),
+              0 10px 24px -3px rgba(16, 185, 129, 0.55),
+              0 4px 8px 0 rgba(4, 120, 87, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.25),
+              0 2px 6px 0 rgba(16, 185, 129, 0.35);
 }
 
 .btn-subtle {
-  background: var(--surface-subtle);
-  color: var(--text-main);
-  border: 1px solid var(--border-clean);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 40%, #eef7f4 100%);
+  color: var(--primary-dark);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95),
+              inset 0 -1px 2px 0 rgba(0, 0, 0, 0.04),
+              0 4px 12px -2px rgba(0, 0, 0, 0.08),
+              0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.btn-subtle:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ecfdf5 100%);
+  color: var(--primary-emerald);
+  border-color: var(--primary-emerald);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+              0 6px 16px -2px rgba(16, 185, 129, 0.22),
+              0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.btn-subtle:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-emerald {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #0d9488 100%);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.22),
+              0 6px 18px -2px rgba(6, 78, 59, 0.48),
+              0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-emerald:hover {
+  background: linear-gradient(135deg, #047857 0%, #0d9488 50%, #10b981 100%);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.6),
+              0 10px 24px -3px rgba(6, 78, 59, 0.55),
+              0 3px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-emerald:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3),
+              0 2px 6px 0 rgba(6, 78, 59, 0.35);
 }
 
 .btn-sm {
@@ -1277,14 +1350,26 @@ body {
 }
 
 .btn-fill-ideal {
-  background: var(--gold-50);
-  border: 1px solid var(--gold-400);
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
   color: var(--gold-700);
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.3rem 0.75rem;
+  padding: 0.32rem 0.8rem;
   border-radius: var(--radius-full);
   cursor: pointer;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+              0 3px 8px -1px rgba(245, 158, 11, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-fill-ideal:hover {
+  background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+  border-color: var(--gold-500);
+  color: var(--gold-800, #92400e);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 1),
+              0 5px 12px -2px rgba(245, 158, 11, 0.35);
 }
 
 .ai-score-banner {
@@ -1427,56 +1512,85 @@ body {
 /* Last Read Play Button */
 .btn-last-read-play {
   margin-top: 0.6rem;
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
   color: var(--primary-dark);
   font-weight: 800;
   font-size: 0.72rem;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-full);
-  padding: 0.35rem 0.85rem;
+  padding: 0.38rem 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: all 0.2s ease;
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95),
+              inset 0 -1px 2px 0 rgba(16, 185, 129, 0.15),
+              0 6px 16px -2px rgba(0, 0, 0, 0.22),
+              0 2px 6px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-last-read-play:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: var(--gold-50);
-  color: var(--gold-600);
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(180deg, #ffffff 0%, #fef3c7 100%);
+  color: var(--gold-700);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+              0 10px 22px -3px rgba(0, 0, 0, 0.28),
+              0 3px 8px 0 rgba(217, 119, 6, 0.25);
+}
+
+.btn-last-read-play:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+              0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Surah List Item Play Button */
 .btn-surah-play {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1.5px solid var(--primary-emerald);
-  background: var(--primary-soft);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: linear-gradient(145deg, #ecfdf5 0%, #d1fae5 55%, #a7f3d0 100%);
   color: var(--primary-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 0.8rem;
-  transition: all 0.2s ease;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
   margin-left: 0.5rem;
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+              inset 0 -1.5px 2px 0 rgba(16, 185, 129, 0.2),
+              0 4px 12px -1px rgba(16, 185, 129, 0.25),
+              0 2px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-surah-play:hover {
-  background: var(--primary-emerald);
+  background: linear-gradient(145deg, #10b981 0%, #059669 60%, #047857 100%);
   color: #ffffff;
-  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.6),
+              0 8px 20px -2px rgba(16, 185, 129, 0.45),
+              0 3px 6px 0 rgba(4, 120, 87, 0.2);
 }
 
 .btn-surah-play.playing {
-  background: var(--primary-emerald);
+  background: linear-gradient(145deg, #10b981 0%, #047857 100%);
   color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.5),
+              0 0 0 4px rgba(16, 185, 129, 0.35),
+              0 8px 20px -2px rgba(16, 185, 129, 0.5);
   animation: pulse-ring 1.5s infinite;
+}
+
+.btn-surah-play:active {
+  transform: scale(0.96) translateY(1px);
+  box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.25),
+              0 2px 6px 0 rgba(16, 185, 129, 0.3);
 }
 
 @keyframes pulse-ring {
@@ -1533,28 +1647,44 @@ body {
 
 /* Reciter Play Button */
 .btn-reciter-play {
-  background: var(--grad-emerald-banner);
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
   color: #ffffff;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-full);
-  padding: 0.45rem 0.95rem;
+  padding: 0.45rem 1rem;
   font-size: 0.78rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-  transition: all 0.2s ease;
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+              inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.18),
+              0 6px 18px -2px rgba(16, 185, 129, 0.42),
+              0 2px 6px 0 rgba(4, 120, 87, 0.2);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-reciter-play:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7),
+              0 10px 22px -3px rgba(16, 185, 129, 0.52),
+              0 3px 8px 0 rgba(4, 120, 87, 0.25);
 }
 
 .btn-reciter-play.playing {
   background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.35),
+              0 0 0 3px rgba(16, 185, 129, 0.35),
+              0 8px 20px -2px rgba(6, 78, 59, 0.5);
+}
+
+.btn-reciter-play:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3),
+              0 2px 4px 0 rgba(16, 185, 129, 0.3);
 }
 
 /* Sound Wave Equalizer */
@@ -1590,23 +1720,29 @@ body {
 
 /* Dalil Audio Button (AI Simulator) */
 .btn-dalil-audio {
-  background: var(--primary-soft);
+  background: linear-gradient(145deg, #ecfdf5 0%, #d1fae5 100%);
   color: var(--primary-dark);
-  border: 1px solid var(--primary-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.35);
   border-radius: var(--radius-full);
-  padding: 0.25rem 0.65rem;
+  padding: 0.28rem 0.72rem;
   font-size: 0.72rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  transition: all 0.2s ease;
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+              0 3px 8px -1px rgba(16, 185, 129, 0.2);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-dalil-audio:hover {
-  background: var(--primary-emerald);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: transparent;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+              0 6px 14px -2px rgba(16, 185, 129, 0.4);
 }
 
 /* Global Floating Quran Audio Player Bar */

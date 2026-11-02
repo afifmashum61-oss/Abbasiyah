@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="myQuran - Media Pembelajaran Interaktif Al-Qur'an Hadits MTs Berdasarkan KMA No. 183 Tahun 2019.">
+  <meta name="description" content="mySKI - Media Pembelajaran Interaktif Sejarah Kebudayaan Islam MTs Kelas 8 Materi Masa Kejayaan Dinasti Abbasiyah Berdasarkan KMA No. 183 Tahun 2019.">
   <meta name="theme-color" content="#10b981">
-  <title>myQuran | Al-Qur'an Hadits MTs (KMA 183 Tahun 2019)</title>
+  <title>mySKI | Masa Kejayaan Dinasti Abbasiyah (SKI Kelas 8 MTs - KMA 183)</title>
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 
   <!-- ==========================================================================
        APP DEVICE FRAME (RESPONSIVE DESKTOP & MOBILE SHELL)
@@ -21,7 +20,7 @@
     <!-- APP HEADER -->
     <header class="app-header">
       <div class="header-brand-group">
-        <button class="header-icon-btn" id="btnHeaderMenu" title="Menu & Peta Kurikulum">
+        <button class="header-icon-btn" id="btnHeaderMenu" title="Peta Kurikulum SKI KMA 183">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="15" y2="12"></line>
@@ -30,8 +29,8 @@
         </button>
 
         <div class="app-title-box" onclick="window.quranApp.switchTab('beranda')">
-          <span class="app-title-text">myQuran</span>
-          <span class="app-subtitle-text">Al-Qur'an Hadits MTs</span>
+          <span class="app-title-text">mySKI</span>
+          <span class="app-subtitle-text">SKI Kelas VIII MTs</span>
         </div>
       </div>
 
@@ -54,7 +53,7 @@
             <path d="M6 11h2"/>
             <path d="M16 11h2"/>
           </svg>
-          <span>Lab Tajwid</span>
+          <span>Galeri Kejayaan</span>
         </button>
         <button class="desktop-nav-btn" data-nav="tahfidz" onclick="window.quranApp.switchTab('tahfidz')">
           <svg class="nav-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -64,7 +63,7 @@
             <circle cx="15" cy="11" r="1" fill="currentColor"/>
             <circle cx="17" cy="13" r="1" fill="currentColor"/>
           </svg>
-          <span>Arena Tahfidz</span>
+          <span>Arena Sejarah</span>
         </button>
         <button class="desktop-nav-btn" data-nav="ai_simulator" onclick="window.quranApp.switchTab('ai_simulator')">
           <svg class="nav-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -102,55 +101,55 @@
     <div class="app-content-body">
 
       <!-- ====================================================================
-           TAB 0: SCREEN 1 - HOME DASHBOARD (Matching Reference Image)
+           TAB 0: SCREEN 1 - HOME DASHBOARD
            ==================================================================== -->
       <section id="tab-beranda" class="tab-pane active">
-        <!-- 4 Colorful Feature Tiles (Top Grid: 4 in row on Desktop, 2x2 on Mobile) -->
+        <!-- 4 Colorful Feature Tiles (Top Grid) -->
         <div class="feature-tiles-grid">
-          <!-- Tile 1: Quran (Lab Tajwid) - Cyan/Teal -->
+          <!-- Tile 1: Galeri Ilmuwan (Cyan) -->
           <div class="feature-tile-card tile-cyan" onclick="window.quranApp.switchTab('tajwid')">
-            <div class="tile-icon-box">📖</div>
+            <div class="tile-icon-box">🏛️</div>
             <div class="tile-info">
-              <h4>Quran & Tajwid</h4>
-              <div class="tile-link">Go to &gt;</div>
+              <h4>Galeri Ilmuwan</h4>
+              <div class="tile-link">Jelajahi &gt;</div>
             </div>
           </div>
 
-          <!-- Tile 2: Memorize (Tahfidz) - Pink/Magenta -->
+          <!-- Tile 2: Arena Sejarah (Pink) -->
           <div class="feature-tile-card tile-pink" onclick="window.quranApp.switchTab('tahfidz')">
-            <div class="tile-icon-box">🌙</div>
+            <div class="tile-icon-box">⚔️</div>
             <div class="tile-info">
-              <h4>Memorize</h4>
+              <h4>Arena Sejarah</h4>
               <div class="tile-progress-bar">
-                <div class="tile-progress-fill" style="width: 65%;"></div>
+                <div class="tile-progress-fill" style="width: 75%;"></div>
               </div>
-              <div class="tile-link">Go to &gt;</div>
+              <div class="tile-link">Tantangan &gt;</div>
             </div>
           </div>
 
-          <!-- Tile 3: Tajwid List (Gharib) - Purple/Violet -->
+          <!-- Tile 3: Bayt al-Hikmah (Purple) -->
           <div class="feature-tile-card tile-purple" onclick="window.quranApp.switchTab('tajwid'); window.quranApp.switchTajwidSub('gharib');">
-            <div class="tile-icon-box">🔍</div>
+            <div class="tile-icon-box">📚</div>
             <div class="tile-info">
-              <h4>Tajwid list</h4>
-              <div class="tile-link">Go to &gt;</div>
+              <h4>Bayt al-Hikmah</h4>
+              <div class="tile-link">Pusat Riset &gt;</div>
             </div>
           </div>
 
-          <!-- Tile 4: Bookmarks / AI Simulator - Mint/Emerald -->
+          <!-- Tile 4: Simulator AI (Mint) -->
           <div class="feature-tile-card tile-mint" onclick="window.quranApp.switchTab('ai_simulator')">
             <div class="tile-icon-box">🤖</div>
             <div class="tile-info">
               <h4>Simulator AI</h4>
-              <div class="tile-link">Go to &gt;</div>
+              <div class="tile-link">Dilema HOTS &gt;</div>
             </div>
           </div>
         </div>
 
-        <!-- Responsive Two Column Grid (Desktop side-by-side, Mobile single column) -->
+        <!-- Responsive Two Column Grid -->
         <div class="responsive-two-col-grid home-content-grid">
           <div class="grid-col-left">
-            <!-- "Last Read" Featured Emerald Wave Card -->
+            <!-- "Featured Card" Featured Emerald Wave Card -->
             <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')">
               <!-- Decorative Waves -->
               <svg class="last-read-wave-svg" viewBox="0 0 160 120" fill="none">
@@ -161,20 +160,20 @@
               <div class="last-read-content">
                 <div>
                   <div class="last-read-tag">
-                    <span>📖</span> Terakhir Dipelajari
+                    <span>🏛️</span> Puncak Masa Keemasan Islam
                   </div>
-                  <h3 class="last-read-title">QS. Al-Fajr: 15</h3>
-                  <p class="last-read-verse">Mad 'Iwadh & Ujian Rezeki • Ayat No. 15</p>
-                  <button class="btn-last-read-play" id="btnPlayLastRead" title="Putar Murottal Syaikh Misyari Rasyid">
-                    <span>▶</span> Putar Misyari Rasyid
+                  <h3 class="last-read-title">Harun Ar-Rasyid & Al-Ma'mun</h3>
+                  <p class="last-read-verse">Kota Baghdad, Bayt al-Hikmah & Diplomasi Global (786–833 M)</p>
+                  <button class="btn-last-read-play" id="btnPlayLastRead" title="Putar Narasi Sejarah">
+                    <span>▶</span> Putar Narasi Sejarah
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- 3D Quran on Wooden Rehal Showcase -->
+            <!-- 3D Historical Showcase Card -->
             <div class="quran-3d-showcase">
-              <img src="images/quran_rehal_3d.jpg" alt="Holy Quran on Wooden Rehal Stand" class="quran-3d-image" onclick="window.quranApp.switchTab('tajwid')" title="Klik untuk mulai belajar">
+              <img src="images/quran_rehal_3d.jpg" alt="Masa Kejayaan Dinasti Abbasiyah" class="quran-3d-image" onclick="window.quranApp.switchTab('tajwid')" title="Klik untuk mulai belajar">
             </div>
 
             <!-- Student Score Quick Info -->
@@ -195,9 +194,9 @@
           </div>
 
           <div class="grid-col-right">
-            <!-- Quick Access to Curriculum Directory (Screen 2 preview) -->
+            <!-- Focus Materials List (KMA 183 SKI Kelas 8) -->
             <div class="section-header" style="margin-top: 0; margin-bottom: 0.75rem;">
-              <h4 class="section-title"><span>📜</span> Daftar Surah & Pokok Bahasan KMA 183</h4>
+              <h4 class="section-title"><span>📜</span> Fokus Materi Dinasti Abbasiyah KMA 183</h4>
               <span style="font-size: 0.75rem; color: var(--primary-emerald); font-weight: 700; cursor: pointer;" onclick="window.quranApp.openCurriculumModal()">Lihat KI/KD</span>
             </div>
 
@@ -213,18 +212,18 @@
                     <span class="rub-star-num">1</span>
                   </div>
                   <div class="surah-info-text">
-                    <h5>Al-Fatihah</h5>
-                    <p>Makkiyah • 7 Ayat • Ummul Qur'an</p>
+                    <h5>Berdirinya Dinasti Abbasiyah</h5>
+                    <p>132 H / 750 M • Abu Abbas As-Saffah & Abu Ja'far</p>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">الفاتحة</div>
-                  <button class="btn-surah-play" data-surah-key="fatihah" title="Putar Murottal Syaikh Misyari Rasyid" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fatihah');">▶</button>
+                  <div class="surah-arabic-title">تأسيس الدولة</div>
+                  <button class="btn-surah-play" data-surah-key="fatihah" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fatihah');">▶</button>
                 </div>
               </div>
 
               <!-- Item 2 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tahfidz')">
+              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid')">
                 <div class="surah-left-box">
                   <div class="rub-star-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -234,18 +233,18 @@
                     <span class="rub-star-num">2</span>
                   </div>
                   <div class="surah-info-text">
-                    <h5>QS. Al-Baqarah: 254 & 261</h5>
-                    <p>Madaniyah • Keutamaan Infak & Sedekah</p>
+                    <h5>Kemakmuran Harun Ar-Rasyid</h5>
+                    <p>786–809 M • Puncak Ekonomi, Bimaristan & Jam Charlemagne</p>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">البقرة</div>
-                  <button class="btn-surah-play" data-surah-key="baqarah" title="Putar Murottal Syaikh Misyari Rasyid" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_baqarah');">▶</button>
+                  <div class="surah-arabic-title">هارون الرشيد</div>
+                  <button class="btn-surah-play" data-surah-key="baqarah" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_baqarah');">▶</button>
                 </div>
               </div>
 
               <!-- Item 3 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('ai_simulator')">
+              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid'); window.quranApp.switchTajwidSub('gharib');">
                 <div class="surah-left-box">
                   <div class="rub-star-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -255,18 +254,18 @@
                     <span class="rub-star-num">3</span>
                   </div>
                   <div class="surah-info-text">
-                    <h5>QS. Al-Fajr: 15–18</h5>
-                    <p>Makkiyah • Ujian Kelapangan & Kesempitan</p>
+                    <h5>Bayt al-Hikmah & Al-Ma'mun</h5>
+                    <p>813–833 M • Gerakan Penerjemahan Emas & Observatorium</p>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">الفجر</div>
-                  <button class="btn-surah-play" data-surah-key="fajr" title="Putar Murottal Syaikh Misyari Rasyid" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fajr');">▶</button>
+                  <div class="surah-arabic-title">بيت الحكمة</div>
+                  <button class="btn-surah-play" data-surah-key="fajr" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fajr');">▶</button>
                 </div>
               </div>
 
               <!-- Item 4 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid')">
+              <div class="surah-item-card" onclick="window.quranApp.switchTab('tahfidz')">
                 <div class="surah-left-box">
                   <div class="rub-star-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -276,13 +275,13 @@
                     <span class="rub-star-num">4</span>
                   </div>
                   <div class="surah-info-text">
-                    <h5>QS. An-Naba: 6–7</h5>
-                    <p>Makkiyah • Hukum Mad 'Iwadh</p>
+                    <h5>Mahakarya Cendekiawan Muslim</h5>
+                    <p>Sains Dunia • Ibnu Sina, Al-Khawarizmi, Bukhari-Muslim</p>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">النبأ</div>
-                  <button class="btn-surah-play" data-surah-key="naba" title="Putar Murottal Syaikh Misyari Rasyid" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_naba');">▶</button>
+                  <div class="surah-arabic-title">علماء الإسلام</div>
+                  <button class="btn-surah-play" data-surah-key="naba" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_naba');">▶</button>
                 </div>
               </div>
             </div>
@@ -292,26 +291,26 @@
 
 
       <!-- ====================================================================
-           TAB 1: MENU 1 - LAB TAJWID & GHARIB (Screen 3 Practice Style)
+           TAB 1: GALERI KEJAYAAN: ILMUWAN & PUSAT PERADABAN
            ==================================================================== -->
       <section id="tab-tajwid" class="tab-pane">
         <!-- Segmented Sub-tab -->
         <div class="segmented-nav-wrapper">
           <button class="segmented-tab-btn tajwid-sub-btn active" data-sub="mad">
-            Hukum Bacaan Mad
+            Cendekiawan & Ilmuwan Muslim
           </button>
           <button class="segmented-tab-btn tajwid-sub-btn" data-sub="gharib">
-            Bacaan Gharib
+            Pusat Peradaban & Khalifah
           </button>
         </div>
 
         <!-- Topic Pills -->
         <div class="tajwid-topics-container" id="tajwidTopicsPills"></div>
 
-        <!-- Responsive Two Column Layout for Lab Tajwid -->
+        <!-- Responsive Two Column Layout -->
         <div class="responsive-two-col-grid tajwid-content-grid">
           <div class="grid-col-left">
-            <!-- Practice Detail Header Card (Compact Islamic Style) -->
+            <!-- Practice Detail Header Card -->
             <div class="subview-header-card">
               <div class="subview-header-left">
                 <div class="rub-star-badge" style="color: #ffffff; width: 34px; height: 34px;">
@@ -322,74 +321,74 @@
                   <span class="rub-star-num" style="color: #ffffff; font-size: 0.68rem;">★</span>
                 </div>
                 <div>
-                  <h3 class="subview-header-title" id="verseTitle">Mad 'Iwadh</h3>
-                  <p class="subview-header-sub" id="verseSubtitle">QS. An-Naba: 6–7</p>
+                  <h3 class="subview-header-title" id="verseTitle">Ibnu Sina (Avicenna)</h3>
+                  <p class="subview-header-sub" id="verseSubtitle">Al-Qanun fi at-Tibb</p>
                 </div>
               </div>
-              <div class="subview-bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+              <div class="subview-bismillah-arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ</div>
             </div>
 
-            <!-- Fitur 1: Bedah Ayat Card -->
+            <!-- Dissector Card -->
             <div class="dissector-card">
-              <!-- Reciter Banner Box (Syaikh Misyari Rasyid) -->
+              <!-- Reciter / Narrator Banner Box -->
               <div class="reciter-banner-box">
                 <div class="reciter-info-left">
-                  <div class="reciter-avatar-circle">🎙️</div>
+                  <div class="reciter-avatar-circle">🏛️</div>
                   <div>
-                    <div class="reciter-text-title">Syaikh Misyari Rasyid Al-Afasy</div>
-                    <div class="reciter-text-sub">Qari Internasional (Kuwait)</div>
+                    <div class="reciter-text-title">Edukator Sejarah Kebudayaan Islam</div>
+                    <div class="reciter-text-sub">Kemenag RI • Kurikulum KMA 183</div>
                   </div>
                 </div>
-                <button id="btnPlayFullVerse" class="btn-reciter-play" title="Putar Murottal Syaikh Misyari Rasyid">
+                <button id="btnPlayFullVerse" class="btn-reciter-play" title="Putar Narasi Edukasi Sejarah">
                   <span id="playIconSpan">▶</span>
-                  <span id="playTextSpan">Tartil Misyari Rasyid</span>
+                  <span id="playTextSpan">Putar Narasi Sejarah</span>
                   <span class="sound-wave-eq" id="headerAudioWave">
                     <span></span><span></span><span></span>
                   </span>
                 </button>
               </div>
 
-              <!-- TAMPILAN SATU AYAT PENUH (Full Verse Presentation) -->
+              <!-- TAMPILAN SUMBER SEJARAH & KUTIPAN MONUMENTAL -->
               <div class="full-verse-display-card">
                 <div class="full-verse-header">
                   <div class="full-verse-header-left">
-                    <span class="full-verse-badge">📖 Teks Lengkap Ayat</span>
-                    <span class="full-verse-surah" id="fullVerseSurahRef">QS. An-Naba: 6–7</span>
+                    <span class="full-verse-badge">📜 Mahakarya & Catatan Sejarah</span>
+                    <span class="full-verse-surah" id="fullVerseSurahRef">Kitab Al-Qanun fi at-Tibb</span>
                   </div>
-                  <button class="btn-listen-ayat" id="btnListenAyatQuick" title="Dengarkan Tartil Misyari Rasyid">
-                    <span>🔊 Putar Tartil</span>
+                  <button class="btn-listen-ayat" id="btnListenAyatQuick" title="Dengarkan Narasi Edukator">
+                    <span>🔊 Putar Narasi</span>
                   </button>
                 </div>
                 
-                <!-- Ayat Al-Qur'an Penuh Berharakat Lengkap -->
+                <!-- Arabic Primary Motto / Citation -->
                 <div class="arabic-text full-verse-arabic-text" id="fullVerseArabicText">
-                  أَلَمْ نَجْعَلِ الْأَرْضَ مِهَٰدًا ۝ وَالْجِبَالَ أَوْتَادًا ۝
+                  إِنَّ الْعِلْمَ حَيَاةُ الْقُلُوبِ مِنَ الْعَمَى وَنُورُ الْأَبْصَارِ مِنَ الظُّلْمَةِ
                 </div>
 
-                <!-- Transliterasi & Terjemahan Lengkap -->
+                <!-- Transliterasi & Makna Historis -->
                 <div class="full-verse-meta-box">
                   <div class="full-verse-phonetic" id="fullVersePhonetic">
-                    Alam naj'alil ardha mihaadaa, wal jibaala awtaadaa
+                    Ibnu Sina: Al-Qanun fi at-Tibb, Pelopor Kedokteran Klinis dan Karantina Dunia
                   </div>
                   <div class="full-verse-translation-text" id="fullVerseTranslation">
-                    "Bukankah Kami telah menjadikan bumi sebagai hamparan, dan gunung-gunung sebagai pasak?"
+                    "Ibnu Sina (Avicenna, 980–1037 M) adalah mahaguru kedokteran dunia asal Bukhara. Ia membuktikan bahwa penyakit infeksi menyebar melalui mikroorganisme di air dan tanah, serta menemukan metode anestesi bedah dan teori sirkulasi darah paru."
                   </div>
                 </div>
               </div>
 
-              <!-- Modul Latihan: Bedah Ayat & Identifikasi Tajwid -->
+              <!-- Modul Latihan: Bedah Fakta Sejarah -->
               <div class="bedah-ayat-section-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <span class="bedah-badge">🔍 Bedah Tajwid</span>
-                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary-dark);" id="verseMission">Klik kata yang mengandung hukum bacaan!</span>
+                  <span class="bedah-badge">🔍 Bedah Sejarah</span>
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary-dark);" id="verseMission">Klik kata kunci yang merupakan fakta & karya monumental tokoh ini!</span>
                 </div>
                 <div class="verse-icons-group">
-                  <span title="Salin Ayat" id="btnCopyAyat" style="cursor: pointer;">📋</span>
-                  <span title="Tandai Belajar">🔖</span>
+                  <span title="Salin Catatan" id="btnCopyAyat" style="cursor: pointer;">📋</span>
+                  <span title="Tandai Materi">🔖</span>
                 </div>
               </div>
 
-              <!-- Clickable Arabic Words -->
+              <!-- Clickable History Keyword Chips -->
               <div class="puzzle-answer-box" id="verseTokensContainer" style="border: none; background: #fafdfc; padding: 1.25rem 0.5rem;"></div>
 
               <!-- Explanation Pop-up Card -->
@@ -401,40 +400,40 @@
           </div>
 
           <div class="grid-col-right">
-            <!-- Fitur 2: Visualizer Ketukan & Metronom -->
+            <!-- Fitur 1: Visualizer Timeline & Garis Waktu Dinasti -->
             <div class="vis-card">
               <div class="section-header" style="margin-bottom: 0.65rem;">
-                <h4 class="section-title">⏱️ Visualizer Ketukan Harakat</h4>
-                <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary-emerald);">Kaidah Tartil</span>
+                <h4 class="section-title">⏱️ Garis Waktu Dinasti Abbasiyah</h4>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary-emerald);">750 – 1258 M</span>
               </div>
               
               <div style="display: flex; gap: 0.4rem; margin-bottom: 0.75rem;">
-                <button class="beat-btn active" data-beats="2">2 Ketukan</button>
-                <button class="beat-btn" data-beats="4">4 Ketukan</button>
-                <button class="beat-btn" data-beats="6">6 Ketukan</button>
+                <button class="beat-btn active" data-beats="2">3 Fase Dinasti</button>
+                <button class="beat-btn" data-beats="4">4 Khalifah Utama</button>
+                <button class="beat-btn" data-beats="6">6 Pusat Sains</button>
               </div>
 
               <div class="metronome-visualizer" id="metronomeBeads"></div>
 
               <div style="display: flex; align-items: center; justify-content: space-between;">
                 <button class="btn btn-primary btn-sm" id="btnToggleMetronome">
-                  ▶ Mulai Ketukan
+                  ▶ Jalankan Garis Waktu
                 </button>
-                <span style="font-size: 0.72rem; color: var(--text-muted);">Tempo: 60 BPM</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted);">Tempo Sejarah: 60 BPM</span>
               </div>
             </div>
 
-            <!-- Gharib Articulation Guide -->
+            <!-- Historical Guide Card -->
             <div class="vis-card" id="gharibGuideCard" style="display: none;">
-              <h4 class="section-title" id="gharibGuideTitle" style="margin-bottom: 0.4rem;">Panduan Cara Baca</h4>
+              <h4 class="section-title" id="gharibGuideTitle" style="margin-bottom: 0.4rem;">Karakteristik & Nilai Historis</h4>
               <p id="gharibGuideRule" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.35rem;"></p>
               <p id="gharibGuideMouth" style="font-size: 0.8rem; color: var(--primary-teal); font-weight: 700;"></p>
             </div>
 
-            <!-- Fitur 3: Studio Rekaman Suara Mandiri -->
+            <!-- Fitur 2: Studio Rekam Retorika Sejarah Mandiri -->
             <div class="recorder-card">
               <div class="section-header" style="margin-bottom: 0.65rem;">
-                <h4 class="section-title">🎙️ Studio Rekam Suara Mandiri</h4>
+                <h4 class="section-title">🎙️ Studio Rekam Retorika Sejarah</h4>
                 <div style="display: flex; align-items: center; gap: 0.35rem;">
                   <span id="recDot" style="width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; display: inline-block;"></span>
                   <span id="recStatusText" style="font-size: 0.72rem; color: var(--text-muted);">Siap</span>
@@ -445,19 +444,19 @@
 
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem;">
-                  <button class="btn btn-primary btn-sm" id="btnStartRecord">🔴 Mulai Rekam</button>
+                  <button class="btn btn-primary btn-sm" id="btnStartRecord">🔴 Mulai Presentasi</button>
                   <button class="btn btn-subtle btn-sm" id="btnStopRecord" disabled>⏹️ Berhenti</button>
                 </div>
                 <audio id="userAudioPlayer" controls style="display: none; max-width: 200px; height: 32px;"></audio>
               </div>
 
               <div style="background: var(--surface-subtle); padding: 0.75rem; border-radius: var(--radius-md);">
-                <div style="font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--primary-dark);">Rubrik Evaluasi Diri (+10 Poin):</div>
+                <div style="font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--primary-dark);">Rubrik Evaluasi Diri Siswa (+10 Poin):</div>
                 <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; margin-bottom: 0.3rem;">
-                  <input type="checkbox" class="eval-check" id="evalCheck1"> Ketepatan panjang ketukan harakat.
+                  <input type="checkbox" class="eval-check" id="evalCheck1"> Ketepatan menyebutkan nama tokoh, masa kekhalifahan, & karya.
                 </label>
                 <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; margin-bottom: 0.5rem;">
-                  <input type="checkbox" class="eval-check" id="evalCheck2"> Kejelasan makharijul huruf & gharib.
+                  <input type="checkbox" class="eval-check" id="evalCheck2"> Refleksi nilai keteladanan kecintaan terhadap ilmu pengetahuan.
                 </label>
                 <button class="btn btn-emerald btn-sm" id="btnSaveSelfEval" style="width: 100%;">Simpan Evaluasi Mandiri</button>
               </div>
@@ -468,23 +467,22 @@
 
 
       <!-- ====================================================================
-           TAB 2: MENU 2 - ARENA TAHFIDZ & MUFRADAT
+           TAB 2: ARENA SEJARAH: SPEED MATCHING & PUZZLE KRONOLOGI
            ==================================================================== -->
       <section id="tab-tahfidz" class="tab-pane">
-        <!-- Responsive Two Column Grid for Arena Tahfidz -->
         <div class="responsive-two-col-grid tahfidz-content-grid">
           <div class="grid-col-left">
-            <!-- Gim Pasangkan Mufradat -->
+            <!-- Gim Pasangkan Istilah & Tokoh Sejarah -->
             <div class="game-wrapper">
               <div class="section-header">
                 <div>
-                  <h4 class="section-title">⚡ Speed Matching Mufradat</h4>
-                  <p class="section-subtitle">Pasangkan kosakata Arab dengan terjemahannya!</p>
+                  <h4 class="section-title">⚡ Speed Matching Istilah & Tokoh</h4>
+                  <p class="section-subtitle">Pasangkan nama tokoh ilmuwan/lembaga dengan penemuan & definisinya!</p>
                 </div>
-                <select id="matchSetSelect" class="form-input" style="max-width: 170px; font-size: 0.75rem;">
-                  <option value="0">QS. Al-Fajr: 15–18</option>
-                  <option value="1">QS. Al-Baqarah: 254</option>
-                  <option value="2">Hadits Etos Kerja</option>
+                <select id="matchSetSelect" class="form-input" style="max-width: 190px; font-size: 0.75rem;">
+                  <option value="0">1. Tokoh Ilmuwan & Penemuan</option>
+                  <option value="1">2. Lembaga & Peradaban</option>
+                  <option value="2">3. Khalifah & Peristiwa Kunci</option>
                 </select>
               </div>
 
@@ -500,34 +498,34 @@
               </div>
             </div>
 
-            <!-- Puzzle Susun Ayat -->
+            <!-- Puzzle Susun Kronologi & Kutipan Sejarah -->
             <div class="game-wrapper">
               <div class="section-header">
                 <div>
-                  <h4 class="section-title">🧩 Puzzle Susun Ayat & Hadits</h4>
-                  <p class="section-subtitle">Susun lafadz Arab berurutan dari kanan ke kiri!</p>
+                  <h4 class="section-title">🧩 Puzzle Kronologi & Kutipan Sejarah</h4>
+                  <p class="section-subtitle">Susun urutan peristiwa atau kutipan sejarah secara runtut!</p>
                 </div>
-                <select id="puzzleLevelSelect" class="form-input" style="max-width: 170px; font-size: 0.75rem;">
-                  <option value="0">Tantangan 1: Hadits</option>
-                  <option value="1">Tantangan 2: Al-Baqarah</option>
-                  <option value="2">Tantangan 3: An-Naba</option>
+                <select id="puzzleLevelSelect" class="form-input" style="max-width: 190px; font-size: 0.75rem;">
+                  <option value="0">Tantangan 1: Urutan 4 Khalifah</option>
+                  <option value="1">Tantangan 2: Semboyan Al-Ma'mun</option>
+                  <option value="2">Tantangan 3: Gelar Ibnu Sina</option>
                 </select>
               </div>
 
               <div style="background: var(--surface-subtle); padding: 0.65rem 0.85rem; border-radius: var(--radius-md); margin-bottom: 0.85rem;">
-                <div style="font-size: 0.7rem; font-weight: 700; color: var(--primary-dark); text-transform: uppercase;">Terjemahan Petunjuk:</div>
-                <div id="puzzleClueText" style="font-size: 0.82rem; font-style: italic; color: var(--text-main);">"Tangan yang di atas lebih baik daripada tangan yang di bawah."</div>
+                <div style="font-size: 0.7rem; font-weight: 700; color: var(--primary-dark); text-transform: uppercase;">Petunjuk Tantangan:</div>
+                <div id="puzzleClueText" style="font-size: 0.82rem; font-style: italic; color: var(--text-main);">"Susunlah urutan 4 khalifah paling berpengaruh pada fase pendirian hingga puncak keemasan Dinasti Abbasiyah!"</div>
               </div>
 
-              <!-- Answer Box (RTL) -->
+              <!-- Answer Box -->
               <div class="puzzle-answer-box" id="puzzleAnswerBox"></div>
 
               <!-- Pool of Scrambled Chips -->
               <div class="puzzle-pool-box" id="puzzlePoolBox"></div>
 
               <div style="display: flex; justify-content: flex-end; gap: 0.5rem; flex-wrap: wrap;">
-                <button class="btn btn-subtle btn-sm" id="btnListenPuzzleAudio" title="Dengarkan Murottal Syaikh Misyari Rasyid">
-                  🔊 Dengarkan Tartil
+                <button class="btn btn-subtle btn-sm" id="btnListenPuzzleAudio" title="Dengarkan Narasi Sejarah">
+                  🔊 Dengarkan Narasi
                 </button>
                 <button class="btn btn-subtle btn-sm" id="btnResetPuzzle">Reset</button>
                 <button class="btn btn-primary btn-sm" id="btnCheckPuzzle">Periksa (+25 Poin)</button>
@@ -539,7 +537,7 @@
             <!-- Live Leaderboard Kelas -->
             <div class="leaderboard-card">
               <div class="section-header">
-                <h4 class="section-title">🏆 Papan Peringkat Kelas VIII</h4>
+                <h4 class="section-title">🏆 Papan Peringkat Kelas VIII MTs</h4>
                 <span style="font-size: 0.72rem; color: var(--gold-600); font-weight: 700;">Live Real-Time</span>
               </div>
               <table style="width: 100%; border-collapse: collapse;">
@@ -547,6 +545,7 @@
                   <tr style="border-bottom: 1.5px solid var(--border-clean); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">
                     <th style="padding: 0.4rem; text-align: left;">Rank</th>
                     <th style="padding: 0.4rem; text-align: left;">Nama</th>
+                    <th style="padding: 0.4rem; text-align: left;">Gelar</th>
                     <th style="padding: 0.4rem; text-align: right;">Skor</th>
                   </tr>
                 </thead>
@@ -559,29 +558,29 @@
 
 
       <!-- ====================================================================
-           TAB 3: MENU 3 - SIMULATOR KONTEKSTUAL AI (HOTS)
+           TAB 3: SIMULATOR KONTEKSTUAL AI: DILEMA KEBIJAKAN ABBASIYAH (HOTS)
            ==================================================================== -->
       <section id="tab-ai_simulator" class="tab-pane">
         <div class="section-header">
           <div>
-            <h4 class="section-title">🤖 Simulator AI: Dilema Remaja MTs</h4>
-            <p class="section-subtitle">Pemecahan masalah afektif & penalaran HOTS berlandaskan wahyu</p>
+            <h4 class="section-title">🤖 Simulator AI: Dilema Kebijakan Abbasiyah</h4>
+            <p class="section-subtitle">Studi kasus kepemimpinan, riset peradaban, dan penalaran HOTS berlandaskan nilai Islam</p>
           </div>
         </div>
 
         <!-- 3 Scenarios Selector Pills -->
         <div class="scenario-selector-grid">
           <div class="scenario-card-select active" data-index="0">
-            <h4>📖 Skenario 1: Ujian Rezeki</h4>
-            <p>QS. Al-Fajr: 15–18</p>
+            <h4>📖 Skenario 1: Anggaran Riset vs Militer</h4>
+            <p>Baitul Mal & Al-Ma'mun (820 M)</p>
           </div>
           <div class="scenario-card-select" data-index="1">
-            <h4>💰 Skenario 2: Infak vs Konsumtif</h4>
-            <p>QS. Al-Baqarah: 254 & 261</p>
+            <h4>🤝 Skenario 2: Ilmuwan Non-Muslim & Toleransi</h4>
+            <p>Hunayn bin Ishaq di Bayt al-Hikmah</p>
           </div>
           <div class="scenario-card-select" data-index="2">
-            <h4>🤝 Skenario 3: Tangan di Atas</h4>
-            <p>HR. Bukhari-Muslim</p>
+            <h4>💡 Skenario 3: Spirit Bayt al-Hikmah Pelajar</h4>
+            <p>Relevansi Abad 21 (KMA 183)</p>
           </div>
         </div>
 
@@ -591,12 +590,12 @@
             <div class="ai-split-left">
               <div class="scenario-dalil-banner">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
-                  <span class="dalil-ref-badge" id="scenarioDalilRef">Landasan Dalil: QS. Al-Fajr: 15–18</span>
-                  <button class="btn-dalil-audio" id="btnPlayScenarioDalil" title="Dengarkan Dalil (Syaikh Misyari Rasyid)">
-                    <span>▶</span> Murottal Syaikh Misyari Rasyid
+                  <span class="dalil-ref-badge" id="scenarioDalilRef">Landasan Nilai: Kebijakan Anggaran Khalifah Al-Ma'mun</span>
+                  <button class="btn-dalil-audio" id="btnPlayScenarioDalil" title="Dengarkan Narasi Sejarah">
+                    <span>▶</span> Narasi Sejarah
                   </button>
                 </div>
-                <div class="dalil-arabic-text" id="scenarioArabicDalil">فَأَمَّا الْإِنسَانُ إِذَا مَا ابْتَلَاهُ رَبُّهُ فَأَكْرَمَهُ وَنَعَّمَهُ فَيَقُولُ رَبِّي أَكْرَمَنِ</div>
+                <div class="dalil-arabic-text" id="scenarioArabicDalil">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ</div>
               </div>
 
               <div id="scenarioNarrative" style="font-size: 0.88rem; line-height: 1.65; margin-bottom: 0.85rem; color: var(--text-main);"></div>
@@ -611,10 +610,10 @@
               <!-- Essay Textarea -->
               <div style="margin-bottom: 1rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.35rem;">
-                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary-dark);">Argumen & Analisis Dalil:</span>
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary-dark);">Argumen Analisis Kebijakan & Landasan Sejarah:</span>
                   <button class="btn-fill-ideal" id="btnFillIdeal">✨ Isi Contoh Jawaban Ideal (Demo Juri)</button>
                 </div>
-                <textarea id="argumentTextarea" class="argument-textarea" placeholder="Tuliskan argumen Anda..."></textarea>
+                <textarea id="argumentTextarea" class="argument-textarea" placeholder="Tuliskan argumen kepemimpinan dan analisis sejarah Anda..."></textarea>
               </div>
 
               <button class="btn btn-primary" id="btnSubmitAi" style="width: 100%;">
@@ -629,28 +628,28 @@
                     <span class="ai-score-label">HOTS</span>
                   </div>
                   <div>
-                    <h5 style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark);">Refleksi Islami Unggul</h5>
-                    <p style="font-size: 0.75rem; color: var(--text-muted);">Terverifikasi KMA No. 183 Tahun 2019</p>
+                    <h5 style="font-size: 0.95rem; font-weight: 800; color: var(--primary-dark);">Refleksi Kepemimpinan Islami Unggul</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Terverifikasi Standar SKI KMA No. 183 Tahun 2019</p>
                   </div>
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem;">
                   <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md);">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Sikap & Afektif:</div>
+                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Sikap & Visi Kepemimpinan:</div>
                     <div id="evalAttitude" style="font-size: 0.8rem;"></div>
                   </div>
                   <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md);">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Kekuatan Dalil:</div>
+                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Kekuatan Fakta & Hikmah Sejarah:</div>
                     <div id="evalDalil" style="font-size: 0.8rem;"></div>
                   </div>
                   <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md);">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Kedalaman Refleksi:</div>
+                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);">Kedalaman Refleksi Abad 21 (HOTS):</div>
                     <div id="evalHots" style="font-size: 0.8rem;"></div>
                   </div>
                 </div>
 
                 <div style="background: var(--gold-50); border-left: 3px solid var(--gold-500); padding: 0.75rem; border-radius: var(--radius-sm);">
-                  <div style="font-size: 0.75rem; font-weight: 800; color: var(--gold-700); margin-bottom: 0.2rem;">👳‍♂️ Pesan Ustadz AI Pembimbing:</div>
+                  <div style="font-size: 0.75rem; font-weight: 800; color: var(--gold-700); margin-bottom: 0.2rem;">👳‍♂️ Pesan Guru / Edukator Sejarah AI:</div>
                   <p id="ustadzNotes" style="font-size: 0.78rem; font-style: italic;"></p>
                 </div>
               </div>
@@ -661,20 +660,20 @@
 
 
       <!-- ====================================================================
-           TAB 4: MENU 4 - PANEL GURU & REKAP NILAI
+           TAB 4: PANEL GURU & REKAP NILAI SISWA
            ==================================================================== -->
       <section id="tab-guru" class="tab-pane">
         <div class="section-header">
           <div>
-            <h4 class="section-title">📊 Panel Guru & Rekap Nilai</h4>
-            <p class="section-subtitle">Rekapitulasi ketuntasan dan pengaturan sistem</p>
+            <h4 class="section-title">📊 Panel Guru & Rekap Nilai SKI</h4>
+            <p class="section-subtitle">Rekapitulasi ketuntasan materi Masa Kejayaan Dinasti Abbasiyah</p>
           </div>
           <button class="btn btn-emerald btn-sm" id="btnDownloadCsv">
             📥 Unduh CSV
           </button>
         </div>
 
-        <!-- Responsive Two Column Grid for Panel Guru -->
+        <!-- Responsive Two Column Grid -->
         <div class="responsive-two-col-grid guru-content-grid">
           <div class="grid-col-left">
             <div class="teacher-card">
@@ -692,11 +691,11 @@
               <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
                 <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md); text-align: center;">
                   <div id="teacherTajwidScore" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark);">80</div>
-                  <div style="font-size: 0.68rem; color: var(--text-muted);">Lab Tajwid</div>
+                  <div style="font-size: 0.68rem; color: var(--text-muted);">Galeri Kejayaan</div>
                 </div>
                 <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md); text-align: center;">
                   <div id="teacherTahfidzScore" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark);">65</div>
-                  <div style="font-size: 0.68rem; color: var(--text-muted);">Tahfidz</div>
+                  <div style="font-size: 0.68rem; color: var(--text-muted);">Arena Sejarah</div>
                 </div>
                 <div style="background: var(--surface-subtle); padding: 0.65rem; border-radius: var(--radius-md); text-align: center;">
                   <div id="teacherHotsScore" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark);">175</div>
@@ -709,7 +708,7 @@
                 <span id="teacherTotalScore" style="font-size: 1.15rem; font-weight: 800; color: var(--gold-600);">320 XP</span>
               </div>
 
-              <h5 style="font-size: 0.82rem; font-weight: 800; margin-bottom: 0.5rem;">📋 Riwayat Log Asesmen:</h5>
+              <h5 style="font-size: 0.82rem; font-weight: 800; margin-bottom: 0.5rem;">📋 Riwayat Log Asesmen Pembelajaran:</h5>
               <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem;">
                 <tbody id="teacherAssessmentsBody"></tbody>
               </table>
@@ -719,7 +718,7 @@
           <div class="grid-col-right">
             <!-- API Settings Card -->
             <div class="teacher-card">
-              <h5 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0.75rem;">⚙️ Pengaturan Evaluator AI</h5>
+              <h5 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0.75rem;">⚙️ Pengaturan Evaluator AI Sejarah</h5>
               <div style="margin-bottom: 0.75rem;">
                 <label style="font-size: 0.75rem; font-weight: 700;">Google Gemini API Key:</label>
                 <input type="password" id="apiKeyInput" class="form-input" placeholder="Masukkan AIzaSy... (Opsional)">
@@ -742,18 +741,18 @@
 
     </div>
 
-    <!-- FLOATING QURAN AUDIO PLAYER (Syaikh Misyari Rasyid Al-Afasy) -->
+    <!-- FLOATING HISTORICAL AUDIO PLAYER -->
     <div class="global-audio-player" id="globalAudioPlayer" style="display: none;">
       <div class="gap-top-bar">
         <div class="gap-reciter-info">
-          <div class="gap-avatar">🎙️</div>
+          <div class="gap-avatar">🏛️</div>
           <div class="gap-meta">
-            <span class="gap-title" id="gapTrackTitle">QS. An-Naba: 6–7</span>
-            <span class="gap-reciter" id="gapReciterName">Syaikh Misyari Rasyid Al-Afasy</span>
+            <span class="gap-title" id="gapTrackTitle">Masa Kejayaan Dinasti Abbasiyah</span>
+            <span class="gap-reciter" id="gapReciterName">Edukator Sejarah Kebudayaan Islam</span>
           </div>
         </div>
         <div class="gap-actions">
-          <button class="gap-btn" id="gapBtnRepeat" title="Ulangi Bacaan (Repeat)">🔁</button>
+          <button class="gap-btn" id="gapBtnRepeat" title="Ulangi Narasi (Repeat)">🔁</button>
           <button class="gap-btn gap-play-btn" id="gapBtnPlayPause" title="Jeda / Lanjutkan">⏸️</button>
           <button class="gap-btn" id="gapBtnStop" title="Tutup / Hentikan">⏹️</button>
         </div>
@@ -767,8 +766,7 @@
       </div>
     </div>
 
-    <!-- FLOATING DOCKED BOTTOM NAVIGATION (Matching reference image) -->
-    <!-- FLOATING DOCKED BOTTOM NAVIGATION (Matching reference image) -->
+    <!-- FLOATING DOCKED BOTTOM NAVIGATION -->
     <nav class="floating-bottom-nav">
       <button class="nav-item-btn active" data-nav="beranda" onclick="window.quranApp.switchTab('beranda')">
         <svg class="nav-svg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -785,7 +783,7 @@
           <path d="M6 7.5h2.5"/>
           <path d="M15.5 7.5h2.5"/>
         </svg>
-        <span>Tajwid</span>
+        <span>Galeri</span>
       </button>
       <button class="nav-item-btn" data-nav="tahfidz" onclick="window.quranApp.switchTab('tahfidz')">
         <svg class="nav-svg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -795,7 +793,7 @@
           <circle cx="15" cy="11" r="1" fill="currentColor"/>
           <circle cx="17" cy="13" r="1" fill="currentColor"/>
         </svg>
-        <span>Tahfidz</span>
+        <span>Arena</span>
       </button>
       <button class="nav-item-btn" data-nav="ai_simulator" onclick="window.quranApp.switchTab('ai_simulator')">
         <svg class="nav-svg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -826,13 +824,13 @@
 
 
   <!-- ==========================================================================
-       MODAL 1: PEMETAAN KI & KD KMA NO. 183 TAHUN 2019
+       MODAL 1: PEMETAAN KI & KD SKI KMA NO. 183 TAHUN 2019
        ========================================================================== -->
   <div class="modal-overlay" id="curriculumModal">
     <div class="modal-dialog">
       <div class="modal-header">
         <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-dark);">
-          📜 Pemetaan KI & KD KMA No. 183 Tahun 2019
+          📜 Peta KI & KD SKI MTs (KMA No. 183 Tahun 2019)
         </h4>
         <button class="modal-close-trigger" style="background: none; border: none; font-size: 1.35rem; cursor: pointer;">&times;</button>
       </div>

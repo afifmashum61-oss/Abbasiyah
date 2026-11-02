@@ -1,69 +1,86 @@
-# 📖 Media Pembelajaran Interaktif Al-Qur'an Hadits MTs (KMA 183 Tahun 2019)
+# 🏛️ mySKI - Media Pembelajaran Interaktif SKI MTs Kelas 8 (KMA 183 Tahun 2019)
+## Topik: Masa Kejayaan Dinasti Abbasiyah (The Golden Age of Islam)
 
-Aplikasi Web Media Pembelajaran Interaktif **Al-Qur'an Hadits** untuk tingkat Madrasah Tsanawiyah (MTs) yang disusun mengacu pada standar kurikulum **KMA No. 183 Tahun 2019** Kementerian Agama RI.
+Aplikasi Web Media Pembelajaran Interaktif **Sejarah Kebudayaan Islam (SKI)** untuk tingkat Madrasah Tsanawiyah (MTs) Kelas VIII yang disusun mengacu pada standar kurikulum **KMA No. 183 Tahun 2019** Kementerian Agama Republik Indonesia.
 
-Dilengkapi dengan audio murottal resmi bersuara jernih oleh **Syaikh Misyari Rasyid Al-Afasy** (*Sheikh Mishary Rashid Alafasy*).
+Dilengkapi dengan antarmuka modern bernuansa *Islamic Modern Emerald & Gold*, narasi suara edukasi sejarah, laboratorium bedah sejarah interaktif, mini-game gamifikasi, dan simulator kecerdasan buatan (*AI HOTS Simulator*).
 
 ---
 
 ## ✨ Fitur Unggulan
 
 1. **🕌 Beranda Pintar & Navigasi Cepat**
-   - Kartu progres belajar dan resume bacaan terakhir (*Last Read*).
-   - Pintasan cepat materi Surah pilihan (Al-Fatihah, Al-Baqarah, Al-Fajr, An-Naba').
-   - Mode responsif: Pilihan tampilan Ponsel (*Mobile App Frame*) atau Layar Penuh (*Desktop Mode*).
+   - 4 Kartu Fitur Utama: Galeri Ilmuwan, Arena Sejarah, Bayt al-Hikmah, dan Simulator AI.
+   - Kartu Pilihan: *Masa Keemasan Khalifah Harun Ar-Rasyid & Al-Ma'mun*.
+   - Pintasan Peristiwa Kunci: Berdirinya Dinasti Abbasiyah (750 M), Kemakmuran Harun Ar-Rasyid, Bayt al-Hikmah Al-Ma'mun, dan Cendekiawan Muslim Dunia.
+   - Mode responsif: Pilihan tampilan Ponsel (*Mobile App Shell Frame*) atau Layar Penuh (*Desktop Responsive Grid*).
 
-2. **📖 Lab Tajwid & Bacaan Gharib Interaktif**
-   - **Hukum Mad**: Mad 'Iwadh, Mad Layyin, dan Mad 'Aridh Lissukun dengan metronom pengetuk ketukan harakat digital (2, 4, 6 ketukan).
-   - **Bacaan Gharib**: Panduan cara baca dan simulasi interaktif Imalah (QS. Hud: 41), Isymam (QS. Yusuf: 11), Tashil (QS. Fussilat: 44), Naql (QS. Al-Hujurat: 11), serta titik Saktah.
-   - Bedah ayat interaktif kata-per-kata beserta penjelasan kaidah tajwidnya.
+2. **🏛️ Galeri Kejayaan: Cendekiawan & Pusat Peradaban**
+   - **Cendekiawan & Ilmuwan Muslim**:
+     - **Ibnu Sina (Avicenna)**: Bapak Kedokteran Modern, metode karantina, dan mahakarya *Al-Qanun fi at-Tibb*.
+     - **Al-Khawarizmi**: Bapak Aljabar Dunia, penemu konsep angka nol (*Sifr*), algoritma, dan *Kitab Al-Jabr wal-Muqabalah*.
+     - **Jabir bin Hayyan (Geber)**: Bapak Kimia Modern, penemu metode eksperimen laboratorium, distilasi, dan asam mineral pekat.
+     - **Ar-Razi (Rhazes)**: Pelopor diagnosis pembeda cacar & campak (*Al-Hawi fit-Tibb*), benang jahit bedah *catgut*, dan rumah sakit modern.
+     - **Imam Al-Bukhari & Muslim**: Puncak kodifikasi hadits shahih (*Kutubus Sittah*) dan metode kritik sanad-matan tertinggi.
+   - **Pusat Peradaban & Khalifah**:
+     - **Bayt al-Hikmah (House of Wisdom)**: Pusat riset, perpustakaan agung Baghdad, dan gerakan penerjemahan berimbalan emas seberat buku.
+     - **Kota Baghdad (Madinatussalam)**: Tata kota bundar konsentris di tepi Sungai Tigris karya Abu Ja'far Al-Mansur.
+     - **Khalifah Harun Ar-Rasyid (786–809 M)**: Puncak kemakmuran ekonomi Baitul Mal, rumah sakit Bimaristan, dan hadiah teknologi jam air kepada Kaisar Charlemagne.
+     - **Khalifah Al-Ma'mun (813–833 M)**: Puncak intelektualisme, observatorium astronomi Syammasiyyah, dan pengukuran keliling bumi.
+   - **Bedah Fakta Sejarah**: Klik kata kunci interaktif untuk mengungkap analisis peran dan mendapatkan poin skor.
+   - **Garis Waktu (Timeline Visualizer)**: Pengetuk ritme langkah waktu dinasti (Fase Dinasti, Khalifah Utama, Pusat Sains).
+   - **Studio Rekaman Presentasi Mandiri**: Rekam suara retorika sejarah siswa dilengkapi visualisasi gelombang suara (*Waveform Canvas*) dan rubrik evaluasi mandiri.
 
-3. **🎮 Game Tahfidz Susun Kata (Puzzle Ayat)**
-   - Game interaktif menyusun potongan kata Al-Qur'an dan Hadits dengan sistem drag & tap.
-   - Evaluasi langsung otomatis, efek suara selebrasi, dan skor penghargaan (*Gamification*).
-   - Papan peringkat (*Leaderboard*) kelas secara real-time.
+3. **⚔️ Arena Sejarah: Speed Matching & Puzzle Kronologi**
+   - **Speed Matching Game**: Pasangkan nama tokoh/lembaga dengan definisi dan penemuannya dalam waktu 60 detik.
+     - Set 1: Tokoh Ilmuwan & Penemuan Monumental
+     - Set 2: Lembaga & Peradaban Abbasiyah
+     - Set 3: Khalifah & Peristiwa Kunci
+   - **Puzzle Kronologi & Kutipan Sejarah**: Susun kepingan kronologi 4 khalifah utama, semboyan emas Al-Ma'mun, dan gelar kebesaran Ibnu Sina.
+   - **Papan Peringkat Real-Time**: Leaderboard kompetitif siswa kelas VIII MTs.
 
-4. **🤖 AI Simulator Dilema Akhlak Remaja**
-   - Studi kasus kontekstual kehidupan madrasah berbasis nilai Al-Qur'an dan Hadits (infak, dermawan, rendah hati, menjaga lisan).
-   - Umpan balik refleksi analitis (*HOTS - Higher Order Thinking Skills*) berdasarkan landasan dalil ayat.
+4. **🤖 Simulator AI: Dilema Kepemimpinan Abbasiyah (HOTS)**
+   - Studi kasus kontekstual *Higher Order Thinking Skills* (HOTS):
+     - **Skenario 1**: Kebijakan Anggaran Riset Bayt al-Hikmah vs Ambisi Militer (Khalifah Al-Ma'mun).
+     - **Skenario 2**: Merekrut Ilmuwan Non-Muslim (Hunayn bin Ishaq) & Piagam Toleransi Ilmiah.
+     - **Skenario 3**: Menghidupkan Spirit Bayt al-Hikmah bagi Pelajar Madrasah di Abad ke-21.
+   - Evaluasi ditenagai Google Gemini API (dengan *Smart Heuristic Fallback* 100% siap luring/offline).
+   - Rubrik umpan balik komprehensif: Sikap Kepemimpinan, Kekuatan Fakta Sejarah, Kedalaman Refleksi Abad 21, dan Nasihat Guru Sejarah AI.
 
-5. **🎙️ Audio Murottal Syaikh Misyari Rasyid Al-Afasy**
-   - Pemutar audio Al-Qur'an mengambang (*Floating Player*) yang sinkron di seluruh halaman.
-   - Streaming audio berkualitas tinggi per-ayat (128 kbps) dari EveryAyah CDN.
-   - Dilengkapi fungsi Play, Pause, Repeat (pengulangan ayat), dan visual bar durasi.
+5. **📊 Panel Guru & Rekap Nilai Siswa**
+   - Resume skor akumulasi per modul (Galeri Kejayaan, Arena Sejarah, Simulator AI) dan predikat kelulusan (*Mumtaz*, *Jayyid Jiddan*, *Jayyid*).
+   - Log riwayat aktivitas asesmen siswa secara mendetail.
+   - Ekspor laporan nilai resmi berformat **CSV / Microsoft Excel** (dengan penanda UTF-8 BOM).
 
-6. **📜 Pemetaan Kurikulum KMA 183 Tahun 2019**
-   - Rangkuman lengkap Kompetensi Inti (KI) dan Kompetensi Dasar (KD) Al-Qur'an Hadits untuk Kelas VII, Kelas VIII, dan Kelas IX MTs.
+6. **📜 Peta Kurikulum KMA No. 183 Tahun 2019**
+   - Pemetaan resmi Kompetensi Inti (KI 1-4) dan Kompetensi Dasar (KD 3.1 - KD 4.4) mata pelajaran SKI MTs.
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **HTML5** (Semantik, aksesibilitas tinggi, dan RTL Arabic support)
-- **CSS3** (Desain modern bertema Islamic Modern Gold & Emerald, Glassmorphism, Responsive Mobile Frame)
+- **HTML5** (Semantik, aksesibilitas tinggi, dan RTL Arabic calligraphy support)
+- **CSS3 Modern** (Desain modern bertema Islamic Modern Gold & Emerald, Glassmorphism, Responsive Mobile Frame & Desktop Mode)
 - **Vanilla JavaScript ES6+** (State Management, DOM rendering interaktif, custom event bus)
-- **Web Audio API & HTML5 Audio** (Sintesis audio metronom & streaming murottal CDN)
-- **Node.js** (Server statis lokal ringan)
+- **Web Audio API & Web Speech API** (Sintesis efek suara game, ritme ketukan garis waktu, dan narasi edukasi sejarah suara jernih)
+- **MediaRecorder API & Canvas API** (Perekaman suara presentasi mandiri & visualisasi gelombang frekuensi audio)
+- **Google Gemini API** (Analisis HOTS siswa dengan fallback cerdas luring tanpa server eksternal)
+- **Node.js** (Server lokal statis)
 
 ---
 
 ## 🚀 Cara Menjalankan Secara Lokal
 
-1. **Clone repositori**:
-   ```bash
-   git clone https://github.com/afifmashum61-oss/Alqur-an.git
-   cd Alqur-an
-   ```
-
-2. **Jalankan server lokal (Node.js)**:
+1. **Jalankan server lokal (Node.js)**:
    ```bash
    node server.js
    ```
 
-3. **Buka aplikasi di browser**:
-   Akses `http://localhost:3000/` pada peramban web (Chrome, Edge, Firefox, atau Safari).
+2. **Buka aplikasi di peramban web**:
+   Akses `http://localhost:3000/` pada browser (Chrome, Edge, Firefox, atau Safari).
 
 ---
 
-## 👨‍💻 Pengembang
-- **Repositori**: [afifmashum61-oss/Alqur-an](https://github.com/afifmashum61-oss/Alqur-an)
+## 👨‍🎓 Pengembang
+- **Mata Pelajaran**: Sejarah Kebudayaan Islam (SKI) Kelas VIII Madrasah Tsanawiyah
+- **Kurikulum**: KMA No. 183 Tahun 2019 Kementerian Agama RI

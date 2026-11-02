@@ -1,72 +1,72 @@
-// Data Store: Media Pembelajaran Interaktif Al-Qur'an Hadits MTs (KMA 183 Tahun 2019)
-// Dilengkapi Referensi Murottal Syaikh Misyari Rasyid Al-Afasy (Mishary Rashid Alafasy)
+// ==========================================================================
+// DATA STORE: MEDIA PEMBELAJARAN INTERAKTIF SEJARAH KEBUDAYAAN ISLAM (SKI)
+// KELAS VIII MADRASAH TSANAWIYAH (KMA NO. 183 TAHUN 2019)
+// TOPIK UTAMA: MASA KEJAYAAN DINASTI ABBASIYAH (THE GOLDEN AGE OF ISLAM)
+// ==========================================================================
 
 const APP_DATA = {
-  // Profil Qari Utama
+  // Profil Narator Utama
   activeReciter: {
-    id: "alafasy",
-    name: "Syaikh Misyari Rasyid Al-Afasy",
-    title: "Qari Internasional (Kuwait)",
-    avatar: "🎙️"
+    id: "ski_narrator",
+    name: "Edukator Sejarah Kebudayaan Islam",
+    title: "Kemenag RI • Kurikulum KMA 183",
+    avatar: "🏛️"
   },
 
-  // 1. Peta Kurikulum KMA No. 183 Tahun 2019
+  // 1. Peta Kurikulum KMA No. 183 Tahun 2019 Bidang SKI MTs
   curriculum: {
-    title: "Peta Kompetensi Inti & Kompetensi Dasar (KMA No. 183 Tahun 2019)",
-    subject: "Al-Qur'an Hadits Madrasah Tsanawiyah (MTs)",
+    title: "Peta Kompetensi Inti & Kompetensi Dasar SKI (KMA No. 183 Tahun 2019)",
+    subject: "Sejarah Kebudayaan Islam (SKI) Madrasah Tsanawiyah (MTs)",
     levels: [
       {
         grade: "Kelas VII",
         semesters: [
           {
-            semester: "Semester Ganjil",
+            semester: "Semester Ganjil & Genap",
             ki: [
-              "KI-1: Menghargai dan menghayati ajaran agama Islam.",
-              "KI-2: Menunjukkan perilaku jujur, disiplin, santun, percaya diri, peduli, dan bertanggung jawab.",
-              "KI-3: Memahami pengetahuan faktual, konseptual, dan prosedural dalam ilmu Al-Qur'an Hadits.",
-              "KI-4: Mencoba, mengolah, dan menyaji dalam ranah konkret dan abstrak."
+              "KI-1: Menghayati dan mengamalkan ajaran agama Islam.",
+              "KI-2: Menunjukkan perilaku jujur, disiplin, santun, peduli, dan bertanggung jawab.",
+              "KI-3: Memahami pengetahuan faktual dan konseptual tentang sejarah peradaban Islam.",
+              "KI-4: Mengolah, menyaji, dan menalar dalam ranah konkret sejarah dakwah Nabi SAW dan Khulafaur Rasyidin."
             ],
             kd: [
-              "KD 1.1: Menerima Al-Qur'an dan hadits sebagai pedoman hidup.",
-              "KD 3.1: Memahami kedudukan dan fungsi Al-Qur'an dan hadits dalam kehidupan.",
-              "KD 3.2: Memahami ketentuan hukum bacaan Mad Thabi'i agar terbiasa membaca Al-Qur'an dengan benar.",
-              "KD 4.1: Mendemonstrasikan pelafalan hukum bacaan Mad Thabi'i sesuai makharijul huruf."
-            ]
-          },
-          {
-            semester: "Semester Genap",
-            kd: [
-              "KD 3.3: Memahami isi kandungan QS. Asy-Syams (91) dan QS. Al-Lail (92) tentang sifat murah hati.",
-              "KD 3.4: Menganalisis keterkaitan etos berbagi dengan keberkahan rezeki.",
-              "KD 4.2: Membaca dan menghafal matan hadits tentang keutamaan sedekah."
+              "KD 3.1: Memahami misi Nabi Muhammad SAW sebagai rahmat bagi seluruh alam.",
+              "KD 3.2: Menganalisis strategi dakwah Rasulullah SAW di Makkah dan Madinah.",
+              "KD 3.3: Menganalisis prestasi Khulafaur Rasyidin dalam mengembangkan dakwah Islam.",
+              "KD 3.4: Menganalisis sejarah berdirinya dan perkembangan peradaban Dinasti Umayyah di Damaskus."
             ]
           }
         ]
       },
       {
-        grade: "Kelas VIII",
+        grade: "Kelas VIII (Fokus Materi: Dinasti Abbasiyah)",
         semesters: [
           {
             semester: "Semester Ganjil",
             ki: [
-              "KI-1: Menghayati nilai-nilai keagamaan melalui pembiasaan tilawah dan pemahaman hadits.",
-              "KI-2: Menumbuhkan integritas pribadi, empati sosial, dan etos kerja Islami.",
-              "KI-3: Menganalisis kaidah ilmu tajwid dan kandungan ayat-hadits secara kritis (HOTS).",
-              "KI-4: Mengembangkan keterampilan membaca tartil dan memecahkan dilema moral kontekstual."
+              "KI-1: Menghayati nilai-nilai kejuangan dan keteladanan para khalifah serta ilmuwan muslim.",
+              "KI-2: Menunjukkan sikap ilmiah, kritis, toleran, dan gemar menuntut ilmu sebagaimana dicontohkan cendekiawan Abbasiyah.",
+              "KI-3: Menganalisis sejarah berdirinya Dinasti Abbasiyah, fase keemasan, dan perkembangan peradaban Islam.",
+              "KI-4: Menyajikan dan merekonstruksi biografi ilmuwan muslim, karya monumental, dan peran Bayt al-Hikmah dalam kemajuan dunia."
             ],
             kd: [
-              "KD 3.1: Memahami hukum bacaan Mad 'Iwadh, Mad Layyin, dan Mad 'Aridh Lissukun dalam Al-Qur'an.",
-              "KD 4.1: Mempraktikkan bacaan Mad 'Iwadh, Mad Layyin, dan Mad 'Aridh Lissukun dengan ketukan yang tepat.",
-              "KD 3.2: Menganalisis isi kandungan QS. Al-Fajr: 15-18 tentang ujian kelapangan dan kesempitan rezeki.",
-              "KD 4.2: Mensimulasikan sikap adil dan dermawan dalam kehidupan sosial remaja madrasah."
+              "KD 3.1: Menganalisis sejarah berdirinya Dinasti Abbasiyah (tokoh pendiri, latar belakang runtuhnya Umayyah, dan pemindahan ibu kota ke Baghdad).",
+              "KD 4.1: Menyajikan rangkaian peristiwa sejarah berdirinya Dinasti Abbasiyah dalam bentuk garis waktu (timeline).",
+              "KD 3.2: Menganalisis perkembangan peradaban dan kemakmuran Islam pada masa kejayaan Dinasti Abbasiyah (Khalifah Harun Ar-Rasyid dan Al-Ma'mun).",
+              "KD 4.2: Memaparkan kemajuan peradaban, administrasi pemerintahan, dan perekonomian pada masa Dinasti Abbasiyah."
             ]
           },
           {
             semester: "Semester Genap",
+            ki: [
+              "KI-3: Menganalisis biografi, spesialisasi, dan karya monumental para ilmuwan muslim serta ulama penyusun kutubussittah pada masa Abbasiyah.",
+              "KI-4: Mengomunikasikan hikmah dan inspirasi kemajuan sains Islam untuk membangun peradaban modern."
+            ],
             kd: [
-              "KD 3.3: Menganalisis isi kandungan QS. Al-Baqarah: 254 dan 261 tentang menyegerakan infak di jalan Allah.",
-              "KD 3.4: Memahami hadits riwayat Bukhari Muslim dari Abdullah bin Umar tentang keutamaan 'Tangan di Atas' (tangan yang memberi lebih mulia daripada tangan yang meminta).",
-              "KD 4.3: Menampilkan karakter mandiri, produktif, dan menjauhi mental meminta-minta."
+              "KD 3.3: Menganalisis tokoh ilmuwan muslim dan perannya dalam kemajuan peradaban Islam masa Abbasiyah (Ibnu Sina, Al-Khawarizmi, Ar-Razi, Al-Kindi, Jabir bin Hayyan, Al-Farabi).",
+              "KD 4.3: Mengolah informasi tentang keteladanan ilmuwan muslim Dinasti Abbasiyah dalam memadukan wahyu dan riset empiris.",
+              "KD 3.4: Menganalisis biografi dan peran para ulama mazhab fiqih (Abu Hanifah, Malik, Syafi'i, Ahmad bin Hanbal) dan ulama hadits penyusun Kutubus Sittah (Bukhari, Muslim, Abu Dawud, Tirmidzi, An-Nasa'i, Ibnu Majah).",
+              "KD 4.4: Mempresentasikan keteladanan ulama hadits dan fiqih pada masa Abbasiyah dalam menjaga orisinalitas ajaran Islam."
             ]
           }
         ]
@@ -77,13 +77,13 @@ const APP_DATA = {
           {
             semester: "Semester Ganjil & Genap",
             ki: [
-              "KI-3: Memahami kaidah bacaan Gharib dalam Al-Qur'an riwayat Imam Ashim jalur Hafs.",
-              "KI-4: Melafalkan bacaan-bacaan Gharib secara fasih sesuai kaidah talaqqi."
+              "KI-3: Memahami sejarah perkembangan Islam di Nusantara dan peran Dinasti Ayyubiyah.",
+              "KI-4: Menyajikan jejak kebudayaan dan nilai kearifan lokal Islam di Indonesia."
             ],
             kd: [
-              "KD 3.1: Memahami macam-macam bacaan Gharib (Imalah, Isymam, Tashil, Naql, dan Saktah).",
-              "KD 4.1: Mempraktikkan bacaan Imalah pada QS. Hud: 41, Isymam pada QS. Yusuf: 11, Tashil pada QS. Fussilat: 44, Naql pada QS. Al-Hujurat: 11, dan 4 titik Saktah.",
-              "KD 3.2: Menganalisis hadits tentang menuntut ilmu, etos integritas, dan kelestarian alam."
+              "KD 3.1: Menganalisis sejarah Dinasti Ayyubiyah dan peran Shalahuddin Al-Ayyubi dalam Perang Salib.",
+              "KD 3.2: Menganalisis masuknya Islam ke Nusantara melalui perdagangan, perkawinan, dan pendidikan pesantren.",
+              "KD 3.3: Menganalisis sejarah kerajaan-kerajaan Islam di tanah Jawa, Sumatra, Sulawesi, dan Maluku."
             ]
           }
         ]
@@ -91,292 +91,314 @@ const APP_DATA = {
     ]
   },
 
-  // 2. Data Lab Tajwid & Gharib
+  // 2. Data Galeri Kejayaan: Cendekiawan Muslim & Pusat Peradaban Abbasiyah
   tajwid: {
+    // Kategori 1: Cendekiawan & Ilmuwan Muslim (Sains & Agama)
     mad: [
       {
-        id: "mad_iwadh_1",
-        title: "Mad 'Iwadh",
-        subtitle: "QS. An-Naba: 6–7",
-        hukumKey: "iwadh",
-        hukumName: "Mad 'Iwadh",
-        surah: 78,
-        ayahs: [
-          { surah: 78, ayah: 6 },
-          { surah: 78, ayah: 7 }
-        ],
-        surahName: "QS. An-Naba'",
-        ayahRange: "Ayat 6–7",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        ketukan: 2,
-        beatsText: "2 Harakat (1 Alif)",
-        ruleGuide: "Mad 'Iwadh terjadi saat fathan/tanwin fathah berada di akhir kata dan diwaqafkan (berhenti). Tanwin diganti menjadi mad berharakat fathah panjang 2 ketukan.",
-        mission: "Klik kata yang mengandung hukum bacaan Mad 'Iwadh pada akhir ayat!",
-        verseTokens: [
-          { word: "أَلَمْ", isTarget: false, reason: "Bukan akhir ayat dan tidak bertanwin fathah" },
-          { word: "نَجْعَلِ", isTarget: false, reason: "Kata kerja berharakat kasrah" },
-          { word: "الْأَرْضَ", isTarget: false, reason: "Hukum Al-Qamariyah, fathah biasa" },
-          { word: "مِهَٰدًا", isTarget: true, reason: "Mad 'Iwadh: huruf dal bertanwin fathah (دًا) di akhir waqaf, dibaca 'Mihadaa' (2 harakat)" },
-          { word: "وَالْجِبَالَ", isTarget: false, reason: "Hukum Al-Qamariyah dan Mad Thabi'i" },
-          { word: "أَوْتَادًا", isTarget: true, reason: "Mad 'Iwadh: tanwin fathah pada huruf dal (دًا) di akhir waqaf, dibaca 'Awtaadaa' (2 harakat)" }
-        ],
-        fullArabic: "أَلَمْ نَجْعَلِ الْأَرْضَ مِهَٰدًا ۝ وَالْجِبَالَ أَوْتَادًا ۝",
-        translation: "Bukankah Kami telah menjadikan bumi sebagai hamparan, dan gunung-gunung sebagai pasak?",
-        audioPhonetic: "Alam naj'alil ardha mihaadaa, wal jibaala awtaadaa"
-      },
-      {
-        id: "mad_layyin_1",
-        title: "Mad Layyin",
-        subtitle: "QS. Quraisy: 1–4",
-        hukumKey: "layyin",
-        hukumName: "Mad Layyin (Lin)",
-        surah: 106,
-        ayahs: [
-          { surah: 106, ayah: 1 },
-          { surah: 106, ayah: 2 },
-          { surah: 106, ayah: 3 },
-          { surah: 106, ayah: 4 }
-        ],
-        surahName: "QS. Quraisy",
-        ayahRange: "Ayat 1–4",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        ketukan: 4,
-        beatsText: "2, 4, atau 6 Harakat (Utama 4 Ketukan)",
-        ruleGuide: "Mad Layyin terjadi bila huruf Wawu sukun (وْ) atau Ya' sukun (يْ) didahului harakat fathah, dan berada sebelum huruf hidup yang disukunkan karena waqaf.",
-        mission: "Klik kata yang mengandung hukum bacaan Mad Layyin!",
-        verseTokens: [
-          { word: "لِإِيلَافِ", isTarget: false, reason: "Mad Badal dan Mad Thabi'i" },
-          { word: "قُرَيْشٍ", isTarget: true, reason: "Mad Layyin: Ya' sukun didahului huruf ro' berharakat fathah (رَيْ), lalu huruf syin disukunkan saat waqaf" },
-          { word: "وَآمَنَهُم", isTarget: false, reason: "Mad Badal dan Idzhar Syafawi" },
-          { word: "مِّنْ", isTarget: false, reason: "Idgham Mimi / Ghunnah" },
-          { word: "خَوْفٍ", isTarget: true, reason: "Mad Layyin: Wawu sukun didahului kho' berharakat fathah (خَوْ), diwaqafkan pada fa'" }
-        ],
-        fullArabic: "لِإِيلَافِ قُرَيْشٍ ۝ إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ ۝ فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ ۝ الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ ۝",
-        translation: "Karena kebiasaan orang-orang Quraisy, (yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas. Maka hendaklah mereka menyembah Tuhan (pemilik) rumah ini (Ka'bah), yang telah memberi makanan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari rasa ketakutan.",
-        audioPhonetic: "Li'iilaafi quraisy. Iilaafihim rihlatasy syitaa'i wash shaif. Falya'buduu rabba haadzal bait. Alladzii ath'amahum min juu'iw wa aamanahum min khauf."
-      },
-      {
-        id: "mad_aridh_1",
-        title: "Mad 'Aridh Lissukun",
-        subtitle: "QS. Al-Fatihah: 2",
-        hukumKey: "aridh",
-        hukumName: "Mad 'Aridh Lissukun",
+        id: "tokoh_ibnu_sina",
+        title: "Ibnu Sina (Avicenna)",
+        subtitle: "Bapak Kedokteran Modern • Al-Qanun fi at-Tibb",
+        hukumKey: "kedokteran",
+        hukumName: "Ilmu Kedokteran & Farmakologi",
         surah: 1,
-        ayahs: [
-          { surah: 1, ayah: 2 }
-        ],
-        surahName: "QS. Al-Fatihah",
-        ayahRange: "Ayat 2",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        ketukan: 6,
-        beatsText: "2, 4, atau 6 Harakat (Tawasuth 4 / Thul 6)",
-        ruleGuide: "Mad 'Aridh Lissukun terjadi apabila Mad Thabi'i (Alif, Wawu, Ya') bertemu huruf berharakat di akhir kalimat yang diwaqafkan (disukunkan karena henti).",
-        mission: "Klik kata yang mengandung hukum Mad 'Aridh Lissukun!",
+        ayahs: [],
+        surahName: "Biografi Kedokteran Abbasiyah",
+        ayahRange: "980 – 1037 M",
+        reciter: "Edukator Sejarah Islam",
+        ketukan: 2,
+        beatsText: "Penyusun Ensiklopedia Kedokteran 5 Jilid",
+        ruleGuide: "Ibnu Sina (Avicenna) adalah ilmuwan genius serba bisa yang meletakkan dasar kedokteran klinis modern, metode karantina penularan penyakit, dan farmakologi. Karyanya 'Al-Qanun fi at-Tibb' (The Canon of Medicine) diterjemahkan ke bahasa Latin dan menjadi rujukan wajib fakultas kedokteran Eropa selama lebih dari 5 abad.",
+        mouthGuide: "Metode Ilmiah: Mengintegrasikan pengamatan klinis empiris dengan penalaran logika Aristotelian dan etika Islam.",
+        mission: "Klik kata kunci yang merupakan mahakarya & penemuan monumental Ibnu Sina!",
         verseTokens: [
-          { word: "الْحَمْدُ", isTarget: false, reason: "Hukum Al-Qamariyah dan Idzhar Syafawi" },
-          { word: "لِلَّهِ", isTarget: false, reason: "Lam Jalalah Tarqiq" },
-          { word: "رَبِّ", isTarget: false, reason: "Huruf berharakat biasa bertasydid" },
-          { word: "الْعَالَمِينَ", isTarget: true, reason: "Mad 'Aridh Lissukun: Ya' mad bertemu huruf nun hidup di akhir ayat yang diwaqafkan (dibaca 2, 4, atau 6 harakat)" }
+          { word: "Al-Qanun fi at-Tibb", isTarget: true, reason: "MAHAKARYA IBNU SINA: Ensiklopedia medis 5 volume terlengkap yang merangkum anatomi, farmakologi, dan pengobatan penyakit menular." },
+          { word: "Penemu Aljabar", isTarget: false, reason: "Bukan Ibnu Sina, penemu Aljabar dan angka nol adalah Muhammad bin Musa Al-Khawarizmi." },
+          { word: "Metode Karantina", isTarget: true, reason: "PENEMUAN IBNU SINA: Pertama kali merumuskan konsep isolasi/karantina medis untuk mencegah penularan wabah patogen lewat udara dan air." },
+          { word: "Bapak Kimia", isTarget: false, reason: "Bukan Ibnu Sina, gelar Bapak Kimia Modern adalah milik Jabir bin Hayyan." },
+          { word: "Asy-Syaikh ar-Ra'is", isTarget: true, reason: "GELAR KEHORMATAN: Gelar agung 'Pemimpin Para Cendekiawan' yang diberikan dunia Timur atas keluasan ilmunya di bidang filsafat dan sains." },
+          { word: "Penyusun Shahih", isTarget: false, reason: "Bukan Ibnu Sina, kodifikasi hadits shahih dipelopori oleh Imam Al-Bukhari dan Imam Muslim." }
         ],
-        fullArabic: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝",
-        translation: "Segala puji bagi Allah, Tuhan seluruh alam.",
-        audioPhonetic: "Alhamdulillaahi Rabbil 'aalamiin"
+        fullArabic: "إِنَّ الْعِلْمَ حَيَاةُ الْقُلُوبِ مِنَ الْعَمَى وَنُورُ الْأَبْصَارِ مِنَ الظُّلْمَةِ",
+        targetLafadz: "Al-Qanun fi at-Tibb (القانون في الطب)",
+        translation: "Ibnu Sina (Avicenna, 980–1037 M) adalah mahaguru kedokteran dunia asal Bukhara. Ia membuktikan bahwa penyakit infeksi menyebar melalui mikroorganisme di air dan tanah, serta menemukan metode anestesi bedah dan teori sirkulasi darah paru.",
+        audioPhonetic: "Ibnu Sina: Al-Qanun fi at-Tibb, Pelopor Kedokteran Klinis dan Karantina Dunia"
+      },
+      {
+        id: "tokoh_al_khawarizmi",
+        title: "Al-Khawarizmi (Algoritma)",
+        subtitle: "Bapak Aljabar Dunia • Matematika & Astronomi",
+        hukumKey: "matematika",
+        hukumName: "Ilmu Matematika, Aljabar & Geografi",
+        surah: 2,
+        ayahs: [],
+        surahName: "Riset Matematika Bayt al-Hikmah",
+        ayahRange: "780 – 850 M",
+        reciter: "Edukator Sejarah Islam",
+        ketukan: 4,
+        beatsText: "Penemu Konsep Angka Nol & Aljabar",
+        ruleGuide: "Muhammad bin Musa Al-Khawarizmi bertugas sebagai astronom utama dan kepala perpustakaan di Bayt al-Hikmah Baghdad pada masa Khalifah Al-Ma'mun. Ia menciptakan cabang ilmu matematika baru yaitu Aljabar (Al-Jabr wa Al-Muqabalah), memperkenalkan angka Hindu-Arab termasuk angka nol (Sifr), dan menciptakan algoritma dasar pemrograman modern.",
+        mouthGuide: "Metode Ilmiah: Memecahkan persoalan praktis pembagian waris syariah (faraidh), survei tanah, dan navigasi bintang melalui rumus matematika.",
+        mission: "Klik kata kunci yang merupakan kontribusi orisinal Al-Khawarizmi!",
+        verseTokens: [
+          { word: "Kitab Al-Jabr", isTarget: true, reason: "MAHAKARYA AL-KHAWARIZMI: Buku 'Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala' yang melahirkan istilah Aljabar." },
+          { word: "Penemu Cacar", isTarget: false, reason: "Bukan Al-Khawarizmi, penemu diagnosis diferensial cacar dan campak adalah ilmuwan kedokteran Ar-Razi." },
+          { word: "Konsep Angka Nol", isTarget: true, reason: "KONTRIBUSI BESAR: Memperkenalkan angka nol (Sifr) ke dunia Islam dan Eropa yang merevolusi sistem hitung desimal dunia." },
+          { word: "Filsuf Pertama", isTarget: false, reason: "Bukan Al-Khawarizmi, gelar filosof Muslim pertama disandang oleh Abu Yusuf Ya'qub Al-Kindi." },
+          { word: "Peta Bumi Surat al-Ard", isTarget: true, reason: "GEOGRAFI MONUMENTAL: Buku 'Surat al-Ard' yang mengoreksi peta koordinat bumi Ptolemeus bersama 70 geografer Baghdad." },
+          { word: "Penyair Abu Nawas", isTarget: false, reason: "Abu Nawas adalah sastrawan istana Harun Ar-Rasyid, bukan ilmuwan matematika." }
+        ],
+        fullArabic: "إِنَّ الْحِسَابَ مِيزَانُ الْمُعَامَلَاتِ وَأَسَاسُ فَرَائِضِ الْمَوَارِيثِ",
+        targetLafadz: "Al-Jabr wal-Muqabalah (الجبر والمقابلة)",
+        translation: "Muhammad bin Musa Al-Khawarizmi merevolusi peradaban dengan mengenalkan sistem desimal, logaritma/algoritma, dan aljabar. Tanpa penemuannya tentang konsep angka nol dan persamaan aljabar, teknologi komputer modern tidak akan pernah ada.",
+        audioPhonetic: "Al-Khawarizmi: Penemu Aljabar, Angka Nol, dan Peletak Dasar Algoritma Modern"
+      },
+      {
+        id: "tokoh_jabir_bin_hayyan",
+        title: "Jabir bin Hayyan (Geber)",
+        subtitle: "Bapak Kimia Modern • Laboratorium Eksperimental",
+        hukumKey: "kimia",
+        hukumName: "Eksperimen Kimia & Metalurgi",
+        surah: 3,
+        ayahs: [],
+        surahName: "Laboratorium Kufah & Baghdad",
+        ayahRange: "721 – 815 M",
+        reciter: "Edukator Sejarah Islam",
+        ketukan: 6,
+        beatsText: "Pelopor Metode Eksperimen Laboratorium",
+        ruleGuide: "Jabir bin Hayyan mengubah alkimia kuno mistis menjadi ilmu kimia ilmiah modern berbasis eksperimen terukur di laboratorium. Ia menemukan berbagai asam mineral penting (asam sulfat, asam klorida, asam nitrat), teknik distilasi, kristalisasi, sublimasi, dan alat lab seperti retor & alembik.",
+        mouthGuide: "Metode Ilmiah: 'Syarat utama dalam kimia adalah melakukan riset eksperimen praktis, sebab siapa yang tidak beruji coba tidak akan mencapai kebenaran'.",
+        mission: "Klik penemuan ilmiah yang dipelopori oleh Jabir bin Hayyan!",
+        verseTokens: [
+          { word: "Teknik Distilasi", isTarget: true, reason: "PENEMUAN JABIR: Menciptakan alat alembik dan teknik penyulingan/distilasi zat cair murni." },
+          { word: "Mazhab Syafi'i", isTarget: false, reason: "Bukan kimia, Imam Asy-Syafi'i adalah ulama peletak dasar Ushul Fiqih." },
+          { word: "Asam Sulfat & Nitrat", isTarget: true, reason: "KIMIA ANORGANIK: Berhasil mengisolasi asam mineral pekat yang menjadi fondasi industri kimia modern." },
+          { word: "Astronomi Optik", isTarget: false, reason: "Optik modern dipelopori Ibnu Al-Haitsam (Alhazen)." },
+          { word: "Zat Anti Karat", isTarget: true, reason: "METALURGI MAJU: Menciptakan formula pelapis anti air pada kain dan pelindung karat pada besi." },
+          { word: "Kitab Al-Hawi", isTarget: false, reason: "Kitab Al-Hawi adalah ensiklopedia kedokteran karya Ar-Razi." }
+        ],
+        fullArabic: "مَنْ لَمْ يُجَرِّبْ لَمْ يَصِلْ إِلَى حَقِيقَةِ الْعِلْمِ وَالْبُرْهَانِ",
+        targetLafadz: "Ilmu Kimia Eksperimental (علم الكيمياء التجريبي)",
+        translation: "Jabir bin Hayyan (Geber) membongkar rahasia materi melalui ratusan riset laboratorium presisi di Kufah dan Baghdad. Ia menyusun tabel sifat zat kimia dan menjadi bapak kimia modern yang diakui dunia internasional.",
+        audioPhonetic: "Jabir bin Hayyan: Peletak Dasar Ilmu Kimia Eksperimen dan Metalurgi Modern"
+      },
+      {
+        id: "tokoh_ar_razi",
+        title: "Ar-Razi (Rhazes)",
+        subtitle: "Pelopor Bedah Pediatri • Al-Hawi fit-Tibb",
+        hukumKey: "medis",
+        hukumName: "Klinik Medis & Rumah Sakit Bimaristan",
+        surah: 4,
+        ayahs: [],
+        surahName: "Rumah Sakit Al-Adudi Baghdad",
+        ayahRange: "865 – 925 M",
+        reciter: "Edukator Sejarah Islam",
+        ketukan: 2,
+        beatsText: "Spesialis Penyakit Cacar & Farmasi",
+        ruleGuide: "Abu Bakar Muhammad bin Zakaria Ar-Razi menjabat sebagai kepala dokter Rumah Sakit Rayy dan Bimaristan Baghdad. Ia orang pertama di dunia yang berhasil membedakan penyakit cacar air (smallpox) dan campak (measles), serta menemukan benang bedah dari usus hewan (catgut) dan penggunaan alkohol untuk sterilisasi medis.",
+        mouthGuide: "Metode Ilmiah: Memilih lokasi rumah sakit paling steril di Baghdad dengan menggantung potongan daging segar di penjuru kota dan memilih tempat di mana daging paling lambat membusuk.",
+        mission: "Klik terobosan medis luar biasa yang dihasilkan oleh Ar-Razi!",
+        verseTokens: [
+          { word: "Pembeda Cacar & Campak", isTarget: true, reason: "TEROBOSAN AR-RAZI: Kitab Al-Jadari wal-Hasbah yang pertama memisahkan gejala klinis cacar dan campak secara ilmiah." },
+          { word: "Penemu Angka Nol", isTarget: false, reason: "Angka nol ditemukan dan disebarluaskan oleh Al-Khawarizmi." },
+          { word: "Benang Bedah Catgut", isTarget: true, reason: "INOVASI BEDAH: Menggunakan benang dari usus hewan untuk menjahit rongga perut pasien yang dapat terserap alami oleh tubuh." },
+          { word: "Teori Geosentris", isTarget: false, reason: "Geosentris adalah teori astronomi kuno Yunani." },
+          { word: "Kitab Al-Hawi", isTarget: true, reason: "ENSIKLOPEDIA AR-RAZI: Buku raksasa 23 jilid yang menghimpun seluruh diagnosa klinis dan catatan pasiennya." },
+          { word: "Alf Lailah wa Lailah", isTarget: false, reason: "Cerita Seribu Satu Malam adalah karya sastra fiksi rakyat, bukan buku kedokteran." }
+        ],
+        fullArabic: "إِذَا كَانَتْ مُعَالَجَةُ الْمَرِيضِ بِالْأَغْذِيَةِ فَلَا تَعْدِلْ إِلَى الْأَدْوِيَةِ",
+        targetLafadz: "Al-Hawi fit-Tibb (الحاوي في الطب)",
+        translation: "Ar-Razi mempraktikkan kedokteran humanis di mana seluruh pasien miskin di Bimaristan Baghdad diobati gratis tanpa pungutan biaya. Ia menekankan pentingnya makanan bergizi dan kebersihan lingkungan sebelum memberi obat keras.",
+        audioPhonetic: "Ar-Razi: Pelopor Diagnosis Penyakit Cacar, Benang Jahit Catgut, dan Rumah Sakit Modern"
+      },
+      {
+        id: "tokoh_imam_hadits",
+        title: "Imam Bukhari & Muslim",
+        subtitle: "Penyusun Kutubus Sittah • Hadits Shahih",
+        hukumKey: "hadits",
+        hukumName: "Kodifikasi Hadits & Sanad",
+        surah: 5,
+        ayahs: [],
+        surahName: "Puncak Kodifikasi Hadits Abbasiyah",
+        ayahRange: "Abad ke-3 H / 810 – 875 M",
+        reciter: "Edukator Sejarah Islam",
+        ketukan: 2,
+        beatsText: "Metodologi Kritik Sanad & Matan Tertinggi",
+        ruleGuide: "Pada masa Dinasti Abbasiyah, ilmu hadits mencapai zaman keemasan melalui penyusunan Kutubus Sittah (Enam Kitab Induk Hadits). Imam Al-Bukhari meneliti 600.000 hadits dengan kriteria sanad bersambung dan perawi tsiqah (jujur, kuat ingatan, dan bertemu langsung), melahirkan Al-Jami' As-Shahih sebagai kitab paling otentik setelah Al-Qur'an.",
+        mouthGuide: "Metode Ilmiah: Kritik sanad (keotentikan transmiter riwayat) dan kritik matan (keselarasan teks hadits dengan Al-Qur'an dan logika sehat).",
+        mission: "Klik karya monumental ulama hadits di masa Dinasti Abbasiyah!",
+        verseTokens: [
+          { word: "Shahih Al-Bukhari", isTarget: true, reason: "KITAB TEROTENTIK: Karya Imam Bukhari yang menyaring ribuan hadits shahih murni dengan standar validasi tertinggi." },
+          { word: "Al-Qanun fi at-Tibb", isTarget: false, reason: "Al-Qanun adalah buku kedokteran karya Ibnu Sina." },
+          { word: "Shahih Muslim", isTarget: true, reason: "SISTEMATIKA UNGGUL: Karya Imam Muslim bin Hajjaj dengan penyusunan bab tematik dan pengelompokan jalur riwayat teratur." },
+          { word: "Kitab Al-Jabr", isTarget: false, reason: "Kitab Al-Jabr adalah karya matematika Al-Khawarizmi." },
+          { word: "Sunan Abu Dawud & Tirmidzi", isTarget: true, reason: "BAGIAN KUTUBUS SITTAH: Kitab hadits rujukan hukum fiqih yang disusun pada era keemasan Abbasiyah." },
+          { word: "Bimaristan", isTarget: false, reason: "Bimaristan adalah nama fasilitas rumah sakit umum di Baghdad." }
+        ],
+        fullArabic: "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+        targetLafadz: "Al-Kutubus Sittah (الكتب الستة)",
+        translation: "Para ulama hadits masa Abbasiyah menempuh ribuan kilometer perjalanan ilmiah (rihlah ilmiyyah) melintasi Bukhara, Baghdad, Makkah, dan Madinah untuk memverifikasi keaslian sabda Rasulullah SAW demi menjaga kemurnian syariat Islam.",
+        audioPhonetic: "Imam Bukhari dan Muslim: Pelopor Kodifikasi Hadits Shahih dan Metodologi Kritik Sanad"
       }
     ],
 
+    // Kategori 2: Pusat Peradaban & Khalifah Utama Dinasti Abbasiyah
     gharib: [
       {
-        id: "imalah_1",
-        title: "Imalah (إِمَالَة)",
+        id: "peradaban_bayt_al_hikmah",
+        title: "Bayt al-Hikmah (Baitul Hikmah)",
+        surah: 10,
+        ayahs: [],
+        surahName: "Pusat Riset Terbesar Dunia di Baghdad",
+        ayahRange: "Didirikan 800 M",
+        reciter: "Edukator Sejarah Islam",
+        type: "lembaga",
+        hukumName: "Pusat Ilmu & Perpustakaan",
+        ketukan: 2,
+        beatsText: "The Grand Library of Baghdad",
+        ruleGuide: "Bayt al-Hikmah (House of Wisdom) didirikan oleh Khalifah Harun Ar-Rasyid dan mencapai puncak kejayaan di masa Khalifah Al-Ma'mun. Lembaga ini berfungsi sebagai perpustakaan raksasa, balai penerjemahan karya-karya Yunani, Persia, Sanskerta, dan India, observatorium astronomi, serta akademi riset interdisipliner tempat berkumpulnya sarjana dari berbagai latar belakang suku dan agama.",
+        mouthGuide: "Fakta Historis: Khalifah Al-Ma'mun menimbang naskah terjemahan berbahasa Arab dengan emas murni setimpal bobot fisiknya untuk menghargai keringat para ilmuwan.",
+        mission: "Klik fakta sejarah yang mencirikan kehebatan lembaga Bayt al-Hikmah!",
+        verseTokens: [
+          { word: "Gerakan Penerjemahan Massal", isTarget: true, reason: "PERAN UTAMA: Menerjemahkan karya filosofis, sains, kedokteran, dan astronomi dari Yunani, Persia, dan India ke dalam bahasa Arab." },
+          { word: "Ibu Kota Damaskus", isTarget: false, reason: "Damaskus adalah ibu kota Dinasti Umayyah, sedangkan Abbasiyah berpusat di Baghdad." },
+          { word: "Imbalan Emas Seberat Buku", isTarget: true, reason: "APRESIASI LUAR BIASA: Kebijakan Khalifah Al-Ma'mun memberi upah emas murni seberat naskah buku yang diterjemahkan ilmuwan." },
+          { word: "Perang Saudara", isTarget: false, reason: "Bayt al-Hikmah adalah pusat perdamaian intelektual dan riset kolaboratif." },
+          { word: "Akademi Lintas Agama & Suku", isTarget: true, reason: "PLURALITAS ILMIAH: Merekrut cendekiawan Muslim, Kristen Nestorian, Yahudi, dan Persia untuk berkolaborasi memajukan sains." },
+          { word: "Piramida Giza", isTarget: false, reason: "Piramida berada di Mesir kuno, tidak terkait dengan Bayt al-Hikmah di Baghdad." }
+        ],
+        fullArabic: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ وَالْحِكْمَةُ ضَالَّةُ الْمُؤْمِنِ",
+        targetLafadz: "Bayt al-Hikmah (بيت الحكمة)",
+        translation: "Bayt al-Hikmah di Baghdad adalah mercusuar pengetahuan dunia abad pertengahan. Di sinilah sains global diselamatkan dari kepunahan, diperluas, dan disempurnakan hingga menjadi pemicu era Renaisans di Eropa.",
+        audioPhonetic: "Bayt al-Hikmah: Pusat Riset, Perpustakaan Agung, dan Gerakan Penerjemahan Dunia"
+      },
+      {
+        id: "peradaban_kota_baghdad",
+        title: "Kota Baghdad (Madinatussalam)",
         surah: 11,
-        ayahs: [{ surah: 11, ayah: 41 }],
-        surahName: "QS. Hud",
-        ayahRange: "Ayat 41",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        type: "imalah",
-        hukumName: "Imalah Kubra",
-        ketukan: 2,
-        beatsText: "2 Harakat (Bunyi Vokal 'e')",
-        ruleGuide: "Imalah menurut bahasa artinya memiringkan/mencondongkan. Menurut istilah: mencondongkan bunyi fathah ke arah kasrah, atau bunyi alif ke arah ya' (terdengar seperti huruf 'e' pada kata 'sate' atau 'ember'). Dalam qira'ah Imam Ashim riwayat Hafs hanya ada 1 tempat, yaitu QS. Hud ayat 41.",
-        mouthGuide: "Posisi mulut semi-terbuka: bukan 'A' bulat dan bukan 'I' senyum rapat, melainkan vokal 'e' sedang yang halus.",
-        mission: "Klik lafadz yang WAJIB dibaca dengan hukum Imalah!",
+        ayahs: [],
+        surahName: "Kota Bundar Karya Abu Ja'far Al-Mansur",
+        ayahRange: "Didirikan 762 M",
+        reciter: "Edukator Sejarah Islam",
+        type: "arsitektur",
+        hukumName: "Tata Kota Bundar (Madinatussalam)",
+        ketukan: 4,
+        beatsText: "Kota Pusat Perdagangan & Diplomasi",
+        ruleGuide: "Baghdad dibangun pada tahun 762 M oleh Khalifah kedua Dinasti Abbasiyah, Abu Ja'far Al-Mansur, dengan nama resmi Madinatussalam (Kota Perdamaian). Dirancang dengan denah bundar konsentris yang dikelilingi parit dan dinding bertingkat, berlokasi strategis di tepi Sungai Tigris (Dajlah) yang mempertemukan jalur perdagangan dunia antara Timur Jauh (Tiongkok/India) dan Barat (Mediterania).",
+        mouthGuide: "Fakta Historis: Memiliki 4 gerbang utama mengarah ke Kufah, Basrah, Damaskus, dan Khurasan, dengan istana emas Qasr Az-Zahab di pusat lingkaran.",
+        mission: "Klik karakteristik keistimewaan Kota Bundar Baghdad!",
         verseTokens: [
-          { word: "وَقَالَ", isTarget: false, reason: "Mad Thabi'i biasa" },
-          { word: "ارْكَبُوا", isTarget: false, reason: "Hamzah washol & Mad Thabi'i" },
-          { word: "فِيهَا", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "بِسْمِ", isTarget: false, reason: "Kasrah biasa" },
-          { word: "اللَّهِ", isTarget: false, reason: "Lam Jalalah Tarqiq" },
-          { word: "مَجْرَىٰهَا", isTarget: true, reason: "IMALAH KUBRA: Huruf ro' dibaca 'Maj-ree-haa' (mencondongkan bunyi ra ke re seperti pada kata 'sate') dengan tanda wajik/elips." },
-          { word: "وَمُرْسَاهَا", isTarget: false, reason: "Mad Thabi'i biasa tanpa imalah" }
+          { word: "Denah Bundar Konsentris", isTarget: true, reason: "ARSITEKTUR UNIK: Dirancang berbentuk lingkaran sempurna dengan 3 lapis benteng pertahanan dan gerbang megah." },
+          { word: "Didirikan Muawiyah", isTarget: false, reason: "Muawiyah bin Abi Sufyan adalah pendiri Dinasti Umayyah di Damaskus." },
+          { word: "Tepi Sungai Tigris (Dajlah)", isTarget: true, reason: "LOKASI STRATEGIS: Memberikan pasokan air melimpah, jalur pelayaran kapal dagang, dan kesuburan pertanian." },
+          { word: "Ibu Kota Cordoba", isTarget: false, reason: "Cordoba adalah pusat pemerintahan Dinasti Umayyah di Spanyol (Andalusia)." },
+          { word: "Poros Jalur Sutra Dunia", isTarget: true, reason: "PERDAGANGAN GLOBAL: Menjadi pasar internasional bagi rempah-rempah Asia, sutra Tiongkok, gading Afrika, dan kaca Eropa." },
+          { word: "Menara Pisa", isTarget: false, reason: "Menara Pisa berada di Italia, bukan di Baghdad." }
         ],
-        fullArabic: "وَقَالَ ارْكَبُوا فِيهَا بِسْمِ اللَّهِ مَجْرَىٰهَا وَمُرْسَاهَا ۚ إِنَّ رَبِّي لَغَفُورٌ رَّحِيمٌ",
-        targetLafadz: "مَجْرَىٰهَا (Majreehaa)",
-        translation: "Dan dia berkata: 'Naiklah kamu semua ke dalamnya dengan (menyebut) nama Allah pada waktu berlayar dan berlabuhnya.' Sesungguhnya Tuhanku Maha Pengampun, Maha Penyayang.",
-        audioPhonetic: "Wa qaalar kabuu fiihaa bismillaahi majreehaa wa mursaahaa"
+        fullArabic: "مَدِينَةُ السَّلَامِ بَغْدَادُ حَاضِرَةُ الدُّنْيَا وَقِبْلَةُ الْعُلَمَاءِ",
+        targetLafadz: "Madinatussalam (مدينة السلام - بغداد)",
+        translation: "Baghdad tumbuh pesat menjadi kota metropolis terbesar di dunia pada abad ke-9 dengan penduduk melampaui 1 juta jiwa, ribuan pemandian umum, saluran sanitasi modern, dan perpustakaan di setiap distrik.",
+        audioPhonetic: "Kota Bundar Baghdad: Madinatussalam, Mahakarya Arsitektur dan Metropolis Dunia"
       },
       {
-        id: "isymam_1",
-        title: "Isymam (إِشْمَام)",
+        id: "peradaban_harun_ar_rasyid",
+        title: "Khalifah Harun Ar-Rasyid",
         surah: 12,
-        ayahs: [{ surah: 12, ayah: 11 }],
-        surahName: "QS. Yusuf",
-        ayahRange: "Ayat 11",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        type: "isymam",
-        hukumName: "Isymam",
+        ayahs: [],
+        surahName: "Puncak Kemakmuran Abbasiyah (786–809 M)",
+        ayahRange: "786 – 809 M (Khalifah ke-5)",
+        reciter: "Edukator Sejarah Islam",
+        type: "khalifah",
+        hukumName: "Era Keemasan Kesejahteraan",
         ketukan: 2,
-        beatsText: "Gerakan Bibir saat Ghunnah",
-        ruleGuide: "Isymam adalah memonyongkan (mencucukan) kedua bibir ke depan tanpa mengeluarkan suara dhommah sesaat setelah mensukunkan huruf mim bertasydid (pada saat mendengung/ghunnah). Gerakan bibir ini sebagai isyarat visual bahwa bentuk asal kata adalah 'laa ta'manuna' (ada dhommah yang diidghamkan).",
-        mouthGuide: "Visual Posisi Bibir: Saat melafalkan 'ta'man...', kedua bibir langsung dicucukan/dimonyongkan ke depan ke arah huruf 'O/U' tanpa mengeluarkan suara dhommah, lalu ditarik kembali saat membuka na.",
-        mission: "Klik lafadz yang mengandung hukum Isymam pada kisah Nabi Yusuf!",
+        beatsText: "Pemberantasan Kemiskinan & Diplomasi",
+        ruleGuide: "Khalifah Harun Ar-Rasyid memimpin masa kejayaan keemasan di mana perekonomian sangat makmur, kas Baitul Mal melimpah ruah, dan rakyat hidup sejahtera hingga sulit mencari orang yang berhak menerima zakat di Baghdad. Ia mendirikan rumah sakit modern Bimaristan Al-Adudi, menjaga keadilan hukum bersama Qadhi Abu Yusuf, dan menjalin hubungan diplomatik setara dengan Kaisar Charlemagne dari Prancis.",
+        mouthGuide: "Fakta Historis: Harun Ar-Rasyid mengirim hadiah teknologi jam air hidrolik mekanik kuningan kepada Kaisar Charlemagne yang membuat bangsa Eropa terpukau.",
+        mission: "Klik kebijakan luar biasa di masa kekhalifahan Harun Ar-Rasyid!",
         verseTokens: [
-          { word: "قَالُوا", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "يَا أَبَانَا", isTarget: false, reason: "Mad Jaiz Munfashil" },
-          { word: "مَا لَكَ", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "لَا تَأْمَنَّا", isTarget: true, reason: "ISYMAM: Asal katanya 'laa ta'manuna'. Kedua bibir dimonyongkan ke depan tanpa suara di sela ghunnah huruf nun bertasydid." },
-          { word: "عَلَىٰ", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "يُوسُفَ", isTarget: false, reason: "Mad Thabi'i" }
+          { word: "Bimaristan Rumah Sakit Gratis", isTarget: true, reason: "PELAYANAN SOSIAL: Membangun rumah sakit modern dengan dokter bergaji negara dan obat gratis bagi semua warga." },
+          { word: "Menyerang Ka'bah", isTarget: false, reason: "Tuduhan salah, Harun Ar-Rasyid rajin berhaji dan bersedekah ke penduduk Haramain." },
+          { word: "Hadiah Jam Air Charlemagne", isTarget: true, reason: "DIPLOMASI DUNIA: Mengirim jam hidrolik canggih kepada Raja Franka membuktikan tingginya teknologi rekayasa Islam." },
+          { word: "Menghapus Pajak Petani", isTarget: false, reason: "Bukan menghapus, melainkan menata ulang sistem kharaj secara berkeadilan melalui Kitab Al-Kharaj karya Abu Yusuf." },
+          { word: "Kemakmuran Kas Baitul Mal", isTarget: true, reason: "EKONOMI KUAT: Surplus anggaran negara dialokasikan untuk jaminan sosial fakir miskin, anak yatim, dan beasiswa ilmuwan." },
+          { word: "Perang Salib Pertama", isTarget: false, reason: "Perang Salib baru terjadi 300 tahun kemudian pada abad ke-11 M." }
         ],
-        fullArabic: "قَالُوا يَا أَبَانَا مَا لَكَ لَا تَأْمَنَّا عَلَىٰ يُوسُفَ وَإِنَّا لَهُ لَنَاصِحُونَ",
-        targetLafadz: "لَا تَأْمَنَّا",
-        translation: "Mereka berkata: 'Wahai ayah kami, apa sebabnya engkau tidak mempercayai kami terhadap Yusuf, padahal sesungguhnya kami tulus menginginkan kebaikan baginya.'",
-        audioPhonetic: "Qooluu yaa abaanaa maa laka laa ta'manna 'alaa yuusuf"
+        fullArabic: "أَمْطِرِي حَيْثُ شِئْتِ فَإِنَّ خَرَاجَكِ سَيَأْتِينِي بِإِذْنِ اللَّهِ",
+        targetLafadz: "Harun Ar-Rasyid (هارون الرشيد)",
+        translation: "Khalifah Harun Ar-Rasyid dikenal sebagai pemimpin yang adil, taat beribadah, dan dermawan. Kisah keadilannya dan keindahan peradaban Baghdad di eranya menginspirasi mahakarya sastra dunia 'Seribu Satu Malam' (One Thousand and One Nights).",
+        audioPhonetic: "Khalifah Harun Ar-Rasyid: Puncak Kemakmuran, Diplomasi Global, dan Rumah Sakit Bimaristan"
       },
       {
-        id: "tashil_1",
-        title: "Tashil (تَسْهِيل)",
-        surah: 41,
-        ayahs: [{ surah: 41, ayah: 44 }],
-        surahName: "QS. Fussilat",
-        ayahRange: "Ayat 44",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        type: "tashil",
-        hukumName: "Tashil",
+        id: "peradaban_khalifah_al_mamun",
+        title: "Khalifah Al-Ma'mun",
+        surah: 13,
+        ayahs: [],
+        surahName: "Revolusi Riset & Observatorium (813–833 M)",
+        ayahRange: "813 – 833 M (Khalifah ke-7)",
+        reciter: "Edukator Sejarah Islam",
+        type: "khalifah",
+        hukumName: "Puncak Intelektualisme Islam",
         ketukan: 2,
-        beatsText: "Alif Lembut Antara Hamzah & Alif",
-        ruleGuide: "Tashil secara bahasa berarti memberi kemudahan atau meringankan. Menurut istilah tajwid: membaca hamzah kedua dengan suara samar antara hamzah qath'i (tahqiq) dan huruf alif mad, tanpa diseret dan tidak berlebihan.",
-        mouthGuide: "Pita suara melemas saat hamzah kedua: 'Aa'ajjamiyy' - hamzah pertama tegas 'A', hamzah kedua meluncur lembut tanpa sentakan tenggorokan.",
-        mission: "Klik lafadz yang dibaca dengan cara Tashil!",
+        beatsText: "Pemberdayaan Ilmuwan & Observatorium",
+        ruleGuide: "Khalifah Abdullah Al-Ma'mun adalah khalifah yang sangat mencintai ilmu pengetahuan, filsafat, dan perdebatan akademis (Munazharah). Ia mengembangkan Bayt al-Hikmah secara besar-besaran, mendanai pembangunan Observatorium Astronomi Syammasiyyah di Baghdad, dan membiayai para astronom untuk mengukur keliling bumi secara ilmiah.",
+        mouthGuide: "Fakta Historis: Al-Ma'mun mengundang ilmuwan lintas agama dan menggelar diskusi teologi serta filsafat secara terbuka di istananya setiap pekan.",
+        mission: "Klik kontribusi penting Khalifah Al-Ma'mun dalam bidang sains!",
         verseTokens: [
-          { word: "وَلَوْ", isTarget: false, reason: "Huruf lin biasa" },
-          { word: "جَعَلْنَاهُ", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "قُرْآنًا", isTarget: false, reason: "Mad Badal & tanwin" },
-          { word: "ءَ۬اعْجَمِيٌّ", isTarget: true, reason: "TASHIL: Hamzah pertama tahqiq jelas, hamzah kedua dibaca tashil (meringankan hamzah di antara bunyi 'a' dan alif mad lembut)." },
-          { word: "وَعَرَبِيٌّ", isTarget: false, reason: "Idgham bighunnah" }
+          { word: "Pengukuran Keliling Bumi", isTarget: true, reason: "ASTRONOMI AKURAT: Memerintahkan tim ilmuwan mengukur derajat busur meridian bumi di gurun Sinjar dengan hasil sangat mendekati angka modern." },
+          { word: "Runtuhnya Abbasiyah", isTarget: false, reason: "Abbasiyah runtuh pada tahun 1258 M oleh Mongol, bukan pada era Al-Ma'mun." },
+          { word: "Observatorium Syammasiyyah", isTarget: true, reason: "STASIUN ASTRONOMI: Membangun fasilitas pengamatan pergerakan matahari, bulan, dan rasi bintang paling canggih di zamannya." },
+          { word: "Menolak Filsafat", isTarget: false, reason: "Sebaliknya, Al-Ma'mun sangat mengagumi filsafat dan mensponsori penerjemahan dialog Aristoteles dan Plato." },
+          { word: "Debat Ilmiah Terbuka (Munazharah)", isTarget: true, reason: "KEBEBASAN AKADEMIK: Membudayakan forum diskusi ilmiah dan filsafat terbuka di balai istana kekhalifahan." },
+          { word: "Membangun Taj Mahal", isTarget: false, reason: "Taj Mahal dibangun oleh Dinasti Mughal di India pada abad ke-17 M." }
         ],
-        fullArabic: "وَلَوْ جَعَلْنَاهُ قُرْآنًا أَعْجَمِيًّا لَّقَالُوا لَوْلَا فُصِّلَتْ آيَاتُهُ ۖ ءَ۬اعْجَمِيٌّ وَعَرَبِيٌّ",
-        targetLafadz: "ءَ۬اعْجَمِيٌّ (Aa'jamiyyun)",
-        translation: "Dan sekiranya Al-Qur'an Kami jadikan berbahasa asing, tentulah mereka berkata: 'Mengapa tidak dijelaskan ayat-ayatnya? Apakah patut (Al-Qur'an) berbahasa asing sedang rasul orang Arab?'",
-        audioPhonetic: "Walaw ja'alnaahu qur-aanan a'jamiyyan... A-a'jamiyyuw wa 'arabiyy"
-      },
-      {
-        id: "naql_1",
-        title: "Naql (نَقْل)",
-        surah: 49,
-        ayahs: [{ surah: 49, ayah: 11 }],
-        surahName: "QS. Al-Hujurat",
-        ayahRange: "Ayat 11",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        type: "naql",
-        hukumName: "Naql",
-        ketukan: 2,
-        beatsText: "Pindah Harakat (Bi'salismu)",
-        ruleGuide: "Naql berarti memindahkan. Dalam istilah tajwid: memindahkan harakat kasrah dari hamzah washol pada kata 'Al-Ismu' ke huruf mati sebelumnya yaitu Lam sukun, sehingga hamzah tidak lagi dibaca dan dibaca menjadi 'Bi'sa-lismu'.",
-        mouthGuide: "Sambungan langsung: dari huruf Sin berharakat fathah (sa) langsung mengalir ke Lam berharakat kasrah (li) -> 'Bi'sa lis-mu'.",
-        mission: "Klik lafadz yang mengalami pemindahan harakat (Naql)!",
-        verseTokens: [
-          { word: "بِئْسَ", isTarget: false, reason: "Lafadz kata kerja celaan" },
-          { word: "الاِسْمُ", isTarget: true, reason: "NAQL: Harakat kasrah hamzah dipindah ke huruf lam sukun sehingga dilafalkan 'Bi'salismu'." },
-          { word: "الْفُسُوقُ", isTarget: false, reason: "Al-Qamariyah dan Mad Thabi'i" },
-          { word: "بَعْدَ", isTarget: false, reason: "Fathah biasa" },
-          { word: "الْإِيمَانِ", isTarget: false, reason: "Mad Badal & Mad 'Aridh" }
-        ],
-        fullArabic: "بِئْسَ الاِسْمُ الْفُسُوقُ بَعْدَ الْإِيمَانِ ۚ وَمَن لَّمْ يَتُبْ فَأُولَٰئِكَ هُمُ الظَّالِمُونَ",
-        targetLafadz: "بِئْسَ الاِسْمُ (Dibaca: Bi'salismu)",
-        translation: "Seburuk-buruk panggilan adalah (panggilan) yang buruk (fasik) setelah beriman. Dan barangsiapa tidak bertobat, maka mereka itulah orang-orang yang zalim.",
-        audioPhonetic: "Bi'salismul fusuuqu ba'dal iimaan"
-      },
-      {
-        id: "saktah_1",
-        title: "Saktah (سَكْتَة)",
-        surah: 83,
-        ayahs: [{ surah: 83, ayah: 14 }],
-        surahName: "QS. Al-Muthaffifin",
-        ayahRange: "Ayat 14",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
-        type: "saktah",
-        hukumName: "Saktah Lathifah",
-        ketukan: 2,
-        beatsText: "Diam 2 Harakat Tanpa Nafas",
-        ruleGuide: "Saktah menurut bahasa artinya menahan/diam. Menurut istilah: berhenti sejenak tanpa bernafas selama kurang lebih 2 harakat (1 alif), lalu langsung melanjutkan bacaan berikutnya. Ada 4 tempat wajib saktah riwayat Imam Ashim: QS. Al-Kahfi: 1-2, QS. Ya-Sin: 52, QS. Al-Qiyamah: 27, dan QS. Al-Muthaffifin: 14.",
-        mouthGuide: "Tahan aliran nafas tepat di tenggorokan selama 2 ketukan, jangan mengambil nafas baru!",
-        mission: "Klik lafadz yang memiliki tanda Saktah (berhenti 2 ketukan tanpa nafas)!",
-        verseTokens: [
-          { word: "كَلَّا", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "بَلْ ۜ", isTarget: true, reason: "SAKTAH pada 'Bal': berhenti sejenak 2 harakat tanpa nafas sebelum menyambung ke kata 'Raana'." },
-          { word: "رَانَ", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "عَلَىٰ", isTarget: false, reason: "Mad Thabi'i" },
-          { word: "قُلُوبِهِم", isTarget: false, reason: "Mad Thabi'i & Idzhar Syafawi" }
-        ],
-        fullArabic: "كَلَّا ۖ بَلْ ۜ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا يَكْسِبُونَ",
-        targetLafadz: "بَلْ ۜ رَانَ (Bal [Saktah 2 ketukan] Raana)",
-        translation: "Sekali-kali tidak! Bahkan apa yang mereka telah usahakan itu menutupi hati mereka.",
-        audioPhonetic: "Kallaa... bal... [saktah]... raana 'alaa quluubihim maa kaanuu yaksibuun"
+        fullArabic: "لَا سَبِيلَ إِلَى مَعْرِفَةِ الْحَقِّ إِلَّا بِالْعَقْلِ الصَّرِيحِ وَالنَّقْلِ الصَّحِيحِ",
+        targetLafadz: "Al-Ma'mun bin Harun Ar-Rasyid (المأمون)",
+        translation: "Khalifah Al-Ma'mun menjadikan Baghdad sebagai ibu kota sains dunia. Gerakan penerjemahan massal yang dipimpinnya menyelamatkan khazanah ilmu dunia kuno dan melahirkan fondasi revolusi ilmiah modern.",
+        audioPhonetic: "Khalifah Al-Ma'mun: Bapak Kebangkitan Intelektual, Observatorium, dan Gerakan Penerjemahan"
       }
     ]
   },
 
-  // 3. Data Arena Tahfidz & Mufradat
+  // 3. Data Arena Sejarah: Speed Matching & Puzzle Kronologi
   tahfidz: {
     matchingSets: [
       {
-        id: "set_fajr",
-        name: "QS. Al-Fajr: 15–18 (Ujian Rezeki)",
-        surah: 89,
-        ayahs: [
-          { surah: 89, ayah: 15 },
-          { surah: 89, ayah: 16 },
-          { surah: 89, ayah: 17 },
-          { surah: 89, ayah: 18 }
-        ],
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
+        id: "set_ilmuwan",
+        name: "Tokoh Ilmuwan & Penemuan Monumental",
+        surah: 1,
+        ayahs: [],
+        reciter: "Edukator Sejarah Islam",
         pairs: [
-          { id: 1, ar: "ابْتَلَاهُ", id_txt: "Mengujinya / Mencobanya" },
-          { id: 2, ar: "فَأَكْرَمَهُ", id_txt: "Lalu Dia memuliakannya" },
-          { id: 3, ar: "نَعَّمَهُ", id_txt: "Dan memberinya kenikmatan" },
-          { id: 4, ar: "قَدَرَ عَلَيْهِ", id_txt: "Membatasi baginya" },
-          { id: 5, ar: "رِزْقَهُ", id_txt: "Rezekinya" },
-          { id: 6, ar: "أَهَانَنِ", id_txt: "Telah menghinakanku" }
+          { id: 1, ar: "Ibnu Sina (Avicenna)", id_txt: "Al-Qanun fi at-Tibb & Bapak Kedokteran" },
+          { id: 2, ar: "Al-Khawarizmi", id_txt: "Penemu Aljabar & Konsep Angka Nol" },
+          { id: 3, ar: "Jabir bin Hayyan", id_txt: "Bapak Kimia Modern & Metode Lab" },
+          { id: 4, ar: "Ar-Razi (Rhazes)", id_txt: "Pembeda Cacar-Campak & Benang Bedah" },
+          { id: 5, ar: "Al-Kindi", id_txt: "Filosof Muslim Pertama & Kriptografi" },
+          { id: 6, ar: "Imam Al-Bukhari", id_txt: "Penyusun Kitab Shahih Hadits Terotentik" }
         ]
       },
       {
-        id: "set_baqarah",
-        name: "QS. Al-Baqarah: 254 & 261 (Infak)",
-        surah: 2,
-        ayahs: [
-          { surah: 2, ayah: 254 },
-          { surah: 2, ayah: 261 }
-        ],
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
+        id: "set_peradaban",
+        name: "Lembaga & Fasilitas Peradaban Abbasiyah",
         pairs: [
-          { id: 7, ar: "أَنفِقُوا", id_txt: "Infakkanlah / Belanjakanlah" },
-          { id: 8, ar: "خُلَّةٌ", id_txt: "Persahabatan yang erat" },
-          { id: 9, ar: "شَفَاعَةٌ", id_txt: "Syafa'at (pertolongan)" },
-          { id: 10, ar: "كَمَثَلِ حَبَّةٍ", id_txt: "Seperti sebutir biji" },
-          { id: 11, ar: "سَبْعَ سَنَابِلَ", id_txt: "Tujuh butir tangkai" },
-          { id: 12, ar: "يُضَاعِفُ", id_txt: "Melipatgandakan pahala" }
+          { id: 7, ar: "Bayt al-Hikmah", id_txt: "Perpustakaan & Lembaga Riset Baghdad" },
+          { id: 8, ar: "Madinatussalam", id_txt: "Sebutan Kota Bundar Baghdad (Kota Damai)" },
+          { id: 9, ar: "Bimaristan", id_txt: "Rumah Sakit Umum & Fasilitas Medis Gratis" },
+          { id: 10, ar: "Baitul Mal", id_txt: "Lembaga Kas & Keuangan Negara" },
+          { id: 11, ar: "Diwanul Jund", id_txt: "Departemen Administrasi Militer & Pertahanan" },
+          { id: 12, ar: "Al-Wazir", id_txt: "Perdana Menteri Pembantu Khalifah" }
         ]
       },
       {
-        id: "set_hadits",
-        name: "Hadits Etos Kerja & Kedermawanan",
+        id: "set_khalifah",
+        name: "Khalifah & Peristiwa Kunci Abbasiyah",
         pairs: [
-          { id: 13, ar: "الْيَدُ الْعُلْيَا", id_txt: "Tangan yang di atas (pemberi)" },
-          { id: 14, ar: "الْيَدِ السُّفْلَى", id_txt: "Tangan yang di bawah (peminta)" },
-          { id: 15, ar: "الْمُنْفِقَةُ", id_txt: "Yang menafkahkan hartanya" },
-          { id: 16, ar: "السَّائِلَةُ", id_txt: "Yang meminta-minta belas kasihan" },
-          { id: 17, ar: "ابْدَأْ بِمَنْ تَعُولُ", id_txt: "Mulailah dari tanggungan keluargamu" },
-          { id: 18, ar: "خَيْرٌ مِنَ", id_txt: "Lebih mulia daripada" }
+          { id: 13, ar: "Abu Abbas As-Saffah", id_txt: "Khalifah Pertama Pendiri Dinasti (750 M)" },
+          { id: 14, ar: "Abu Ja'far Al-Mansur", id_txt: "Pembangun Kota Bundar Baghdad (762 M)" },
+          { id: 15, ar: "Harun Ar-Rasyid", id_txt: "Puncak Kemakmuran & Kirim Jam ke Prancis" },
+          { id: 16, ar: "Al-Ma'mun", id_txt: "Pelopor Gerakan Terjemah Emas Bayt al-Hikmah" },
+          { id: 17, ar: "Pertempuran Zab (750 M)", id_txt: "Runtuhnya Dinasti Umayyah di Damaskus" },
+          { id: 18, ar: "Hulagu Khan (1258 M)", id_txt: "Invasi Pasukan Mongol Penghancur Baghdad" }
         ]
       }
     ],
@@ -384,249 +406,217 @@ const APP_DATA = {
     puzzles: [
       {
         id: "puz_1",
-        title: "Tantangan 1: Matan Hadits Tangan di Atas (HR. Bukhari-Muslim)",
-        translation: "Terjemahan: 'Tangan yang di atas lebih baik daripada tangan yang di bawah.'",
+        title: "Tantangan 1: Urutan 4 Khalifah Era Keemasan Abbasiyah",
+        translation: "Susunlah urutan 4 khalifah paling berpengaruh pada fase pendirian hingga puncak keemasan Dinasti Abbasiyah!",
         correctSequence: [
-          "الْيَدُ الْعُلْيَا",
-          "خَيْرٌ مِنَ",
-          "الْيَدِ السُّفْلَى"
+          "1. Abu Abbas As-Saffah (Pendiri)",
+          "2. Abu Ja'far Al-Mansur (Baghdad)",
+          "3. Harun Ar-Rasyid (Kemakmuran)",
+          "4. Al-Ma'mun (Sains & Terjemah)"
         ],
         wordsScrambled: [
-          "الْيَدِ السُّفْلَى",
-          "الْيَدُ الْعُلْيَا",
-          "خَيْرٌ مِنَ"
+          "3. Harun Ar-Rasyid (Kemakmuran)",
+          "1. Abu Abbas As-Saffah (Pendiri)",
+          "4. Al-Ma'mun (Sains & Terjemah)",
+          "2. Abu Ja'far Al-Mansur (Baghdad)"
         ],
-        hukumNotes: "Hadits dari Abdullah bin Umar ra. Menegaskan etos kerja keras, kemandirian, dan kemuliaan berbagi dibanding mental peminta.",
-        audioPhonetic: "Al-yadul 'ulyaa khairun minal yadis suflaa"
+        hukumNotes: "Urutan kronologis ini membentang dari tahun 750 M hingga 833 M yang menjadi fondasi abad kejayaan Islam (The Golden Age).",
+        audioPhonetic: "Abu Abbas As-Saffah, Abu Ja'far Al-Mansur, Harun Ar-Rasyid, Abdullah Al-Ma'mun"
       },
       {
         id: "puz_2",
-        title: "Tantangan 2: QS. Al-Baqarah: 261 (Pahala Menafkahkan Harta)",
-        translation: "Terjemahan: 'Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai.'",
-        surah: 2,
-        ayahs: [{ surah: 2, ayah: 261 }],
-        surahName: "QS. Al-Baqarah: 261",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
+        title: "Tantangan 2: Semboyan Khalifah Al-Ma'mun di Bayt al-Hikmah",
+        translation: "Susunlah potongan kata tentang penghargaan emas Khalifah Al-Ma'mun kepada penerjemah buku sains!",
         correctSequence: [
-          "مَثَلُ الَّذِينَ يُنفِقُونَ",
-          "أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ",
-          "كَمَثَلِ حَبَّةٍ",
-          "أَنبَتَتْ سَبْعَ سَنَابِلَ"
+          "مَنْ تَرْجَمَ كِتَابًا",
+          "أَعْطَيْنَاهُ وَزْنَهُ",
+          "ذَهَبًا خَالِصًا",
+          "تَقْدِيرًا لِلْعِلْمِ"
         ],
         wordsScrambled: [
-          "كَمَثَلِ حَبَّةٍ",
-          "أَنبَتَتْ سَبْعَ سَنَابِلَ",
-          "مَثَلُ الَّذِينَ يُنفِقُونَ",
-          "أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ"
+          "ذَهَبًا خَالِصًا",
+          "مَنْ تَرْجَمَ كِتَابًا",
+          "تَقْدِيرًا لِلْعِلْمِ",
+          "أَعْطَيْنَاهُ وَزْنَهُ"
         ],
-        hukumNotes: "Menjelaskan kelipatan ganjaran infak yang ikhlas hingga 700 kali lipat bahkan tak terhingga bagi hamba yang bertakwa.",
-        audioPhonetic: "Matsalulladziina yunfiquuna amwaalahum fii sabiilillaahi kamatsali habbatin ambatat sab'a sanaabila"
+        hukumNotes: "Artinya: 'Barangsiapa menerjemahkan satu buku ke bahasa Arab, Kami timbang buku itu dan memberinya emas murni seberat buku tersebut sebagai penghormatan ilmu'.",
+        audioPhonetic: "Man tarjama kitaaban a'thainaahu waznahu dzahaban khaalishan taqdiiran lil-'ilmi"
       },
       {
         id: "puz_3",
-        title: "Tantangan 3: QS. An-Naba: 6–7 (Penerapan Mad 'Iwadh)",
-        translation: "Terjemahan: 'Bukankah Kami telah menjadikan bumi sebagai hamparan, dan gunung-gunung sebagai pasak?'",
-        surah: 78,
-        ayahs: [
-          { surah: 78, ayah: 6 },
-          { surah: 78, ayah: 7 }
-        ],
-        surahName: "QS. An-Naba': 6–7",
-        reciter: "Syaikh Misyari Rasyid Al-Afasy",
+        title: "Tantangan 3: Gelar Kehormatan Dunia untuk Ibnu Sina",
+        translation: "Susunlah 4 gelar monumental yang disematkan kepada Ibnu Sina dalam khazanah ilmiah dunia!",
         correctSequence: [
-          "أَلَمْ نَجْعَلِ",
-          "الْأَرْضَ مِهَٰدًا",
-          "وَالْجِبَالَ",
-          "أَوْتَادًا"
+          "Bapak Kedokteran Modern",
+          "Asy-Syaikh ar-Ra'is",
+          "Pangeran Para Dokter",
+          "Penulis Al-Qanun fi at-Tibb"
         ],
         wordsScrambled: [
-          "وَالْجِبَالَ",
-          "الْأَرْضَ مِهَٰدًا",
-          "أَوْتَادًا",
-          "أَلَمْ نَجْعَلِ"
+          "Pangeran Para Dokter",
+          "Penulis Al-Qanun fi at-Tibb",
+          "Bapak Kedokteran Modern",
+          "Asy-Syaikh ar-Ra'is"
         ],
-        hukumNotes: "Kata 'Mihadaa' dan 'Awtaadaa' merupakan contoh nyata hukum bacaan Mad 'Iwadh dengan panjang 2 ketukan harakat.",
-        audioPhonetic: "Alam naj'alil ardha mihaadaa, wal jibaala awtaadaa"
+        hukumNotes: "Ibnu Sina diakui sebagai jembatan ilmu pengetahuan kedokteran dunia Timur dan Barat yang tak tertandingi pada zamannya.",
+        audioPhonetic: "Bapak Kedokteran Modern, Asy-Syaikh ar-Ra'is, Pangeran Para Dokter, Penulis Al-Qanun fi at-Tibb"
       }
     ],
 
     classmates: [
-      { name: "Ahmad Fathoni", grade: "VIII-A", score: 420, avatar: "👨‍🎓", badge: "Hafidz Cilik" },
-      { name: "Siti Fatimah Azzahra", grade: "VIII-B", score: 395, avatar: "🧕", badge: "Ahli Tajwid" },
-      { name: "Raihan Al-Ghifari", grade: "VIII-A", score: 370, avatar: "👦", badge: "Pejuang HOTS" },
-      { name: "Nabila Zahra", grade: "VIII-C", score: 340, avatar: "👩‍🎓", badge: "Duta Mufradat" },
-      { name: "Zaidan Al-Ayyubi", grade: "VIII-B", score: 310, avatar: "🧑", badge: "Murid Rajin" },
-      { name: "Aisyah Humaira", grade: "VIII-A", score: 280, avatar: "🧕", badge: "Aktif Bertanya" },
-      { name: "M. Farhan", grade: "VIII-C", score: 250, avatar: "👦", badge: "Santri Teladan" },
-      { name: "Khadijah Putri", grade: "VIII-B", score: 220, avatar: "👧", badge: "Penghafal Baru" }
+      { name: "Ahmad Fathoni", grade: "VIII-A", score: 420, avatar: "👨‍🎓", badge: "Pustakawan Baitul Hikmah" },
+      { name: "Siti Fatimah Azzahra", grade: "VIII-B", score: 395, avatar: "🧕", badge: "Sejarawan Muda" },
+      { name: "Raihan Al-Ghifari", grade: "VIII-A", score: 370, avatar: "👦", badge: "Ahli Manuskrip" },
+      { name: "Nabila Zahra", grade: "VIII-C", score: 340, avatar: "👩‍🎓", badge: "Duta Kebudayaan Islam" },
+      { name: "Zaidan Al-Ayyubi", grade: "VIII-B", score: 310, avatar: "🧑", badge: "Peneliti Baghdad" },
+      { name: "Aisyah Humaira", grade: "VIII-A", score: 280, avatar: "🧕", badge: "Kolektor Naskah" },
+      { name: "M. Farhan", grade: "VIII-C", score: 250, avatar: "👦", badge: "Santri Cendekia" },
+      { name: "Khadijah Putri", grade: "VIII-B", score: 220, avatar: "👧", badge: "Pengagum Ibnu Sina" }
     ]
   },
 
-  // 4. Data Simulator Kontekstual AI (HOTS)
+  // 4. Data Simulator Kontekstual AI: Dilema Kepemimpinan & Kebijakan Abbasiyah (HOTS)
   scenarios: [
     {
       id: "scen_1",
-      title: "Skenario 1: Ujian Kelapangan & Kesempitan Rezeki",
-      dalilRef: "QS. Al-Fajr: 15–18",
-      surah: 89,
-      ayahs: [
-        { surah: 89, ayah: 15 },
-        { surah: 89, ayah: 16 },
-        { surah: 89, ayah: 17 },
-        { surah: 89, ayah: 18 }
-      ],
-      surahName: "QS. Al-Fajr: 15–18",
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
-      arabicDalil: "فَأَمَّا الْإِنسَانُ إِذَا مَا ابْتَلَاهُ رَبُّهُ فَأَكْرَمَهُ وَنَعَّمَهُ فَيَقُولُ رَبِّي أَكْرَمَنِ ۝ وَأَمَّا إِذَا مَا ابْتَلَاهُ فَقَدَرَ عَلَيْهِ رِزْقَهُ فَيَقُولُ رَبِّي أَهَانَنِ",
-      background: "Di kelas VIII MTs, ada dua orang siswa: Fikri yang baru saja dibelikan smartphone flagship terbaru oleh orang tuanya dan membanggakannya di depan teman-teman seolah ia anak paling disayangi Tuhan, serta Danu yang terdiam murung karena seragamnya sudah lusuh dan ayahnya baru terkena pengurangan jam kerja pabrik sehingga uang sakunya pas-pasan. Fikri sempat melontarkan gurauan: 'Makanya rajin ibadah biar rezekinya lancar kayak gue!'.",
-      question: "Sebagai ketua kelas atau sahabat Danu dan Fikri yang mempelajari QS. Al-Fajr ayat 15-18, bagaimana sikap dan tindakan terbaikmu?",
+      title: "Skenario 1: Anggaran Riset Bayt al-Hikmah vs Ambisi Militer",
+      dalilRef: "Kebijakan Anggaran Khalifah Al-Ma'mun (Tahun 820 M)",
+      surah: 1,
+      ayahs: [],
+      surahName: "Baitul Mal & Alokasi Riset Negara",
+      reciter: "Edukator Sejarah Islam",
+      arabicDalil: "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ",
+      background: "Pada era Khalifah Al-Ma'mun, kas negara (Baitul Mal) mengalami surplus besar dari pajak perdagangan internasional. Para jenderal militer mendesak agar seluruh dana dialokasikan untuk melipatgandakan jumlah prajurit dan membeli persenjataan perang demi memperluas wilayah kekuasaan. Di saat yang sama, dewan ilmuwan Bayt al-Hikmah mengajukan proposal biaya ekspedisi besar ke Konstantinopel dan Alexandria untuk memborong dan menerjemahkan ribuan naskah kuno sains dan kedokteran demi masa depan peradaban umat.",
+      question: "Sebagai penasihat utama Khalifah Al-Ma'mun yang memahami tujuan peradaban Islam dan nilai KMA 183, saran kebijakan strategis apa yang akan kamu berikan?",
       options: [
         {
           key: "A",
-          title: "Pilihan A (Kurang Tepat / Keliru)",
-          text: "Mendukung perkataan Fikri karena kenyataannya orang kaya memang lebih dimuliakan Allah, dan menyuruh Danu bersabar saja menerima takdir tanpa perlu dinasihati Fikrinya."
+          title: "Pilihan A (Keliru / Militeristik Sempit)",
+          text: "Menyetujui 100% permintaan jenderal militer karena kekuasaan dinasti hanya bisa dijaga dengan kekuatan pedang, sedangkan buku dan riset sains tidak mendatangkan kemenangan teritorial langsung."
         },
         {
           key: "B",
-          title: "Pilihan B (Solusi HOTS & Berakhlak Qur'ani - Ideal)",
-          text: "Mengajak Fikri berbicara secara empatik dan privat, mengingatkannya dengan QS. Al-Fajr 15-18 bahwa kekayaan maupun kemiskinan keduanya adalah 'ujian' (Ibtila'), bukan tolok ukur kemuliaan di mata Allah. Kemudian merangkul Danu, memberikan semangat, serta menginisiasi kepedulian sosial bersama tanpa merendahkan harga dirinya."
+          title: "Pilihan B (Solusi HOTS & Visi Peradaban Unggul - Ideal)",
+          text: "Menetapkan kebijakan anggaran seimbang dan bervisi jangka panjang: memprioritaskan pembiayaan riset, beasiswa ilmuwan, dan ekspedisi naskah Bayt al-Hikmah sebagai fondasi hegemoni intelektual dunia, sembari mengalokasikan anggaran pertahanan secara proporsional dan profesional demi menjaga stabilitas keamanan dari ancaman luar."
         },
         {
           key: "C",
-          title: "Pilihan C (Pasif / Menghindar)",
-          text: "Memilih diam saja dan tidak ikut campur urusan teman agar tidak menimbulkan pertengkaran, biarkan guru BP yang menyelesaikan jika Danu menangis."
+          title: "Pilihan C (Pasif / Tanpa Visi)",
+          text: "Menyimpan seluruh surplus kas Baitul Mal di brankas istana tanpa dibelanjakan untuk riset maupun militer agar negara tidak mengalami defisit di masa depan."
         }
       ],
-      idealAnswer: "Pilihan B adalah keputusan yang paling selaras dengan QS. Al-Fajr: 15-18. Dalam ayat tersebut, Allah mengecam kekeliruan persepsi manusia yang menganggap bahwa ketika dilapangkan rezeki (akramahu wa na'amahu) berarti Allah memuliakannya, dan ketika disempitkan rezeki (qadara 'alaihi rizqahu) berarti Allah menghinakannya. Padahal keduanya adalah sarana ujian (Ibtila'). Rezeki melimpah menguji apakah kita bersyukur dan menyantuni anak yatim serta fakir miskin (QS. Al-Fajr: 17-18), sedangkan kesempitan rezeki menguji kesabaran dan tawakal. Sikap menasihati Fikri dengan santun akan mengikis bibit kesombongan, sementara merangkul Danu merupakan wujud nyata ukhuwah Islamiyah dan keadilan sosial di lingkungan madrasah.",
-      keywords: ["al-fajr", "15", "18", "ujian", "ibtila", "syukur", "sabar", "kesombongan", "kemuliaan", "takwa", "merangkul", "empati", "bukan ukuran", "miskin", "kaya"]
+      idealAnswer: "Pilihan B adalah keputusan kepemimpinan yang paling mencerminkan ruh kejayaan Islam Abbasiyah. Sejarah membuktikan bahwa sebuah imperium tidak akan bertahan lama jika hanya mengandalkan kekuatan militer tanpa fondasi sains dan peradaban. Dengan mendanai Bayt al-Hikmah, Khalifah Al-Ma'mun berhasil mengubah Baghdad menjadi episentrum intelektual dunia yang melahirkan teknologi kedokteran, matematika, dan navigasi. Pertahanan militer tetap diperlukan secara proporsional untuk menjamin stabilitas, namun investasi pada pendidikan dan riset adalah kunci kejayaan peradaban yang manfaatnya dirasakan oleh seluruh umat manusia hingga berabad-abad kemudian.",
+      keywords: ["al-ma'mun", "baitul hikmah", "riset", "sains", "militer", "seimbang", "jangka panjang", "intelektual", "baitul mal", "peradaban", "kma 183", "investasi", "pendidikan", "baghdad", "keamanan"]
     },
     {
       id: "scen_2",
-      title: "Skenario 2: Menyegerakan Infak vs Godaan Konsumtif & FOMO Remaja",
-      dalilRef: "QS. Al-Baqarah: 254 & 261",
+      title: "Skenario 2: Merekrut Ilmuwan Non-Muslim & Toleransi Ilmiah",
+      dalilRef: "Keteladanan Pengangkatan Hunayn bin Ishaq di Bayt al-Hikmah",
       surah: 2,
-      ayahs: [
-        { surah: 2, ayah: 254 },
-        { surah: 2, ayah: 261 }
-      ],
-      surahName: "QS. Al-Baqarah: 254 & 261",
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
-      arabicDalil: "يَا أَيُّهَا الَّذِينَ آمَنُوا أَنفِقُوا مِمَّا رَزَقْنَاكُم مِّن قَبْلِ أَن يَأْتِيَ يَوْمٌ لَّا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ",
-      background: "Kamu berhasil menabung uang saku sebesar Rp 150.000 selama dua bulan untuk membeli skin game edisi terbatas yang sedang tren di kalangan teman-teman satu geng madrasahmu. Tiba-tiba di hari itu, pihak OSIM mengumumkan penggalangan dana darurat untuk biaya operasi adik kelas yatim piatu yang mengalami kecelakaan berat dan membutuhkan bantuan dana tunai hari ini juga sebelum tindakan medis dilakukan.",
-      question: "Bagaimana kamu memprioritaskan penggunaan uang tabungan tersebut berdasarkan pemahaman QS. Al-Baqarah: 254 dan 261?",
+      ayahs: [],
+      surahName: "Universalitas Ilmu & Piagam Toleransi Abbasiyah",
+      reciter: "Edukator Sejarah Islam",
+      arabicDalil: "الْحِكْمَةُ ضَالَّةُ الْمُؤْمِنِ فَحَيْثُ وَجَدَهَا فَهُوَ أَحَقُّ بِهَا",
+      background: "Khalifah Al-Ma'mun menunjuk Hunayn bin Ishaq (seorang dokter dan ilmuwan beragama Kristen Nestorian yang fasih bahasa Yunani, Suryani, dan Arab) untuk memimpin dewan penerjemahan naskah kedokteran Galen dan Hippocrates di Bayt al-Hikmah dengan upah emas setara berat buku. Sebagian kelompok konservatif di istana melayangkan protes keras dan menuduh bahwa mempekerjakan sarjana non-Muslim serta mempelajari naskah filsafat Yunani dapat merusak akidah masyarakat Islam.",
+      question: "Bagaimana seharusnya Khalifah merespons protes tersebut dengan berpijak pada universalitas sains dalam Islam dan toleransi peradaban?",
       options: [
         {
           key: "A",
-          title: "Pilihan A (Menunda Kebaikan)",
-          text: "Tetap membeli skin game karena itu hasil menabung sendiri dengan susah payah, dan berniat menyumbang uang receh sisa jajan saja besok jika ada kembalian."
+          title: "Pilihan A (Menyerah pada Sentimen Sektarian)",
+          text: "Membatalkan pengangkatan Hunayn bin Ishaq dan melarang penerjemahan naskah asing untuk menghindari perdebatan politik di lingkungan istana."
         },
         {
           key: "B",
-          title: "Pilihan B (Memprioritaskan Infak & Menghidupkan Jiwa Sosial - Ideal)",
-          text: "Mendahulukan menyisihkan sebagian besar atau seluruh tabungan untuk infak darurat operasi adik kelas tersebut, meyakini janji Allah dalam QS. Al-Baqarah: 261 bahwa harta infak tidak akan berkurang melainkan dilipatgandakan pahalanya seperti sebutir biji menumbuhkan tujuh tangkai, serta menyadari peringatan QS. Al-Baqarah: 254 tentang pentingnya berinfak sebelum datang hari perhitungan."
+          title: "Pilihan B (Toleransi Ilmiah HOTS & Universalitas Hikmah - Ideal)",
+          text: "Menegaskan prinsip bahwa ilmu pengetahuan kedokteran dan sains bersifat universal (Hikmah yang menjadi hak setiap pencari kebenaran). Merangkul ilmuwan kompeten tanpa memandang latar belakang agama demi kemaslahatan umum (rahmatan lil 'alamin), seraya melibatkan ulama Muslim untuk mengkaji dan menyelaraskan nilai filosofis tersebut dengan tauhid."
         },
         {
           key: "C",
-          title: "Pilihan C (Riya' / Mengharap Pujian)",
-          text: "Menyumbang seluruh uang tetapi dengan syarat nama dan nominalnya diumumkan di depan apel bendera madrasah agar dipuji teman-teman dan guru sebagai siswa terdermawan."
+          title: "Pilihan C (Otoriter Tanpa Edukasi)",
+          text: "Memenjarakan semua pihak yang mengajukan protes tanpa memberikan penjelasan argumen agama maupun manfaat sains yang sedang dikembangkan."
         }
       ],
-      idealAnswer: "Pilihan B merupakan cerminan keimanan yang kokoh sesuai tuntunan QS. Al-Baqarah: 254 dan 261. Ayat 254 mengingatkan kita agar menyegerakan infak dari rezeki yang Allah anugerahkan sebelum datang hari kiamat di mana tidak ada lagi jual beli, persahabatan, maupun pertolongan selain amal shalih. Menyelamatkan nyawa manusia (adik kelas yatim) adalah fardhu kifayah dan kebutuhan darurat hakiki, sedangkan skin game hanyalah keinginan konsumtif sesaat (syahwat duniawi). Sesuai ayat 261, Allah mengibaratkan orang yang berinfak ikhlas di jalan-Nya seperti menanam sebutir benih yang menumbuhkan 7 tangkai dan tiap tangkai menghasilkan 100 biji (kelipatan 700 kali lipat kebaikan). Infak ini melatih remaja madrasah mengendalikan gaya hidup hedonisme dan mengasah kepekaan kemanusiaan.",
-      keywords: ["al-baqarah", "254", "261", "infak", "sedekah", "biji", "tujuh tangkai", "700", "darurat", "yatim", "menunda", "ikhlas", "menabung", "kebaikan", "akhirat"]
+      idealAnswer: "Pilihan B adalah manifestasi etos keterbukaan intelektual Islam masa Abbasiyah. Rasulullah SAW bersabda bahwa hikmah (kebijaksanaan/ilmu) adalah barang milik orang beriman yang hilang; di mana pun ia menemukannya, ia berhak mengambilnya (HR. Tirmidzi). Menunjuk Hunayn bin Ishaq membuktikan bahwa Dinasti Abbasiyah menerapkan prinsip meritokrasi dan profesionalisme: menilai seseorang berdasarkan integritas keilmuan, bukan fanatisme sektarian. Keterbukaan ini justru memperkaya peradaban Islam tanpa mengorbankan akidah, karena para sarjana Muslim menyaring dan mengislamisasikan ilmu tersebut menjadi karya orisinal yang beradab.",
+      keywords: ["hunayn bin ishaq", "non-muslim", "toleransi", "universal", "hikmah", "meritokrasi", "tirmidzi", "profesional", "keterbukaan", "akidah", "rahmatan lil alamin", "kemaslahatan", "sains", "baghdad", "intelektual"]
     },
     {
       id: "scen_3",
-      title: "Skenario 3: Etos Kemandirian 'Tangan di Atas'",
-      dalilRef: "HR. Bukhari-Muslim dari Abdullah bin Umar ra.",
-      arabicDalil: "الْيَدُ الْعُلْيَا خَيْرٌ مِنَ الْيَدِ السُّفْلَى فَالْيَدُ الْعُلْيَا هِيَ الْمُنْفِقَةُ وَالسُّفْلَى هِيَ السَّائِلَةُ",
-      background: "Madrasahmu menyelenggarakan Proyek Penguatan Profil Pelajar Rahmatan lil 'Alamin (P5-PPRA) bertema Kewirausahaan Kreatif. Kelompokmu beranggotakan 4 orang. Salah satu anggota bernama Dimas selalu beralasan tidak punya kuota, malas mengerjakan tugas infografis, dan berkata: 'Kalian saja yang selesaikan, kan kalian pintar-pintar, nanti nama gue tolong cantumin ya biar sama-sama dapat nilai A. Kasihanilah gue'.",
-      question: "Berdasarkan matan hadits 'Al-Yadul 'Ulya Khairun minal Yadis Sufla' (Tangan di atas lebih baik dari tangan di bawah), tindakan edukatif apa yang harus kamu ambil?",
+      title: "Skenario 3: Menghidupkan Spirit Bayt al-Hikmah bagi Generasi Muda",
+      dalilRef: "Relevansi Sejarah Abbasiyah untuk Abad ke-21 (KMA 183)",
+      surah: 3,
+      ayahs: [],
+      surahName: "Transformasi Digital Pelajar Madrasah",
+      reciter: "Edukator Sejarah Islam",
+      arabicDalil: "يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ",
+      background: "Di era digital saat ini, banyak remaja madrasah menghabiskan waktu berjam-jam untuk bermain game online, mengonsumsi konten media sosial tanpa saringan, dan memiliki minat baca yang sangat rendah. Akibatnya, generasi muda muslim rentan terpapar hoaks dan tertinggal dalam penguasaan sains, teknologi, rekayasa, serta riset modern.",
+      question: "Berdasarkan keteladanan para pemuda dan cendekiawan pada masa kejayaan Dinasti Abbasiyah, langkah konkret apa yang harus dilakukan siswa madrasah hari ini?",
       options: [
         {
           key: "A",
-          title: "Pilihan A (Membiarkan Mental Ketergantungan)",
-          text: "Menuruti permintaan Dimas dan tetap mencantumkan namanya tanpa kontribusi apapun karena takut dianggap teman yang jahat atau tidak solider."
+          title: "Pilihan A (Nostalgia Pasif)",
+          text: "Cukup berbangga dengan kejayaan masa lalu Dinasti Abbasiyah dan Ibnu Sina dalam pidato lomba, tanpa perlu bersusah payah belajar sains atau teknologi modern."
         },
         {
           key: "B",
-          title: "Pilihan B (Membimbing Kemandirian & Integritas Islami - Ideal)",
-          text: "Menolak bersikap kompromistis terhadap mental gratisan, lalu mengajaknya berdiskusi secara bijak. Menjelaskan hadits Nabi SAW bahwa seorang muslim harus memiliki etos 'Tangan di Atas' (pemberi manfaat, produktif, mandiri) dan tidak membiasakan diri menjadi 'Tangan di Bawah' (peminta-minta/parasit). Kemudian membagi tugas teknis yang Dimas sanggupi (misalnya wawancara pembeli atau merapikan kemasan) dan mendampinginya sampai selesai."
+          title: "Pilihan B (Transformasi Riset & Literasi Unggul - Ideal)",
+          text: "Menghidupkan kembali 'Spirit Bayt al-Hikmah' di lingkungan madrasah: memanfaatkan teknologi dan internet untuk riset ilmiah, membiasakan budaya membaca kritis (Iqra'), menguasai bahasa asing untuk menyerap teknologi global, serta berani menciptakan karya inovatif yang bermanfaat bagi masyarakat luas."
         },
         {
           key: "C",
-          title: "Pilihan C (Mencaci & Menghakimi di Depan Umum)",
-          text: "Langsung melaporkan Dimas ke wali kelas di depan semua teman sekelas, mencoret namanya secara kasar, dan menyuruh teman-teman lain untuk memusuhinya."
+          title: "Pilihan C (Menolak Teknologi Modern)",
+          text: "Menjauhi sama sekali komputer dan smartphone karena menganggap teknologi modern buatan luar negeri sebagai bahaya bagi keagamaan."
         }
       ],
-      idealAnswer: "Pilihan B adalah manifestasi dari etos hadits riwayat Bukhari dan Muslim: 'Al-Yadul 'Ulya Khairun minal Yadis Sufla' (Tangan di atas lebih baik daripada tangan di bawah). Tangan di atas tidak hanya bermakna orang yang berinfak harta, tetapi juga orang yang memproduksi karya, mandiri, dan berkontribusi memberi kemanfaatan kepada orang lain. Sebaliknya, meminta nilai gratisan tanpa berusaha adalah analogi modern dari mental 'tangan di bawah' (peminta-minta yang merendahkan martabat dirinya). Pendekatan solutif adalah membimbing dan mendampingi Dimas agar menemukan peran kerjanya dalam kelompok, sehingga ia terlatih menjadi pribadi muslim yang berintegritas, mandiri, dan bertanggung jawab.",
-      keywords: ["tangan di atas", "tangan di bawah", "al-yadul 'ulya", "sufla", "kemandirian", "bukhari", "muslim", "etos kerja", "tanggung jawab", "integritas", "meminta-minta", "kontribusi", "produktif", "manfaat"]
+      idealAnswer: "Pilihan B merupakan pengamalan nyata dari spirit KMA No. 183 Tahun 2019. Mempelajari sejarah kejayaan Dinasti Abbasiyah bukan sekadar mengenang romantisme masa lampau, melainkan mengambil ibrah (pelajaran hidup) untuk direplikasi di masa kini. Kejayaan peradaban Islam di era Harun Ar-Rasyid dan Al-Ma'mun lahir dari budaya literasi yang sangat kuat, penguasaan bahasa internasional, rasa haus akan riset ilmiah, serta etos kerja keras memadukan iman dan ilmu (QS. Al-Mujadilah: 11). Remaja madrasah abad ke-21 harus bertransformasi dari sekadar konsumen teknologi pasif menjadi produsen ilmu pengetahuan dan kreator peradaban baru.",
+      keywords: ["spirit", "bayt al-hikmah", "literasi", "iqra", "teknologi", "riset", "bahasa asing", "inovasi", "kma 183", "ibrah", "al-mujadilah", "kritis", "produsen", "madrasah", "kejayaan"]
     }
   ],
 
-  // 5. Daftar Surah Pokok Bahasan KMA 183 untuk Beranda (Dengan Murottal Syaikh Misyari Rasyid)
+  // 5. Daftar Fokus Materi & Peristiwa Kunci Dinasti Abbasiyah (Beranda)
   surahList: [
     {
       id: "surah_fatihah",
       num: 1,
-      title: "Al-Fatihah",
-      arabic: "الفاتحة",
-      subtitle: "Makkiyah • 7 Ayat • Mad 'Aridh Lissukun",
+      title: "1. Berdirinya Dinasti Abbasiyah (750 M)",
+      arabic: "تأسيس الدولة العباسية",
+      subtitle: "Runtuhnya Umayyah • Abu Abbas As-Saffah & Abu Ja'far Al-Mansur",
       surah: 1,
-      ayahs: [
-        { surah: 1, ayah: 1 },
-        { surah: 1, ayah: 2 },
-        { surah: 1, ayah: 3 },
-        { surah: 1, ayah: 4 },
-        { surah: 1, ayah: 5 },
-        { surah: 1, ayah: 6 },
-        { surah: 1, ayah: 7 }
-      ],
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
+      ayahs: [],
+      reciter: "Edukator Sejarah Islam",
       targetTab: "tajwid"
     },
     {
       id: "surah_baqarah",
       num: 2,
-      title: "QS. Al-Baqarah: 254 & 261",
-      arabic: "البقرة",
-      subtitle: "Madaniyah • Keutamaan Infak & Sedekah",
+      title: "2. Kemakmuran Khalifah Harun Ar-Rasyid",
+      arabic: "هارون الرشيد",
+      subtitle: "Puncak Ekonomi Baitul Mal • Bimaristan • Diplomasi Charlemagne",
       surah: 2,
-      ayahs: [
-        { surah: 2, ayah: 254 },
-        { surah: 2, ayah: 261 }
-      ],
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
-      targetTab: "tahfidz"
+      ayahs: [],
+      reciter: "Edukator Sejarah Islam",
+      targetTab: "tajwid"
     },
     {
       id: "surah_fajr",
       num: 3,
-      title: "QS. Al-Fajr: 15–18",
-      arabic: "الفجر",
-      subtitle: "Makkiyah • Ujian Kelapangan & Kesempitan Rezeki",
-      surah: 89,
-      ayahs: [
-        { surah: 89, ayah: 15 },
-        { surah: 89, ayah: 16 },
-        { surah: 89, ayah: 17 },
-        { surah: 89, ayah: 18 }
-      ],
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
-      targetTab: "ai_simulator"
+      title: "3. Bayt al-Hikmah & Khalifah Al-Ma'mun",
+      arabic: "بيت الحكمة والمأمون",
+      subtitle: "Gerakan Penerjemahan Emas • Observatorium • Revolusi Naskah",
+      surah: 3,
+      ayahs: [],
+      reciter: "Edukator Sejarah Islam",
+      targetTab: "tajwid"
     },
     {
       id: "surah_naba",
       num: 4,
-      title: "QS. An-Naba: 6–7",
-      arabic: "النبأ",
-      subtitle: "Makkiyah • Penerapan Kaidah Mad 'Iwadh",
-      surah: 78,
-      ayahs: [
-        { surah: 78, ayah: 6 },
-        { surah: 78, ayah: 7 }
-      ],
-      reciter: "Syaikh Misyari Rasyid Al-Afasy",
-      targetTab: "tajwid"
+      title: "4. Mahakarya Cendekiawan Muslim",
+      arabic: "علماء الحضارة الإسلامية",
+      subtitle: "Ibnu Sina (Kedokteran) • Al-Khawarizmi (Aljabar) • Bukhari & Muslim",
+      surah: 4,
+      ayahs: [],
+      reciter: "Edukator Sejarah Islam",
+      targetTab: "tahfidz"
     }
   ]
 };

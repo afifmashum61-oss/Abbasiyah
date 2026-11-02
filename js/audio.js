@@ -1,24 +1,27 @@
-// Audio Engine & Web Speech API & Sound Synthesizer & Voice Recorder
-// Enhanced with Sheikh Mishary Rashid Alafasy (Syaikh Misyari Rasyid Al-Afasy) Quran MP3 Audio
+// ==========================================================================
+// AUDIO ENGINE, WEB SPEECH API & SOUND SYNTHESIZER
+// SEJARAH KEBUDAYAAN ISLAM MTs (KMA NO. 183 TAHUN 2019)
+// TOPIK: MASA KEJAYAAN DINASTI ABBASIYAH
+// ==========================================================================
 
 class AudioManager {
   constructor() {
     this.audioCtx = null;
-    this.speechSynth = window.speechSynthesis;
+    this.speechSynth = typeof window !== 'undefined' ? window.speechSynthesis : null;
     this.arabicVoice = null;
+    this.indoVoice = null;
     this.initAudioContext();
     this.initSpeechVoices();
 
-    // Reciter Profile: Sheikh Mishary Rashid Alafasy
+    // Reciter / Narrator Profile
     this.reciter = {
-      id: "alafasy",
-      name: "Syaikh Misyari Rasyid Al-Afasy",
-      title: "Qari Internasional (Kuwait)",
-      avatar: "🎙️",
-      baseUrl: "https://everyayah.com/data/Alafasy_128kbps/"
+      id: "ski_narrator",
+      name: "Edukator Sejarah Islam",
+      title: "Kemenag RI • Kurikulum KMA 183",
+      avatar: "🏛️"
     };
 
-    // Dedicated Quran HTML5 Audio Player
+    // Dedicated HTML5 Audio Player
     this.quranAudio = new Audio();
     this.quranAudio.preload = "auto";
     this.isQuranPlaying = false;
@@ -26,6 +29,9 @@ class AudioManager {
     this.playlist = [];
     this.playlistIndex = 0;
     this.repeatMode = false;
+    this.narrationTimer = null;
+    this.narrationElapsed = 0;
+    this.narrationDuration = 0;
 
     this.initQuranAudioListeners();
 
@@ -60,6 +66,8 @@ class AudioManager {
     if (!this.speechSynth) return;
     const findVoice = () => {
       const voices = this.speechSynth.getVoices();
+      // Look for Indonesian voice
+      this.indoVoice = voices.find(v => v.lang.startsWith('id') || v.lang === 'id-ID' || v.name.toLowerCase().includes('indonesia')) || null;
       // Look for Arabic voice
       this.arabicVoice = voices.find(v => v.lang.startsWith('ar') || v.lang === 'ar-SA' || v.name.toLowerCase().includes('arabic')) || null;
     };
@@ -71,7 +79,7 @@ class AudioManager {
   }
 
   // ==========================================================================
-  // SYAIKH MISYARI RASYID AL-AFASY QURAN AUDIO RECITATION SYSTEM
+  // HISTORICAL NARRATION & AUDIO ENGINE
   // ==========================================================================
 
   initQuranAudioListeners() {
@@ -94,7 +102,6 @@ class AudioManager {
 
     this.quranAudio.addEventListener("ended", () => {
       if (this.playlistIndex + 1 < this.playlist.length) {
-        // Advance to next Ayah in sequence
         this.playlistIndex++;
         this.playCurrentPlaylistTrack();
       } else if (this.repeatMode) {
@@ -107,119 +114,120 @@ class AudioManager {
     });
 
     this.quranAudio.addEventListener("error", (err) => {
-      console.warn("Quran audio load/play error:", err);
       this.isQuranPlaying = false;
       this.emitQuranAudioEvent("error", { error: err });
     });
   }
 
-  getAyahUrl(surah, ayah) {
-    const s = String(surah).padStart(3, "0");
-    const a = String(ayah).padStart(3, "0");
-    return `${this.reciter.baseUrl}${s}${a}.mp3`;
-  }
-
-  // Aliases for compatibility
-  getAlafasyAyahUrl(surah, ayah) {
-    return this.getAyahUrl(surah, ayah);
-  }
-
-  getSudaisAyahUrl(surah, ayah) {
-    return this.getAyahUrl(surah, ayah);
-  }
-
-  // Play a sequence of Ayahs recited by Sheikh Mishary Rashid Alafasy
-  playQuranAyahs(ayahList, meta = {}) {
-    if (!ayahList || !ayahList.length) return;
-
+  // Main narration player with floating bar sync
+  playHistoryNarration(text, meta = {}) {
+    if (!text) return;
     this.resumeAudioContext();
     if (this.speechSynth) this.speechSynth.cancel();
+    if (this.narrationTimer) clearInterval(this.narrationTimer);
 
-    this.playlist = ayahList.map((item, idx) => ({
-      surah: item.surah,
-      ayah: item.ayah,
-      url: this.getAyahUrl(item.surah, item.ayah),
-      title: meta.title || `QS. ${item.surah}:${item.ayah}`,
-      subtitle: meta.subtitle || `Ayat ${item.ayah}`,
+    this.currentTrack = {
+      title: meta.title || "Narasi Sejarah Kebudayaan Islam",
+      subtitle: meta.subtitle || "Masa Kejayaan Dinasti Abbasiyah",
       reciterName: this.reciter.name,
-      index: idx
-    }));
+      text: text
+    };
 
-    this.playlistIndex = 0;
-    this.playCurrentPlaylistTrack();
-  }
+    this.isQuranPlaying = true;
+    this.emitQuranAudioEvent("trackchange", { track: this.currentTrack });
+    this.emitQuranAudioEvent("play");
 
-  // Aliases for compatibility
-  playAlafasyAyahs(ayahList, meta = {}) {
-    return this.playQuranAyahs(ayahList, meta);
-  }
+    // Estimate realistic speaking duration based on word count
+    const words = text.split(/\s+/).length;
+    this.narrationDuration = Math.max(6, Math.round((words / 120) * 60));
+    this.narrationElapsed = 0;
 
-  playSudaisAyahs(ayahList, meta = {}) {
-    return this.playQuranAyahs(ayahList, meta);
-  }
+    this.narrationTimer = setInterval(() => {
+      if (!this.isQuranPlaying) return;
+      this.narrationElapsed += 0.5;
+      this.emitQuranAudioEvent("timeupdate", {
+        currentTime: this.narrationElapsed,
+        duration: this.narrationDuration
+      });
 
-  // Play a single Ayah recited by Sheikh Mishary Rashid Alafasy
-  playQuranAyah(surah, ayah, meta = {}) {
-    this.playQuranAyahs([{ surah, ayah }], {
-      title: meta.title || `QS. ${surah}:${ayah}`,
-      subtitle: meta.subtitle || `Ayat ${ayah}`,
-      ...meta
-    });
-  }
+      if (this.narrationElapsed >= this.narrationDuration) {
+        clearInterval(this.narrationTimer);
+        this.isQuranPlaying = false;
+        this.emitQuranAudioEvent("ended");
+      }
+    }, 500);
 
-  // Aliases for compatibility
-  playAlafasyAyah(surah, ayah, meta = {}) {
-    return this.playQuranAyah(surah, ayah, meta);
-  }
+    // Speak using Web Speech API
+    if (this.speechSynth) {
+      const isArabic = /[\u0600-\u06FF]/.test(text.substring(0, 15));
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = isArabic ? 'ar-SA' : 'id-ID';
+      utterance.rate = isArabic ? 0.9 : 0.95;
+      utterance.pitch = 1.0;
 
-  playSudaisAyah(surah, ayah, meta = {}) {
-    return this.playQuranAyah(surah, ayah, meta);
-  }
+      if (isArabic && this.arabicVoice) utterance.voice = this.arabicVoice;
+      else if (!isArabic && this.indoVoice) utterance.voice = this.indoVoice;
 
-  playCurrentPlaylistTrack() {
-    if (!this.playlist.length || this.playlistIndex >= this.playlist.length) return;
+      utterance.onend = () => {
+        clearInterval(this.narrationTimer);
+        this.isQuranPlaying = false;
+        this.emitQuranAudioEvent("ended");
+      };
 
-    const track = this.playlist[this.playlistIndex];
-    this.currentTrack = track;
-    this.quranAudio.src = track.url;
-    
-    const playPromise = this.quranAudio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          this.isQuranPlaying = true;
-          this.emitQuranAudioEvent("trackchange", { track, index: this.playlistIndex });
-        })
-        .catch(err => {
-          console.warn("Autoplay/audio play error:", err);
-          // If network failed, notify user
-          this.emitQuranAudioEvent("error", { error: err, track });
-        });
+      utterance.onerror = () => {
+        // Fallback tone on speech error
+        this.playTone(520, 'sine', 0.2);
+      };
+
+      this.speechSynth.speak(utterance);
     }
+  }
+
+  // Compatibility aliases for app.js
+  playQuranAyahs(ayahList, meta = {}) {
+    if (meta.translation || meta.title) {
+      const textToSpeak = meta.translation ? `${meta.title}. ${meta.translation}` : meta.title;
+      this.playHistoryNarration(textToSpeak, meta);
+    }
+  }
+
+  playQuranAyah(surah, ayah, meta = {}) {
+    this.playHistoryNarration(meta.title || `Topik Sejarah Abbasiyah`, meta);
   }
 
   toggleQuranPlay() {
     if (!this.currentTrack) return;
-    if (this.quranAudio.paused) {
-      this.quranAudio.play();
+    if (this.isQuranPlaying) {
+      this.isQuranPlaying = false;
+      if (this.speechSynth && this.speechSynth.speaking) {
+        this.speechSynth.pause();
+      }
+      this.emitQuranAudioEvent("pause");
     } else {
-      this.quranAudio.pause();
+      this.isQuranPlaying = true;
+      if (this.speechSynth && this.speechSynth.paused) {
+        this.speechSynth.resume();
+      }
+      this.emitQuranAudioEvent("play");
     }
   }
 
   stopQuranAudio() {
-    this.quranAudio.pause();
-    this.quranAudio.currentTime = 0;
     this.isQuranPlaying = false;
-    this.playlist = [];
-    this.playlistIndex = 0;
+    if (this.speechSynth) this.speechSynth.cancel();
+    if (this.narrationTimer) clearInterval(this.narrationTimer);
+    this.narrationElapsed = 0;
     this.currentTrack = null;
     this.emitQuranAudioEvent("stop");
   }
 
   seekQuranAudio(percent) {
-    if (this.quranAudio.duration && isFinite(this.quranAudio.duration)) {
-      this.quranAudio.currentTime = (percent / 100) * this.quranAudio.duration;
+    if (this.narrationDuration > 0) {
+      this.narrationElapsed = (percent / 100) * this.narrationDuration;
+      this.emitQuranAudioEvent("timeupdate", {
+        currentTime: this.narrationElapsed,
+        duration: this.narrationDuration
+      });
     }
   }
 
@@ -234,8 +242,6 @@ class AudioManager {
       event: eventName,
       isPlaying: this.isQuranPlaying,
       track: this.currentTrack,
-      playlistIndex: this.playlistIndex,
-      playlistLength: this.playlist.length,
       repeat: this.repeatMode,
       reciter: this.reciter,
       ...extra
@@ -243,20 +249,16 @@ class AudioManager {
     window.dispatchEvent(new CustomEvent("quran-audio-event", { detail }));
   }
 
-  // ==========================================================================
-  // WEB SPEECH API & FALLBACKS
-  // ==========================================================================
-
-  // Speak Arabic text using Web Speech API (Used for single isolated words/hadits)
+  // Speak Arabic text using Web Speech API
   speakArabic(text, rate = 0.85) {
     if (!this.speechSynth) return;
     this.resumeAudioContext();
 
     try {
-      this.speechSynth.cancel(); // Stop any pending speech
+      this.speechSynth.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'ar-SA';
-      utterance.rate = rate; // Tartil slightly measured pace
+      utterance.rate = rate;
       utterance.pitch = 1.0;
 
       if (this.arabicVoice) {
@@ -265,13 +267,36 @@ class AudioManager {
 
       this.speechSynth.speak(utterance);
     } catch (err) {
-      console.warn("Speech synthesis error:", err);
-      // Fallback tone
       this.playTone(440, 'sine', 0.2);
     }
   }
 
-  // Synthesize custom tones via Web Audio API (Zero external MP3 dependencies)
+  // Speak Indonesian text using Web Speech API
+  speakIndonesian(text, rate = 0.95) {
+    if (!this.speechSynth) return;
+    this.resumeAudioContext();
+
+    try {
+      this.speechSynth.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'id-ID';
+      utterance.rate = rate;
+      utterance.pitch = 1.0;
+
+      if (this.indoVoice) {
+        utterance.voice = this.indoVoice;
+      }
+
+      this.speechSynth.speak(utterance);
+    } catch (err) {
+      this.playTone(440, 'sine', 0.2);
+    }
+  }
+
+  // ==========================================================================
+  // WEB AUDIO SYNTHESIZER (SOUND EFFECTS)
+  // ==========================================================================
+
   playTone(frequency, type = 'sine', duration = 0.2, gainValue = 0.15) {
     if (!this.audioCtx) return;
     this.resumeAudioContext();
@@ -345,7 +370,7 @@ class AudioManager {
     this.playTone(800, 'sine', 0.06, 0.08);
   }
 
-  // Metronome tick for ketukan visualizer
+  // Metronome tick for timeline pace
   playMetronomeTick(isAccent = false) {
     if (!this.audioCtx) return;
     this.resumeAudioContext();
@@ -379,7 +404,7 @@ class AudioManager {
     });
   }
 
-  // Studio Rekam Suara (MediaRecorder + Web Audio Waveform Visualizer)
+  // Studio Rekam Suara (MediaRecorder + Waveform Visualizer)
   async startRecording(canvasElement, onDataAvailableCallback) {
     if (this.isRecording) return;
     this.audioChunks = [];
@@ -389,7 +414,6 @@ class AudioManager {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       this.microphoneStream = stream;
 
-      // Audio Analyser Setup for visualizer
       if (this.audioCtx) {
         const source = this.audioCtx.createMediaStreamSource(stream);
         this.analyser = this.audioCtx.createAnalyser();
@@ -420,13 +444,11 @@ class AudioManager {
       this.isRecording = true;
       return true;
     } catch (err) {
-      console.warn("Microphone access failed or denied:", err);
-      // Simulated recording for presentation environments where mic is blocked
       this.isRecording = true;
       if (canvasElement) {
         this.drawSimulatedWaveform(canvasElement);
       }
-      return false; // Indicates simulated fallback
+      return false;
     }
   }
 
@@ -449,7 +471,6 @@ class AudioManager {
     }
   }
 
-  // Draw real microphone waveform on canvas
   drawWaveform(canvas) {
     if (!canvas || !this.analyser) return;
     const ctx = canvas.getContext('2d');
@@ -475,7 +496,7 @@ class AudioManager {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.lineWidth = 2.5;
-      ctx.strokeStyle = '#f59e0b'; // Gold accent
+      ctx.strokeStyle = '#f59e0b';
       ctx.beginPath();
 
       const sliceWidth = canvas.width * 1.0 / bufferLength;
@@ -500,7 +521,6 @@ class AudioManager {
     render();
   }
 
-  // Simulated visual wave fallback if hardware mic is restricted
   drawSimulatedWaveform(canvas) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -538,5 +558,5 @@ class AudioManager {
   }
 }
 
-// Instantiate globally
+// Global instantiation
 window.audioManager = new AudioManager();

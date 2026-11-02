@@ -1,5 +1,7 @@
 // ==========================================================================
-// MEDIA PEMBELAJARAN INTERAKTIF AL-QUR'AN HADITS MTs (KMA 183 TAHUN 2019)
+// MEDIA PEMBELAJARAN INTERAKTIF SEJARAH KEBUDAYAAN ISLAM (SKI) MTs
+// KELAS VIII MADRASAH TSANAWIYAH (KMA NO. 183 TAHUN 2019)
+// TOPIK: MASA KEJAYAAN DINASTI ABBASIYAH (THE GOLDEN AGE OF ISLAM)
 // CORE APPLICATION LOGIC & SPA CONTROLLER
 // ==========================================================================
 
@@ -16,23 +18,23 @@ class QuranApp {
         {
           id: 1,
           date: new Date().toLocaleDateString('id-ID'),
-          module: "Lab Tajwid - Mad 'Iwadh",
+          module: "Galeri Kejayaan - Ibnu Sina (Al-Qanun)",
           score: 60,
-          notes: "Tuntas mengidentifikasi hukum Mad 'Iwadh"
+          notes: "Tuntas menganalisis biografi dan mahakarya kedokteran Ibnu Sina"
         },
         {
           id: 2,
           date: new Date().toLocaleDateString('id-ID'),
-          module: "Arena Tahfidz - Matan Hadits",
+          module: "Arena Sejarah - Tokoh & Penemuan Abbasiyah",
           score: 50,
-          notes: "Menyusun puzzle hadits Tangan di Atas dengan tepat"
+          notes: "Menyusun puzzle urutan 4 Khalifah Era Keemasan dengan tepat"
         },
         {
           id: 3,
           date: new Date().toLocaleDateString('id-ID'),
-          module: "Simulator AI - Ujian Rezeki",
+          module: "Simulator AI - Anggaran Riset Bayt al-Hikmah",
           score: 75,
-          notes: "Refleksi HOTS QS. Al-Fajr: 15-18 Sangat Baik"
+          notes: "Refleksi HOTS kebijakan Khalifah Al-Ma'mun Sangat Baik"
         }
       ]
     };
@@ -44,9 +46,18 @@ class QuranApp {
     this.activeGharibTopicIndex = 0;
     this.isWidescreen = false;
     
-    // Metronome state
+    // 5 Milestones Linimasa Sejarah Abbasiyah
+    this.timelineSteps = [
+      { year: "750 M", title: "Berdirinya Dinasti Abbasiyah", desc: "Runtuhnya Dinasti Umayyah di Damaskus, Abu Abbas As-Saffah dibaiat sebagai khalifah pertama di Kufah." },
+      { year: "762 M", title: "Pembangunan Kota Baghdad", desc: "Khalifah Abu Ja'far Al-Mansur membangun Madinatussalam (Kota Bundar Baghdad) di tepi Sungai Tigris." },
+      { year: "786 M", title: "Puncak Kemakmuran Harun Ar-Rasyid", desc: "Baitul Mal surplus makmur, pembangunan rumah sakit Bimaristan Al-Adudi, & diplomasi jam air dengan Charlemagne." },
+      { year: "813 M", title: "Era Emas Bayt al-Hikmah Al-Ma'mun", desc: "Gerakan penerjemahan karya dunia berimbalan emas seberat buku, observatorium Syammasiyyah, & pengukuran bumi." },
+      { year: "1258 M", title: "Invasi Pasukan Mongol", desc: "Serbuan pasukan Mongol di bawah pimpinan Hulagu Khan yang meluluhlantakkan peradaban kota Baghdad." }
+    ];
+
+    // Timeline state
     this.metronomeInterval = null;
-    this.metronomeBeats = 2;
+    this.metronomeBeats = 5;
     this.metronomeCurrentStep = 0;
     this.isMetronomeRunning = false;
 
@@ -81,7 +92,7 @@ class QuranApp {
   // State Persistence
   loadState() {
     try {
-      const saved = localStorage.getItem("alquran_app_state");
+      const saved = localStorage.getItem("ski_abbasiyah_app_state");
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed.student) this.student = parsed.student;
@@ -93,7 +104,7 @@ class QuranApp {
 
   saveState() {
     try {
-      localStorage.setItem("alquran_app_state", JSON.stringify({
+      localStorage.setItem("ski_abbasiyah_app_state", JSON.stringify({
         student: this.student
       }));
     } catch (e) {
@@ -131,7 +142,7 @@ class QuranApp {
     this.studentNameElem = document.getElementById("headerStudentName");
     this.studentClassElem = document.getElementById("headerStudentClass");
 
-    // Tajwid elements
+    // Galeri Kejayaan (formerly Tajwid) elements
     this.tajwidSubTabBtns = document.querySelectorAll(".tajwid-sub-btn");
     this.tajwidTopicsContainer = document.getElementById("tajwidTopicsPills");
     this.verseTokensContainer = document.getElementById("verseTokensContainer");
@@ -148,12 +159,12 @@ class QuranApp {
     this.explanationTitle = document.getElementById("explanationTitle");
     this.explanationContent = document.getElementById("explanationContent");
 
-    // Metronome elements
+    // Timeline / Metronome elements
     this.beatButtons = document.querySelectorAll(".beat-btn");
     this.beadContainer = document.getElementById("metronomeBeads");
     this.btnToggleMetronome = document.getElementById("btnToggleMetronome");
 
-    // Gharib Guide elements
+    // Guide elements
     this.gharibGuideCard = document.getElementById("gharibGuideCard");
     this.gharibGuideTitle = document.getElementById("gharibGuideTitle");
     this.gharibGuideRule = document.getElementById("gharibGuideRule");
@@ -168,7 +179,7 @@ class QuranApp {
     this.userAudioPlayer = document.getElementById("userAudioPlayer");
     this.btnSaveSelfEval = document.getElementById("btnSaveSelfEval");
 
-    // Tahfidz Matching elements
+    // Arena Sejarah (formerly Tahfidz) Matching elements
     this.matchSetSelect = document.getElementById("matchSetSelect");
     this.matchArabCol = document.getElementById("matchArabCol");
     this.matchIndoCol = document.getElementById("matchIndoCol");
@@ -265,14 +276,6 @@ class QuranApp {
       });
     });
 
-    // Curriculum Modal button
-    const btnOpenCurriculum = document.getElementById("btnOpenCurriculum");
-    if (btnOpenCurriculum) {
-      btnOpenCurriculum.addEventListener("click", () => {
-        this.openCurriculumModal();
-      });
-    }
-
     // Save Profile button
     const btnSaveProfile = document.getElementById("btnSaveProfile");
     if (btnSaveProfile) {
@@ -290,7 +293,7 @@ class QuranApp {
       });
     }
 
-    // Tajwid Sub-tab switch
+    // Sub-tab switch (Cendekiawan vs Pusat Peradaban)
     this.tajwidSubTabBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         this.tajwidSubTabBtns.forEach(b => b.classList.remove("active"));
@@ -300,7 +303,7 @@ class QuranApp {
       });
     });
 
-    // Metronome Beat Buttons
+    // Timeline / Metronome Beat Buttons
     this.beatButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         this.beatButtons.forEach(b => b.classList.remove("active"));
@@ -310,7 +313,7 @@ class QuranApp {
       });
     });
 
-    // Metronome Start/Stop
+    // Timeline / Metronome Start/Stop
     if (this.btnToggleMetronome) {
       this.btnToggleMetronome.addEventListener("click", () => {
         this.toggleMetronome();
@@ -332,8 +335,8 @@ class QuranApp {
           return;
         }
         window.audioManager.playCelebrate();
-        this.addPoints("tajwid", 10, "Evaluasi Mandiri Studio Rekaman");
-        this.showToast(`✨ Luar biasa! +10 Poin evaluasi mandiri berhasil dicatat!`, "gold");
+        this.addPoints("tajwid", 10, "Evaluasi Mandiri Studio Presentasi Sejarah");
+        this.showToast(`✨ Luar biasa! +10 Poin evaluasi mandiri sejarah berhasil dicatat!`, "gold");
       });
     }
 
@@ -413,7 +416,7 @@ class QuranApp {
     // Reset Session
     if (this.btnResetSession) {
       this.btnResetSession.addEventListener("click", () => {
-        if (confirm("Reset seluruh data sesi siswa saat ini untuk memulai demonstrasi baru?")) {
+        if (confirm("Reset seluruh data sesi siswa saat ini untuk memulai pembelajaran baru?")) {
           this.student = {
             name: "Siswa Baru MTs",
             grade: "Kelas VIII MTs",
@@ -433,10 +436,10 @@ class QuranApp {
     }
 
     // ==========================================================================
-    // SYAIKH MISYARI RASYID AL-AFASY AUDIO HANDLERS
+    // HISTORICAL AUDIO & NARRATION HANDLERS
     // ==========================================================================
 
-    // 1. Audio Play Full Verse in Lab Tajwid
+    // 1. Play Full Item Narration in Galeri Kejayaan
     const btnPlayFullVerse = document.getElementById("btnPlayFullVerse");
     if (btnPlayFullVerse) {
       btnPlayFullVerse.addEventListener("click", () => {
@@ -445,22 +448,18 @@ class QuranApp {
           if (window.audioManager.isQuranPlaying) {
             window.audioManager.toggleQuranPlay();
           } else {
-            if (item.ayahs && item.ayahs.length) {
-              window.audioManager.playQuranAyahs(item.ayahs, {
-                title: item.title,
-                subtitle: `${item.subtitle || item.surahName || ''} • Syaikh Misyari Rasyid`
-              });
-              this.showToast(`🎙️ Memutar Murottal Syaikh Misyari Rasyid (${item.subtitle || item.title})`, "gold");
-            } else {
-              window.audioManager.speakArabic(item.fullArabic);
-              this.showToast("🔊 Memutar pelafalan tartil...", "success");
-            }
+            const narrationText = `${item.title}. ${item.subtitle}. ${item.ruleGuide} ${item.translation}`;
+            window.audioManager.playHistoryNarration(narrationText, {
+              title: item.title,
+              subtitle: `${item.subtitle} • SKI Kelas 8`
+            });
+            this.showToast(`🏛️ Memutar Narasi: ${item.title}`, "gold");
           }
         }
       });
     }
 
-    // Quick Play Full Verse button
+    // Quick Play Narration button
     const btnListenAyatQuick = document.getElementById("btnListenAyatQuick");
     if (btnListenAyatQuick) {
       btnListenAyatQuick.addEventListener("click", () => {
@@ -469,49 +468,46 @@ class QuranApp {
           if (window.audioManager.isQuranPlaying) {
             window.audioManager.toggleQuranPlay();
           } else {
-            if (item.ayahs && item.ayahs.length) {
-              window.audioManager.playQuranAyahs(item.ayahs, {
-                title: item.title,
-                subtitle: `${item.subtitle || item.surahName || ''} • Syaikh Misyari Rasyid`
-              });
-              this.showToast(`🎙️ Memutar Tartil: ${item.subtitle || item.title}`, "gold");
-            } else {
-              window.audioManager.speakArabic(item.fullArabic);
-              this.showToast("🔊 Memutar pelafalan tartil...", "success");
-            }
+            const narrationText = `${item.title}. ${item.subtitle}. ${item.translation}`;
+            window.audioManager.playHistoryNarration(narrationText, {
+              title: item.title,
+              subtitle: item.subtitle
+            });
+            this.showToast(`🏛️ Memutar Narasi: ${item.title}`, "gold");
           }
         }
       });
     }
 
-    // Copy Full Verse button
+    // Copy Citation / Summary button
     const btnCopyAyat = document.getElementById("btnCopyAyat");
     if (btnCopyAyat) {
       btnCopyAyat.addEventListener("click", () => {
         const item = this.getCurrentTajwidItem();
         if (item) {
-          const textToCopy = `${item.fullArabic}\n\n"${item.translation}"\n(${item.subtitle || item.title})`;
+          const textToCopy = `${item.title} (${item.subtitle})\n\n"${item.translation}"\n\nSumber: ${item.surahName} (KMA 183 SKI Kelas 8)`;
           if (navigator.clipboard) {
             navigator.clipboard.writeText(textToCopy).then(() => {
-              this.showToast("📋 Ayat & terjemahan berhasil disalin!", "success");
+              this.showToast("📋 Catatan sejarah berhasil disalin!", "success");
             }).catch(() => {
-              this.showToast("📋 Berhasil memilih teks ayat", "success");
+              this.showToast("📋 Berhasil memilih teks materi", "success");
             });
           }
         }
       });
     }
 
-    // 2. Play Last Read (QS. Al-Fajr: 15) on Home
+    // 2. Play Featured Topic Narration on Home
     const btnPlayLastRead = document.getElementById("btnPlayLastRead");
     if (btnPlayLastRead) {
       btnPlayLastRead.addEventListener("click", (e) => {
         e.stopPropagation();
-        window.audioManager.playQuranAyahs([{ surah: 89, ayah: 15 }], {
-          title: "QS. Al-Fajr: 15",
-          subtitle: "Mad 'Iwadh & Ujian Rezeki • Syaikh Misyari Rasyid"
+        const text = "Puncak Masa Keemasan Dinasti Abbasiyah dipimpin oleh Khalifah Harun Ar-Rasyid dan Khalifah Al-Ma'mun. Berpusat di Kota Baghdad, peradaban Islam memimpin kemajuan sains dunia melalui lembaga Bayt al-Hikmah, gerakan penerjemahan massal, pembangunan rumah sakit modern Bimaristan, serta diplomasi global tingkat tinggi.";
+        window.audioManager.playHistoryNarration(text, {
+          title: "Era Keemasan Harun Ar-Rasyid & Al-Ma'mun",
+          subtitle: "Pusat Peradaban Baghdad (786–833 M)"
         });
-        this.showToast("🎙️ Memutar QS. Al-Fajr: 15 (Syaikh Misyari Rasyid)", "gold");
+        this.showToast("🏛️ Memutar Narasi: Era Keemasan Harun Ar-Rasyid & Al-Ma'mun", "gold");
       });
     }
 
@@ -520,33 +516,29 @@ class QuranApp {
     if (btnPlayScenarioDalil) {
       btnPlayScenarioDalil.addEventListener("click", () => {
         const scen = window.APP_DATA.scenarios[this.activeScenarioIndex];
-        if (scen && scen.ayahs && scen.ayahs.length) {
-          window.audioManager.playQuranAyahs(scen.ayahs, {
-            title: scen.dalilRef,
-            subtitle: `${scen.surahName || scen.title} • Syaikh Misyari Rasyid`
+        if (scen) {
+          const narrationText = `${scen.title}. Landasan: ${scen.dalilRef}. ${scen.background}`;
+          window.audioManager.playHistoryNarration(narrationText, {
+            title: scen.title,
+            subtitle: scen.dalilRef
           });
-          this.showToast(`🎙️ Memutar Dalil: ${scen.dalilRef} (Syaikh Misyari Rasyid)`, "gold");
-        } else if (scen && scen.arabicDalil) {
-          window.audioManager.speakArabic(scen.arabicDalil);
-          this.showToast("🔊 Memutar matan dalil...", "success");
+          this.showToast(`🏛️ Memutar Narasi: ${scen.title}`, "gold");
         }
       });
     }
 
-    // 4. Play Tahfidz Puzzle Audio
+    // 4. Play History Puzzle Audio
     const btnListenPuzzleAudio = document.getElementById("btnListenPuzzleAudio");
     if (btnListenPuzzleAudio) {
       btnListenPuzzleAudio.addEventListener("click", () => {
         const curPuz = window.APP_DATA.tahfidz.puzzles[this.activePuzzleIndex];
-        if (curPuz && curPuz.ayahs && curPuz.ayahs.length) {
-          window.audioManager.playQuranAyahs(curPuz.ayahs, {
+        if (curPuz && curPuz.correctSequence) {
+          const seqText = curPuz.correctSequence.join(", ");
+          window.audioManager.playHistoryNarration(`${curPuz.title}. Urutan: ${seqText}`, {
             title: curPuz.title,
-            subtitle: `${curPuz.surahName || ''} • Syaikh Misyari Rasyid`
+            subtitle: "Tantangan Sejarah Abbasiyah"
           });
-          this.showToast(`🎙️ Memutar Tartil Syaikh Misyari Rasyid`, "gold");
-        } else if (curPuz && curPuz.correctSequence) {
-          window.audioManager.speakArabic(curPuz.correctSequence.join(" "));
-          this.showToast("🔊 Memutar pelafalan matan...", "success");
+          this.showToast("🔊 Memutar penjelasan urutan sejarah...", "gold");
         }
       });
     }
@@ -585,7 +577,7 @@ class QuranApp {
       });
     }
 
-    // 6. Global Quran Audio Event Listener
+    // 6. Global Audio Event Listener
     window.addEventListener("quran-audio-event", (e) => {
       this.handleQuranAudioStateChange(e.detail);
     });
@@ -677,7 +669,7 @@ class QuranApp {
 
   updateHeaderStats() {
     if (this.totalScoreElem) {
-      this.totalScoreElem.textContent = this.student.score;
+      this.totalScoreElem.textContent = `${this.student.score} XP`;
     }
     if (this.studentNameElem) {
       this.studentNameElem.textContent = this.student.name;
@@ -685,10 +677,18 @@ class QuranApp {
     if (this.studentClassElem) {
       this.studentClassElem.textContent = this.student.grade;
     }
+    const homeTotal = document.getElementById("homeTotalScore");
+    if (homeTotal) homeTotal.textContent = `${this.student.score} XP`;
+    const homeTaj = document.getElementById("homeTajwidScore");
+    if (homeTaj) homeTaj.textContent = `${this.student.tajwidScore} XP`;
+    const homeTah = document.getElementById("homeTahfidzScore");
+    if (homeTah) homeTah.textContent = `${this.student.tahfidzScore} XP`;
+    const homeHots = document.getElementById("homeHotsScore");
+    if (homeHots) homeHots.textContent = `${this.student.hotsScore} XP`;
   }
 
   // ==========================================================================
-  // MENU 1: LAB TAJWID & GHARIB
+  // TAB 1: GALERI KEJAYAAN: ILMUWAN & PERADABAN ABBASIYAH
   // ==========================================================================
   renderTajwidTopics() {
     if (!this.tajwidTopicsContainer) return;
@@ -726,12 +726,12 @@ class QuranApp {
 
     // Header & metadata
     if (this.verseTitleElem) this.verseTitleElem.textContent = item.title;
-    if (this.verseSubtitleElem) this.verseSubtitleElem.textContent = item.subtitle || item.surah;
+    if (this.verseSubtitleElem) this.verseSubtitleElem.textContent = item.subtitle;
     if (this.verseMissionElem) this.verseMissionElem.textContent = item.mission;
     if (this.verseTranslationElem) this.verseTranslationElem.textContent = `"${item.translation}"`;
-    if (this.versePhoneticElem) this.versePhoneticElem.textContent = `Pelafalan: ${item.audioPhonetic}`;
+    if (this.versePhoneticElem) this.versePhoneticElem.textContent = item.audioPhonetic;
 
-    // Full Continuous Verse Card Display
+    // Full Card Display
     if (this.fullVerseArabicText) this.fullVerseArabicText.textContent = item.fullArabic;
     if (this.fullVerseSurahRef) this.fullVerseSurahRef.textContent = item.subtitle || item.surahName || item.title;
     if (this.fullVersePhonetic) this.fullVersePhonetic.textContent = item.audioPhonetic || "";
@@ -740,24 +740,18 @@ class QuranApp {
     // Hide previous explanation
     if (this.explanationCard) {
       this.explanationCard.classList.remove("active");
+      this.explanationCard.style.display = "none";
     }
 
-    // Set metronome beats to match rule
-    this.metronomeBeats = item.ketukan || 2;
-    this.beatButtons.forEach(btn => {
-      if (parseInt(btn.getAttribute("data-beats")) === this.metronomeBeats) {
-        btn.classList.add("active");
-      } else {
-        btn.classList.remove("active");
-      }
-    });
+    // Set timeline beats to match rule
+    this.metronomeBeats = item.ketukan || 3;
     this.resetMetronomeBeads();
 
-    // Gharib Guide visibility
+    // Guide visibility
     if (this.gharibGuideCard) {
       if (this.activeTajwidSub === "gharib") {
         this.gharibGuideCard.style.display = "block";
-        if (this.gharibGuideTitle) this.gharibGuideTitle.textContent = `Panduan Cara Baca: ${item.hukumName}`;
+        if (this.gharibGuideTitle) this.gharibGuideTitle.textContent = `Karakteristik: ${item.hukumName}`;
         if (this.gharibGuideRule) this.gharibGuideRule.textContent = item.ruleGuide;
         if (this.gharibGuideMouth) this.gharibGuideMouth.textContent = item.mouthGuide;
       } else {
@@ -765,7 +759,7 @@ class QuranApp {
       }
     }
 
-    // Render Clickable Verse Tokens (Bedah Ayat)
+    // Render Clickable Chips (Bedah Sejarah)
     if (!this.verseTokensContainer) return;
     this.verseTokensContainer.innerHTML = "";
 
@@ -785,31 +779,31 @@ class QuranApp {
 
   handleVerseTokenClick(token, buttonElement, currentItem) {
     if (buttonElement.classList.contains("correct-identified")) {
-      // Re-play audio if clicked again
-      window.audioManager.speakArabic(token.word);
+      window.audioManager.speakIndonesian(token.word);
       return;
     }
 
     if (token.isTarget) {
-      // SUCCESS! Correct word identified
+      // SUCCESS! Correct historical fact identified
       buttonElement.classList.add("correct-identified");
       window.audioManager.playSuccess();
-      window.audioManager.speakArabic(token.word);
+      window.audioManager.speakIndonesian(token.word);
 
-      this.addPoints("tajwid", 20, `Bedah Ayat: ${currentItem.title} (${token.word})`);
-      this.showToast(`🎯 Benar! +20 Poin! Anda menemukan hukum ${currentItem.hukumName}`, "gold");
+      this.addPoints("tajwid", 20, `Bedah Sejarah: ${currentItem.title} (${token.word})`);
+      this.showToast(`🎯 Tepat! +20 Poin! Anda menemukan fakta penting: ${token.word}`, "gold");
 
       // Show Detailed Explanation
       if (this.explanationCard) {
+        this.explanationCard.style.display = "block";
         this.explanationCard.classList.add("active");
         if (this.explanationTitle) {
-          this.explanationTitle.innerHTML = `<span>✅ Analisis Kaidah:</span> <strong>${token.word}</strong>`;
+          this.explanationTitle.innerHTML = `<span>✅ Analisis Fakta Sejarah:</span> <strong>${token.word}</strong>`;
         }
         if (this.explanationContent) {
           this.explanationContent.innerHTML = `
-            <p><strong>Hukum Tajwid:</strong> ${currentItem.hukumName} (${currentItem.beatsText})</p>
-            <p style="margin-top: 0.35rem;"><strong>Alasan / Sebab:</strong> ${token.reason}</p>
-            <p style="margin-top: 0.35rem; color: var(--primary-light);"><strong>Kaidah KMA 183:</strong> ${currentItem.ruleGuide}</p>
+            <p><strong>Spesialisasi & Bidang:</strong> ${currentItem.hukumName} (${currentItem.beatsText})</p>
+            <p style="margin-top: 0.35rem;"><strong>Penjelasan Historis:</strong> ${token.reason}</p>
+            <p style="margin-top: 0.35rem; color: var(--primary-dark);"><strong>Kaidah KMA 183:</strong> ${currentItem.ruleGuide}</p>
           `;
         }
       }
@@ -817,7 +811,7 @@ class QuranApp {
       // INCORRECT!
       buttonElement.classList.add("wrong-shake");
       window.audioManager.playError();
-      this.showToast(`Bukan kata ini. ${token.reason}`, "error");
+      this.showToast(`Bukan tokoh/penemuan ini. ${token.reason}`, "error");
 
       setTimeout(() => {
         buttonElement.classList.remove("wrong-shake");
@@ -825,15 +819,40 @@ class QuranApp {
     }
   }
 
-  // Metronome / Visualizer Ketukan
+  // Timeline Visualizer: 5 Tonggak Sejarah Abbasiyah
   resetMetronomeBeads() {
     if (!this.beadContainer) return;
     this.beadContainer.innerHTML = "";
-    for (let i = 0; i < this.metronomeBeats; i++) {
+    this.timelineSteps.forEach((st, i) => {
       const bead = document.createElement("div");
-      bead.className = "beat-bead";
+      bead.className = `beat-bead ${i === 0 ? "active" : ""}`;
       bead.id = `bead-${i}`;
+      bead.title = `${st.year}: ${st.title}`;
+      bead.addEventListener("click", () => {
+        this.selectTimelineStep(i);
+      });
       this.beadContainer.appendChild(bead);
+    });
+    this.updateTimelineGuideInfo(0);
+  }
+
+  selectTimelineStep(index) {
+    this.metronomeCurrentStep = index;
+    const beads = this.beadContainer ? this.beadContainer.querySelectorAll(".beat-bead") : [];
+    beads.forEach((b, idx) => {
+      b.classList.toggle("active", idx === index);
+    });
+    window.audioManager.playMetronomeTick(true);
+    this.updateTimelineGuideInfo(index);
+  }
+
+  updateTimelineGuideInfo(index) {
+    const st = this.timelineSteps[index] || this.timelineSteps[0];
+    if (this.gharibGuideCard) {
+      this.gharibGuideCard.style.display = "block";
+      if (this.gharibGuideTitle) this.gharibGuideTitle.textContent = `${st.year} • ${st.title}`;
+      if (this.gharibGuideRule) this.gharibGuideRule.textContent = st.desc;
+      if (this.gharibGuideMouth) this.gharibGuideMouth.textContent = `Tonggak Sejarah #${index + 1} dari 5 Periode Kejayaan Abbasiyah`;
     }
   }
 
@@ -847,28 +866,16 @@ class QuranApp {
 
   startMetronome() {
     this.isMetronomeRunning = true;
-    this.metronomeCurrentStep = 0;
     if (this.btnToggleMetronome) {
-      this.btnToggleMetronome.innerHTML = `<span>⏹</span> Hentikan Ketukan`;
+      this.btnToggleMetronome.innerHTML = `<span>⏹</span> Hentikan`;
       this.btnToggleMetronome.classList.add("btn-subtle");
-      this.btnToggleMetronome.classList.remove("btn-primary");
+      this.btnToggleMetronome.classList.remove("btn-emerald");
     }
 
-    const intervalMs = 600; // Tartil rhythm
+    const intervalMs = 2000;
     this.metronomeInterval = setInterval(() => {
-      // Clear all active beads
-      const beads = this.beadContainer.querySelectorAll(".beat-bead");
-      beads.forEach(b => b.classList.remove("active"));
-
-      const activeBead = document.getElementById(`bead-${this.metronomeCurrentStep}`);
-      if (activeBead) {
-        activeBead.classList.add("active");
-      }
-
-      const isAccent = this.metronomeCurrentStep === 0;
-      window.audioManager.playMetronomeTick(isAccent);
-
-      this.metronomeCurrentStep = (this.metronomeCurrentStep + 1) % this.metronomeBeats;
+      this.selectTimelineStep(this.metronomeCurrentStep);
+      this.metronomeCurrentStep = (this.metronomeCurrentStep + 1) % this.timelineSteps.length;
     }, intervalMs);
   }
 
@@ -878,13 +885,10 @@ class QuranApp {
       clearInterval(this.metronomeInterval);
       this.metronomeInterval = null;
     }
-    const beads = this.beadContainer ? this.beadContainer.querySelectorAll(".beat-bead") : [];
-    beads.forEach(b => b.classList.remove("active"));
-
     if (this.btnToggleMetronome) {
-      this.btnToggleMetronome.innerHTML = `<span>▶</span> Mulai Ketukan Visualizer`;
+      this.btnToggleMetronome.innerHTML = `<span>▶</span> Jalankan Linimasa`;
       this.btnToggleMetronome.classList.remove("btn-subtle");
-      this.btnToggleMetronome.classList.add("btn-primary");
+      this.btnToggleMetronome.classList.add("btn-emerald");
     }
   }
 
@@ -893,7 +897,7 @@ class QuranApp {
     if (this.btnStartRecord) this.btnStartRecord.disabled = true;
     if (this.btnStopRecord) this.btnStopRecord.disabled = false;
     if (this.recDot) this.recDot.classList.add("active");
-    if (this.recStatusText) this.recStatusText.textContent = "Merekam Suara Tilawah...";
+    if (this.recStatusText) this.recStatusText.textContent = "Merekam Presentasi Sejarah...";
 
     window.audioManager.playTap();
     await window.audioManager.startRecording(this.recordCanvas, (audioUrl) => {
@@ -901,7 +905,7 @@ class QuranApp {
         this.userAudioPlayer.src = audioUrl;
         this.userAudioPlayer.style.display = "block";
       }
-      this.showToast("Rekaman selesai! Anda dapat memutar ulang tilawah Anda.", "success");
+      this.showToast("Rekaman selesai! Anda dapat memutar ulang presentasi sejarah Anda.", "success");
     });
   }
 
@@ -916,7 +920,7 @@ class QuranApp {
   }
 
   // ==========================================================================
-  // MENU 2: ARENA TAHFIDZ & MUFRADAT
+  // TAB 2: ARENA SEJARAH: SPEED MATCHING & PUZZLE KRONOLOGI
   // ==========================================================================
   startSpeedMatchGame() {
     const currentSet = window.APP_DATA.tahfidz.matchingSets[this.activeMatchSetIndex] || window.APP_DATA.tahfidz.matchingSets[0];
@@ -958,14 +962,14 @@ class QuranApp {
       });
     }
 
-    // Start countdown
+    // Countdown
     this.matchTimerInterval = setInterval(() => {
       this.matchTimeLeft--;
       if (this.matchTimerElem) this.matchTimerElem.textContent = `${this.matchTimeLeft}s`;
 
       if (this.matchTimeLeft <= 0) {
         clearInterval(this.matchTimerInterval);
-        this.showToast("Waktu habis! Coba lagi untuk melatih kecepatan hafalanmu.", "error");
+        this.showToast("Waktu habis! Coba lagi untuk melatih kecepatan ingatan sejarahmu.", "error");
       }
     }, 1000);
   }
@@ -978,7 +982,7 @@ class QuranApp {
       if (this.selectedArabCard) this.selectedArabCard.elem.classList.remove("selected");
       this.selectedArabCard = { elem: cardElement, pairId: pairData.id, arText: pairData.ar };
       cardElement.classList.add("selected");
-      window.audioManager.speakArabic(pairData.ar);
+      window.audioManager.speakIndonesian(pairData.ar);
     } else {
       if (this.selectedIndoCard) this.selectedIndoCard.elem.classList.remove("selected");
       this.selectedIndoCard = { elem: cardElement, pairId: pairData.id };
@@ -996,7 +1000,7 @@ class QuranApp {
 
         window.audioManager.playSuccess();
         this.matchedPairsCount++;
-        this.addPoints("tahfidz", 15, `Pasangkan Mufradat: ${this.selectedArabCard.arText}`);
+        this.addPoints("tahfidz", 15, `Matching Sejarah: ${this.selectedArabCard.arText}`);
 
         if (this.matchScoreElem) this.matchScoreElem.textContent = `${this.matchedPairsCount}/6`;
 
@@ -1007,8 +1011,8 @@ class QuranApp {
           clearInterval(this.matchTimerInterval);
           window.audioManager.playCelebrate();
           const bonus = Math.max(10, Math.floor(this.matchTimeLeft / 2));
-          this.addPoints("tahfidz", bonus, `Bonus Kecepatan Matching Game`);
-          this.showToast(`🎉 Sempurna! Semua mufradat cocok! +${bonus} Poin Bonus Waktu!`, "gold");
+          this.addPoints("tahfidz", bonus, `Bonus Kecepatan Matching Sejarah`);
+          this.showToast(`🎉 Sempurna! Semua istilah sejarah cocok! +${bonus} Poin Bonus Waktu!`, "gold");
         }
       } else {
         // MISMATCH
@@ -1027,7 +1031,7 @@ class QuranApp {
     }
   }
 
-  // Puzzle Susun Ayat & Matan Hadits
+  // Puzzle Susun Kronologi & Kutipan Sejarah
   setupPuzzle() {
     const currentPuzzle = window.APP_DATA.tahfidz.puzzles[this.activePuzzleIndex] || window.APP_DATA.tahfidz.puzzles[0];
     this.puzzleAnswerList = [];
@@ -1040,17 +1044,15 @@ class QuranApp {
   renderPuzzleBoxes() {
     if (!this.puzzleAnswerBox || !this.puzzlePoolBox) return;
 
-    // Render Answer Container (RTL sequence)
     this.puzzleAnswerBox.innerHTML = "";
     if (this.puzzleAnswerList.length === 0) {
-      this.puzzleAnswerBox.innerHTML = `<span style="color: var(--text-light); font-size: 0.9rem; font-style: italic;">Klik kata di bawah untuk menyusun di sini...</span>`;
+      this.puzzleAnswerBox.innerHTML = `<span style="color: var(--text-light); font-size: 0.9rem; font-style: italic;">Klik kepingan di bawah untuk menyusun di sini...</span>`;
     } else {
       this.puzzleAnswerList.forEach((word, idx) => {
         const chip = document.createElement("button");
         chip.className = "puzzle-chip in-answer";
         chip.textContent = word;
         chip.addEventListener("click", () => {
-          // Return word to pool
           this.puzzleAnswerList.splice(idx, 1);
           this.puzzlePoolList.push(word);
           window.audioManager.playTap();
@@ -1060,17 +1062,15 @@ class QuranApp {
       });
     }
 
-    // Render Pool Container
     this.puzzlePoolBox.innerHTML = "";
     this.puzzlePoolList.forEach((word, idx) => {
       const chip = document.createElement("button");
       chip.className = "puzzle-chip";
       chip.textContent = word;
       chip.addEventListener("click", () => {
-        // Move word to answer
         this.puzzlePoolList.splice(idx, 1);
         this.puzzleAnswerList.push(word);
-        window.audioManager.speakArabic(word);
+        window.audioManager.speakIndonesian(word);
         window.audioManager.playTap();
         this.renderPuzzleBoxes();
       });
@@ -1083,7 +1083,7 @@ class QuranApp {
     const correctSeq = currentPuzzle.correctSequence;
 
     if (this.puzzleAnswerList.length !== correctSeq.length) {
-      this.showToast("Susun seluruh potongan kata terlebih dahulu sebelum memeriksa.", "error");
+      this.showToast("Susun seluruh kepingan sebelum memeriksa.", "error");
       window.audioManager.playError();
       return;
     }
@@ -1098,20 +1098,16 @@ class QuranApp {
 
     if (isCorrect) {
       window.audioManager.playCelebrate();
-      if (currentPuzzle.ayahs && currentPuzzle.ayahs.length) {
-        window.audioManager.playQuranAyahs(currentPuzzle.ayahs, {
-          title: currentPuzzle.title,
-          subtitle: `${currentPuzzle.surahName || ''} • Syaikh Misyari Rasyid`
-        });
-        this.showToast(`🏆 Tepat Sekali! Murottal Syaikh Misyari Rasyid diputar (+25 Poin)`, "gold");
-      } else {
-        window.audioManager.speakArabic(correctSeq.join(" "));
-        this.showToast(`🏆 Masya Allah, Tepat Sekali! Susunan lafadz benar (+25 Poin)`, "gold");
-      }
+      const narrationText = `${currentPuzzle.title}. ${currentPuzzle.hukumNotes}`;
+      window.audioManager.playHistoryNarration(narrationText, {
+        title: currentPuzzle.title,
+        subtitle: "Tantangan Sejarah Selesai"
+      });
+      this.showToast(`🏆 Masya Allah, Tepat Sekali! Susunan sejarah benar (+25 Poin)`, "gold");
       this.addPoints("tahfidz", 25, `Puzzle Susun: ${currentPuzzle.title}`);
     } else {
       window.audioManager.playError();
-      this.showToast("Susunan kata belum tepat. Perhatikan kaidah urutan artinya.", "error");
+      this.showToast("Susunan kepingan belum tepat. Perhatikan kaidah urutan waktu dan logikanya.", "error");
     }
   }
 
@@ -1120,7 +1116,6 @@ class QuranApp {
     if (!this.leaderboardBody) return;
     this.leaderboardBody.innerHTML = "";
 
-    // Merge simulated classmates with active student
     const allStudents = [
       ...window.APP_DATA.tahfidz.classmates,
       {
@@ -1164,19 +1159,22 @@ class QuranApp {
   }
 
   // ==========================================================================
-  // MENU 3: SIMULATOR KONTEKSTUAL AI (HOTS)
+  // TAB 3: SIMULATOR KONTEKSTUAL AI: DILEMA KEBIJAKAN ABBASIYAH (HOTS)
   // ==========================================================================
   renderActiveScenario() {
     const scen = window.APP_DATA.scenarios[this.activeScenarioIndex] || window.APP_DATA.scenarios[0];
     this.selectedDecisionKey = null;
 
-    if (this.scenarioDalilRef) this.scenarioDalilRef.textContent = `Landasan Dalil: ${scen.dalilRef}`;
+    if (this.scenarioDalilRef) this.scenarioDalilRef.textContent = `Landasan Nilai: ${scen.dalilRef}`;
     if (this.scenarioArabicDalil) this.scenarioArabicDalil.textContent = scen.arabicDalil;
     if (this.scenarioNarrative) this.scenarioNarrative.textContent = scen.background;
     if (this.scenarioQuestion) this.scenarioQuestion.textContent = scen.question;
 
     if (this.argumentTextarea) this.argumentTextarea.value = "";
-    if (this.aiResultCard) this.aiResultCard.classList.remove("active");
+    if (this.aiResultCard) {
+      this.aiResultCard.classList.remove("active");
+      this.aiResultCard.style.display = "none";
+    }
 
     // Render Options A, B, C
     if (this.decisionOptionsContainer) {
@@ -1222,7 +1220,7 @@ class QuranApp {
     }
 
     window.audioManager.playTap();
-    this.showToast("✨ Contoh Jawaban Ideal Berbasis Dalil Berhasil Dimuat!", "gold");
+    this.showToast("✨ Contoh Analisis Kebijakan Ideal Dimuat!", "gold");
   }
 
   async evaluateHotsAnswer() {
@@ -1236,12 +1234,11 @@ class QuranApp {
     }
 
     if (argumentText.length < 15) {
-      this.showToast("Tuliskan argumen dan dalil pendukung lebih lengkap (minimal 15 karakter).", "error");
+      this.showToast("Tuliskan argumen analisis sejarah lebih lengkap (minimal 15 karakter).", "error");
       window.audioManager.playError();
       return;
     }
 
-    // Set loading state
     if (this.btnSubmitAi) {
       this.btnSubmitAi.disabled = true;
       this.btnSubmitAi.innerHTML = `<span>⏳</span> Menganalisis dengan AI...`;
@@ -1253,7 +1250,6 @@ class QuranApp {
       let evaluationResult = null;
 
       if (apiKey) {
-        // Attempt Gemini API call
         try {
           evaluationResult = await this.callGeminiApi(apiKey, scen, this.selectedDecisionKey, argumentText);
         } catch (apiErr) {
@@ -1261,15 +1257,13 @@ class QuranApp {
           evaluationResult = this.runSmartHeuristicEvaluator(scen, this.selectedDecisionKey, argumentText);
         }
       } else {
-        // Smart Heuristic Evaluator fallback
-        await new Promise(r => setTimeout(r, 700)); // Natural thinking delay
+        await new Promise(r => setTimeout(r, 700));
         evaluationResult = this.runSmartHeuristicEvaluator(scen, this.selectedDecisionKey, argumentText);
       }
 
       this.displayAiEvaluationResult(evaluationResult);
     } catch (e) {
       console.error(e);
-      this.showToast("Terjadi kendala analisis, mencoba evaluasi cerdas lokal...", "warning");
       const fallback = this.runSmartHeuristicEvaluator(scen, this.selectedDecisionKey, argumentText);
       this.displayAiEvaluationResult(fallback);
     } finally {
@@ -1284,19 +1278,19 @@ class QuranApp {
   async callGeminiApi(apiKey, scenario, decisionKey, userArgument) {
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
-    const systemPrompt = `Anda adalah seorang Ustadz Penilai dan Pakar Kurikulum Al-Qur'an Hadits MTs (berdasarkan KMA No. 183 Tahun 2019).
-Evaluasilah respons penalaran HOTS dan sikap afektif siswa MTs terhadap studi kasus nyata berikut:
+    const systemPrompt = `Anda adalah seorang Guru dan Pakar Kurikulum Sejarah Kebudayaan Islam (SKI) MTs berdasarkan KMA No. 183 Tahun 2019.
+Evaluasilah respons penalaran HOTS dan wawasan kepemimpinan siswa MTs terhadap studi kasus sejarah Dinasti Abbasiyah berikut:
 Skenario: ${scenario.title} (${scenario.dalilRef})
 Pilihan Keputusan Siswa: Pilihan ${decisionKey}
-Argumen & Dalil Siswa: "${userArgument}"
+Argumen Siswa: "${userArgument}"
 
 Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan dengan skema:
 {
   "score": number (0-100),
-  "attitudeEvaluation": string (penilaian sikap siswa: Sangat Baik / Baik / Cukup),
-  "dalilEvaluation": string (analisis kekuatan dalil dan pemahamannya terhadap ayat/hadits),
-  "hotsReflection": string (analisis kedalaman refleksi penalaran tingkat tinggi/HOTS),
-  "ustadzFeedback": string (pesan apresiasi dan bimbingan akhlak dari Ustadz AI)
+  "attitudeEvaluation": string (penilaian sikap kepemimpinan siswa),
+  "dalilEvaluation": string (analisis kekuatan fakta dan hikmah sejarah),
+  "hotsReflection": string (analisis kedalaman refleksi abad ke-21 / HOTS),
+  "ustadzFeedback": string (pesan apresiasi dan penguatan materi dari Guru Sejarah AI)
 }`;
 
     const response = await fetch(endpoint, {
@@ -1319,29 +1313,25 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!rawText) throw new Error("Empty response from Gemini");
 
-    // Clean JSON markdown if wrapped
     const cleanedJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
     return JSON.parse(cleanedJson);
   }
 
-  // Smart Heuristic Evaluator (Guaranteed 100% offline & foolproof fallback)
+  // Smart Heuristic Evaluator (100% offline ready)
   runSmartHeuristicEvaluator(scenario, decisionKey, userArgument) {
     let score = 0;
     const lowerArg = userArgument.toLowerCase();
 
-    // 1. Decision choice evaluation (Option B is ideal)
     if (decisionKey === "B") {
       score += 50;
     } else {
       score += 20;
     }
 
-    // 2. Argument length & depth
     if (userArgument.length > 250) score += 20;
     else if (userArgument.length > 100) score += 12;
     else score += 6;
 
-    // 3. Keyword matching based on scenario dalil criteria
     let matchedKeywords = 0;
     scenario.keywords.forEach(kw => {
       if (lowerArg.includes(kw.toLowerCase())) {
@@ -1352,22 +1342,21 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     score += Math.min(30, matchedKeywords * 6);
     score = Math.min(100, Math.max(40, score));
 
-    // Dynamic feedback generation
     let attitudeEvaluation = "Baik";
     let dalilEvaluation = "Relevan dan Cukup Mendalam";
-    let hotsReflection = "Menunjukkan Penalaran Konseptual yang Baik";
-    let ustadzFeedback = "Alhamdulillah, pemahaman antum terhadap kandungan ayat/hadits sudah terarah. Terus amalkan nilai kemuliaan dan kepedulian sosial ini dalam keseharian madrasah.";
+    let hotsReflection = "Menunjukkan Penalaran Historis Konseptual yang Baik";
+    let ustadzFeedback = "Alhamdulillah, pemahaman antum terhadap sejarah kepemimpinan Abbasiyah sudah sangat baik. Terus teladani spirit kecintaan terhadap ilmu pengetahuan ini.";
 
     if (score >= 85) {
-      attitudeEvaluation = "Sangat Baik (Mumtaz - Berkarakter Qur'ani)";
-      dalilEvaluation = `Sangat Kuat: Mengaitkan hikmah ${scenario.dalilRef} secara tepat dan kontekstual.`;
-      hotsReflection = "Penalaran HOTS Unggul: Mampu membedakan orientasi duniawi sesaat dengan nilai ukhrawi serta keadilan sosial.";
-      ustadzFeedback = `Barakallahu fiik, ananda! Argumen antum mencerminkan akhlak mulia dan penalaran kritis yang matang. Pilihan antum selaras dengan ruh KMA 183 Tahun 2019.`;
+      attitudeEvaluation = "Sangat Baik (Bervisi Peradaban Islami & Intelektual)";
+      dalilEvaluation = `Sangat Kuat: Mengaitkan hikmah ${scenario.dalilRef} secara akurat dan kontekstual.`;
+      hotsReflection = "Penalaran HOTS Unggul: Mampu menghubungkan peristiwa abad keemasan Islam dengan tantangan generasi muda era modern.";
+      ustadzFeedback = `Barakallahu fiik, ananda! Analisis antum menunjukkan kedewasaan berpikir sejarah yang matang dan selaras dengan target KMA 183 Tahun 2019.`;
     } else if (score < 70) {
-      attitudeEvaluation = "Cukup (Perlu Bimbingan Penguatan Sikap)";
-      dalilEvaluation = `Masih Perlu Penguatan: Hubungkan argumen dengan teks firman Allah dalam ${scenario.dalilRef}.`;
-      hotsReflection = "Perlu memperdalam refleksi agar tidak terpancing keputusan instan yang pasif atau konsumtif.";
-      ustadzFeedback = `Terus semangat belajar, ananda. Coba baca kembali terjemahan dan asbabun nuzul dalil di atas agar keputusannya semakin mantap.`;
+      attitudeEvaluation = "Cukup (Perlu Penguatan Visi Peradaban)";
+      dalilEvaluation = `Masih Perlu Penguatan: Sertakan fakta sejarah tentang Bayt al-Hikmah dan peranan para khalifah.`;
+      hotsReflection = "Perlu memperdalam refleksi agar tidak terpaku pada pilihan pragmatis jangka pendek.";
+      ustadzFeedback = `Terus semangat belajar, ananda. Coba cermati kembali modul Galeri Kejayaan tentang kebijakan para khalifah Abbasiyah.`;
     }
 
     return {
@@ -1394,6 +1383,7 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     if (evalHots) evalHots.textContent = result.hotsReflection;
     if (ustadzNotes) ustadzNotes.textContent = `"${result.ustadzFeedback}"`;
 
+    this.aiResultCard.style.display = "block";
     this.aiResultCard.classList.add("active");
     this.aiResultCard.scrollIntoView({ behavior: 'smooth' });
 
@@ -1403,14 +1393,13 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
   }
 
   // ==========================================================================
-  // MENU 4: PANEL GURU & REKAP NILAI
+  // TAB 4: PANEL GURU & REKAP NILAI SISWA
   // ==========================================================================
   renderTeacherPanel() {
     if (this.teacherStudentName) this.teacherStudentName.textContent = this.student.name;
     if (this.teacherStudentClass) this.teacherStudentClass.textContent = this.student.grade;
     if (this.teacherTotalScore) this.teacherTotalScore.textContent = `${this.student.score} XP`;
 
-    // Predikat calculation
     let predikat = "Jayyid (Baik)";
     if (this.student.score >= 250) predikat = "Mumtaz (Sangat Baik / Istimewa)";
     else if (this.student.score >= 150) predikat = "Jayyid Jiddan (Amat Baik)";
@@ -1422,7 +1411,6 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     if (this.teacherTahfidzScore) this.teacherTahfidzScore.textContent = `${this.student.tahfidzScore} Pts`;
     if (this.teacherHotsScore) this.teacherHotsScore.textContent = `${this.student.hotsScore} Pts`;
 
-    // Render Assessment Log Table
     if (this.teacherAssessmentsBody) {
       this.teacherAssessmentsBody.innerHTML = "";
       if (this.student.assessments.length === 0) {
@@ -1444,26 +1432,25 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
 
   // Export to CSV / Excel
   exportCsv() {
-    const bom = "\uFEFF"; // UTF-8 BOM for Microsoft Excel in Windows
+    const bom = "\uFEFF";
     let csv = `${bom}No,Nama Siswa,Kelas,Modul / Aktivitas,Poin,Waktu Asesmen,Keterangan\n`;
 
     this.student.assessments.forEach((item, idx) => {
       csv += `"${idx + 1}","${this.student.name}","${this.student.grade}","${item.module}","${item.score}","${item.date}","${item.notes}"\n`;
     });
 
-    // Summary line
     csv += `\n"TOTAL","${this.student.name}","${this.student.grade}","Akumulasi Nilai","${this.student.score}","","Predikat: ${this.teacherPredikat ? this.teacherPredikat.textContent : 'Mumtaz'}"\n`;
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", `Rekap_Nilai_AlQuran_Hadits_${this.student.name.replace(/\s+/g, '_')}.csv`);
+    link.setAttribute("download", `Rekap_Nilai_SKI_Kelas8_Dinasti_Abbasiyah_${this.student.name.replace(/\s+/g, '_')}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    this.showToast("📄 File Rekap CSV/Excel berhasil diunduh!", "success");
+    this.showToast("📄 File Rekap CSV/Excel SKI berhasil diunduh!", "success");
   }
 
   // API Status & Connection Test
@@ -1597,19 +1584,17 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     }, 3500);
   }
 
-  // ==========================================================================
-  // SYAIKH MISYARI RASYID QURAN AUDIO HELPERS
-  // ==========================================================================
-
+  // Play audio from Focus Topic list on Home
   playSurahAudio(surahId) {
     const list = window.APP_DATA.surahList || [];
     const found = list.find(s => s.id === surahId);
-    if (found && found.ayahs && found.ayahs.length) {
-      window.audioManager.playQuranAyahs(found.ayahs, {
+    if (found) {
+      const narrationText = `${found.title}. ${found.subtitle}. Dinasti Abbasiyah mencatatkan sejarah emas kemajuan peradaban Islam di pentas dunia.`;
+      window.audioManager.playHistoryNarration(narrationText, {
         title: found.title,
-        subtitle: `${found.subtitle} • Syaikh Misyari Rasyid`
+        subtitle: found.subtitle
       });
-      this.showToast(`🎙️ Memutar Murottal Syaikh Misyari Rasyid: ${found.title}`, "gold");
+      this.showToast(`🏛️ Memutar Narasi: ${found.title}`, "gold");
     }
   }
 
@@ -1631,24 +1616,22 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
       if (gapBtnPlayPause) gapBtnPlayPause.textContent = "⏸️";
 
       if (detail.track) {
-        if (gapTrackTitle) gapTrackTitle.textContent = detail.track.title || "Lafadz Al-Qur'an";
+        if (gapTrackTitle) gapTrackTitle.textContent = detail.track.title || "Narasi Sejarah Islam";
         if (gapReciterName) {
-          const ayahBadge = detail.playlistLength > 1 ? ` (Ayat ${detail.playlistIndex + 1}/${detail.playlistLength})` : "";
-          gapReciterName.textContent = `${detail.reciter ? detail.reciter.name : "Syaikh Misyari Rasyid"}${ayahBadge}`;
+          gapReciterName.textContent = detail.reciter ? detail.reciter.name : "Edukator Sejarah Islam";
         }
       }
 
       if (btnPlayFullVerse) btnPlayFullVerse.classList.add("playing");
       if (playIconSpan) playIconSpan.textContent = "⏸️";
-      if (playTextSpan) playTextSpan.textContent = "Jeda Tartil";
+      if (playTextSpan) playTextSpan.textContent = "Jeda Narasi";
 
-      // Highlight active surah button
       document.querySelectorAll(".btn-surah-play").forEach(btn => btn.classList.remove("playing"));
     } else if (detail.event === "pause") {
       if (gapBtnPlayPause) gapBtnPlayPause.textContent = "▶";
       if (btnPlayFullVerse) btnPlayFullVerse.classList.remove("playing");
       if (playIconSpan) playIconSpan.textContent = "▶";
-      if (playTextSpan) playTextSpan.textContent = "Lanjutkan Tartil";
+      if (playTextSpan) playTextSpan.textContent = "Lanjutkan Narasi";
     } else if (detail.event === "timeupdate") {
       const cur = detail.currentTime || 0;
       const dur = detail.duration || 0;
@@ -1664,7 +1647,7 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
       if (gapCurrentTime) gapCurrentTime.textContent = "00:00";
       if (btnPlayFullVerse) btnPlayFullVerse.classList.remove("playing");
       if (playIconSpan) playIconSpan.textContent = "▶";
-      if (playTextSpan) playTextSpan.textContent = "Tartil Misyari Rasyid";
+      if (playTextSpan) playTextSpan.textContent = "Putar Narasi Sejarah";
 
       if (detail.event === "stop" && globalPlayer) {
         globalPlayer.style.display = "none";
@@ -1672,7 +1655,7 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
 
       document.querySelectorAll(".btn-surah-play").forEach(btn => btn.classList.remove("playing"));
     } else if (detail.event === "error") {
-      this.showToast("Gagal memutar audio online. Menyiapkan alternatif suara sistem...", "error");
+      this.showToast("Pemberitahuan pemutaran audio edukasi.", "warning");
       if (btnPlayFullVerse) btnPlayFullVerse.classList.remove("playing");
     }
   }
