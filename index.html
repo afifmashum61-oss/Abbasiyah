@@ -104,50 +104,8 @@
            TAB 0: SCREEN 1 - HOME DASHBOARD
            ==================================================================== -->
       <section id="tab-beranda" class="tab-pane active">
-        <!-- 4 Colorful Feature Tiles (Top Grid) -->
-        <div class="feature-tiles-grid">
-          <!-- Tile 1: Galeri Ilmuwan (Cyan) -->
-          <div class="feature-tile-card tile-cyan" onclick="window.quranApp.switchTab('tajwid')">
-            <div class="tile-icon-box">🏛️</div>
-            <div class="tile-info">
-              <h4>Galeri Ilmuwan</h4>
-              <div class="tile-link">Jelajahi &gt;</div>
-            </div>
-          </div>
-
-          <!-- Tile 2: Arena Sejarah (Pink) -->
-          <div class="feature-tile-card tile-pink" onclick="window.quranApp.switchTab('tahfidz')">
-            <div class="tile-icon-box">⚔️</div>
-            <div class="tile-info">
-              <h4>Arena Sejarah</h4>
-              <div class="tile-progress-bar">
-                <div class="tile-progress-fill" style="width: 75%;"></div>
-              </div>
-              <div class="tile-link">Tantangan &gt;</div>
-            </div>
-          </div>
-
-          <!-- Tile 3: Bayt al-Hikmah (Purple) -->
-          <div class="feature-tile-card tile-purple" onclick="window.quranApp.switchTab('tajwid'); window.quranApp.switchTajwidSub('gharib');">
-            <div class="tile-icon-box">📚</div>
-            <div class="tile-info">
-              <h4>Bayt al-Hikmah</h4>
-              <div class="tile-link">Pusat Riset &gt;</div>
-            </div>
-          </div>
-
-          <!-- Tile 4: Simulator AI (Mint) -->
-          <div class="feature-tile-card tile-mint" onclick="window.quranApp.switchTab('ai_simulator')">
-            <div class="tile-icon-box">🤖</div>
-            <div class="tile-info">
-              <h4>Simulator AI</h4>
-              <div class="tile-link">Dilema HOTS &gt;</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Responsive Two Column Grid -->
-        <div class="responsive-two-col-grid home-content-grid">
+        <!-- Top Row: Banner Puncak Masa Keemasan Islam & 3D Showcase -->
+        <div class="responsive-two-col-grid home-content-grid" style="margin-bottom: 1.25rem;">
           <div class="grid-col-left">
             <!-- "Featured Card" Featured Emerald Wave Card -->
             <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')" style="height: 100%; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center;">
@@ -192,6 +150,48 @@
               <button class="btn btn-subtle btn-sm" onclick="window.quranApp.switchTab('guru')" style="font-size: 0.72rem;">
                 Rekap Nilai →
               </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Row: 4 Colorful Feature Buttons Grid -->
+        <div class="feature-tiles-grid">
+          <!-- Tile 1: Galeri Ilmuwan (Cyan) -->
+          <div class="feature-tile-card tile-cyan" onclick="window.quranApp.switchTab('tajwid')">
+            <div class="tile-icon-box">🏛️</div>
+            <div class="tile-info">
+              <h4>Galeri Ilmuwan</h4>
+              <div class="tile-link">Jelajahi &gt;</div>
+            </div>
+          </div>
+
+          <!-- Tile 2: Arena Sejarah (Pink) -->
+          <div class="feature-tile-card tile-pink" onclick="window.quranApp.switchTab('tahfidz')">
+            <div class="tile-icon-box">⚔️</div>
+            <div class="tile-info">
+              <h4>Arena Sejarah</h4>
+              <div class="tile-progress-bar">
+                <div class="tile-progress-fill" style="width: 75%;"></div>
+              </div>
+              <div class="tile-link">Tantangan &gt;</div>
+            </div>
+          </div>
+
+          <!-- Tile 3: Bayt al-Hikmah (Purple) -->
+          <div class="feature-tile-card tile-purple" onclick="window.quranApp.switchTab('tajwid'); window.quranApp.switchTajwidSub('gharib');">
+            <div class="tile-icon-box">📚</div>
+            <div class="tile-info">
+              <h4>Bayt al-Hikmah</h4>
+              <div class="tile-link">Pusat Riset &gt;</div>
+            </div>
+          </div>
+
+          <!-- Tile 4: Simulator AI (Mint) -->
+          <div class="feature-tile-card tile-mint" onclick="window.quranApp.switchTab('ai_simulator')">
+            <div class="tile-icon-box">🤖</div>
+            <div class="tile-info">
+              <h4>Simulator AI</h4>
+              <div class="tile-link">Dilema HOTS &gt;</div>
             </div>
           </div>
         </div>
