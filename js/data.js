@@ -91,6 +91,80 @@ const APP_DATA = {
     ]
   },
 
+  // 1.5 Galeri Visual: 7 Potret Mahakarya Kejayaan Dinasti Abbasiyah
+  gallery: [
+    {
+      id: 1,
+      image: "images/gambar_1.jpg",
+      title: "Bayt al-Hikmah & Gerakan Penerjemahan Akbar",
+      category: "Perpustakaan & Riset Sains",
+      icon: "📚",
+      era: "Baghdad • Harun Ar-Rasyid & Al-Ma'mun (786–833 M)",
+      desc: "Bayt al-Hikmah (Rumah Kebijaksanaan) didirikan oleh Khalifah Harun Ar-Rasyid dan mencapai masa keemasannya di bawah Khalifah Al-Ma'mun. Lembaga ini berfungsi sebagai perpustakaan raksasa, balai penerjemahan, dan akademi riset di mana naskah-naskah kuno Yunani, Persia, dan India diterjemahkan ke dalam bahasa Arab. Para penerjemah terkemuka seperti Hunayn bin Ishaq dianugerahi timbangan emas seberat buku yang berhasil diterjemahkan.",
+      highlight: "Pusat transmisi keilmuan dunia yang menyalakan fajar pencerahan sains global."
+    },
+    {
+      id: 2,
+      image: "images/gambar_2.jpg",
+      title: "Istana Khilafah Abbasiyah & Diplomasi Internasional",
+      category: "Pemerintahan & Diplomasi Global",
+      icon: "👑",
+      era: "Madinatussalam (Kota Baghdad) • Abad ke-8 & 9 M",
+      desc: "Istana kekhalifahan di Baghdad menjadi poros politik dan diplomasi paling disegani di dunia. Khalifah memimpin dengan tata kelola pemerintahan yang berwibawa, menerima delegasi diplomatik dari Kekaisaran Romawi Timur (Bizantium) hingga Dinasti Tang Tiongkok, serta mengutus perwakilan diplomasi bersejarah kepada Raja Charlemagne di Aachen, Eropa Barat dengan membawakan hadiah jam air mekanik canggih.",
+      highlight: "Hubungan diplomasi berwibawa yang menghubungkan peradaban Barat dan Timur."
+    },
+    {
+      id: 3,
+      image: "images/gambar_3.jpg",
+      title: "Pelabuhan Basra & Jalur Niaga Samudra",
+      category: "Perdagangan Laut & Navigasi Maritim",
+      icon: "⛵",
+      era: "Pelabuhan Basra & Teluk Persia",
+      desc: "Pelabuhan Basra di muara Sungai Tigris dan Eufrat berkembang pesat menjadi gerbang perdagangan maritim antardaulat. Kapal-kapal dagang muslim berlayar mengarungi Teluk Persia, Laut Arab, Samudra Hindia, hingga ke pelabuhan Nusantara dan Guangzhou (Tiongkok). Jalur sutra laut ini membawa kemakmuran sekaligus menyebarkan nilai-nilai Islam yang mengedepankan etika kejujuran dan toleransi.",
+      highlight: "Armada perniagaan samudra penghubung rute perdagangan dunia."
+    },
+    {
+      id: 4,
+      image: "images/gambar_4.jpg",
+      title: "Perekonomian & Pusat Perniagaan Kota Baghdad",
+      category: "Pasar Tradisional & Kemakmuran Rakyat",
+      icon: "🪙",
+      era: "Pasar Sentral Karkh, Baghdad",
+      desc: "Pasar-pasar (Suq) di kota Baghdad menjadi pusat pertukaran komoditas teramai di dunia. Berbagai barang berharga seperti rempah-rempah nusantara, sutra Tiongkok, kertas Baghdad, kain tenun, minyak wangi, dan perhiasan ditransaksikan secara tertib. Perekonomian ditopang stabilitas mata uang Dinar emas dan Dirham perak, serta sistem perbankan syariah awal berupa suftajah (surat kredit/cek) dan hawalah.",
+      highlight: "Pusat perniagaan kosmopolitan dengan sistem transaksi perbankan maju."
+    },
+    {
+      id: 5,
+      image: "images/gambar_5.jpg",
+      title: "Observatorium Astronomi & Instrumen Astrolab",
+      category: "Ilmu Falak & Sains Observasi",
+      icon: "🔭",
+      era: "Observatorium Syammasiyyah (Baghdad)",
+      desc: "Khalifah Al-Ma'mun mendirikan observatorium bintang pertama di dunia Islam di Syammasiyyah. Para ilmuwan falak seperti Al-Khawarizmi dan Al-Farghani menggunakan Astrolab kuningan rumit untuk memetakan rasi bintang, menghitung keliling bumi dengan akurasi mengagumkan, serta menetapkan koordinat arah kiblat dan waktu salat yang menjadi rujukan navigasi dunia selama berabad-abad.",
+      highlight: "Puncak riset falak dan teknologi instrumen ilmiah tercanggih pada zamannya."
+    },
+    {
+      id: 6,
+      image: "images/gambar_6.jpg",
+      title: "Bimaristan: Rumah Sakit Islam & Pendidikan Kedokteran",
+      category: "Kedokteran Klinis & Pelayanan Kesehatan",
+      icon: "🏥",
+      era: "Bimaristan Al-Adudi, Baghdad & Rayy",
+      desc: "Bimaristan merupakan cikal bakal rumah sakit modern yang dibangun oleh para khalifah Abbasiyah. Rumah sakit ini menyediakan pelayanan rawat inap gratis bagi semua golongan masyarakat tanpa membedakan suku maupun agama. Memiliki bangsal terpisah untuk berbagai penyakit, apotek farmasi, catatan rekam medis pasien, serta ruang kuliah praktik bagi mahasiswa kedokteran yang dibimbing langsung oleh mahaguru Ibnu Sina dan Ar-Razi.",
+      highlight: "Pelopor etika medis, perawatan humanis gratis, dan sistem karantina klinis."
+    },
+    {
+      id: 7,
+      image: "images/gambar_7.jpg",
+      title: "Majelis Sastra, Syair, & Seni Budaya Islami",
+      category: "Sastra Arab, Musik, & Seni Peradaban",
+      icon: "🎶",
+      era: "Taman Istana Baghdad • Era Harun Ar-Rasyid",
+      desc: "Peradaban Abbasiyah menjunjung tinggi kehalusan budi pekerti melalui apresiasi sastra dan seni. Di taman-taman istana yang dihiasi air mancur mekanis dan lentera malam, para penyair, sastrawan, dan musisi berkumpul dalam majelis munadzarah. Tokoh seperti Ishaq Al-Mawsili dan Ziryab menciptakan teori nada, notasi musik, dan menyempurnakan alat musik 'Ud (gambus) yang kemudian melahirkan instrumen lute dan gitar di Andalusia dan Eropa.",
+      highlight: "Perpaduan luhur antara seni sastra, keindahan bahasa Arab, dan estetika peradaban."
+    }
+  ],
+
   // 2. Data Galeri Kejayaan: Cendekiawan Muslim & Pusat Peradaban Abbasiyah
   tajwid: {
     // Kategori 1: Cendekiawan & Ilmuwan Muslim (Sains & Agama)

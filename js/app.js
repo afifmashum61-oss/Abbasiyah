@@ -41,7 +41,8 @@ class QuranApp {
 
     // Active UI states
     this.activeTab = "beranda";
-    this.activeTajwidSub = "mad";
+    this.activeTajwidSub = "visual";
+    this.activeLightboxItem = null;
     this.activeTajwidTopicIndex = 0;
     this.activeGharibTopicIndex = 0;
     this.isWidescreen = false;
@@ -145,6 +146,9 @@ class QuranApp {
     // Galeri Kejayaan (formerly Tajwid) elements
     this.tajwidSubTabBtns = document.querySelectorAll(".tajwid-sub-btn");
     this.tajwidTopicsContainer = document.getElementById("tajwidTopicsPills");
+    this.visualGalleryView = document.getElementById("visualGalleryView");
+    this.visualGalleryGrid = document.getElementById("visualGalleryGrid");
+    this.tajwidContentGrid = document.querySelector(".tajwid-content-grid");
     this.verseTokensContainer = document.getElementById("verseTokensContainer");
     this.verseTitleElem = document.getElementById("verseTitle");
     this.verseSubtitleElem = document.getElementById("verseSubtitle");
@@ -1768,6 +1772,102 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
     } else if (detail.event === "error") {
       this.showToast("Pemberitahuan pemutaran audio edukasi.", "warning");
       if (btnPlayFullVerse) btnPlayFullVerse.classList.remove("playing");
+    }
+  }
+
+
+  // ==========================================================================
+  // TAB 1 (VISUAL): 7 POTRET MAHAKARYA KEJAYAAN DINASTI ABBASIYAH
+  // ==========================================================================
+  renderVisualGallery() {
+    if (!this.visualGalleryGrid) {
+      this.visualGalleryGrid = document.getElementById("visualGalleryGrid");
+    }
+    if (!this.visualGalleryGrid) return;
+
+    this.visualGalleryGrid.innerHTML = "";
+    const items = window.APP_DATA.gallery || [];
+
+    items.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "gallery-item-card";
+      card.innerHTML = `
+        <div class="gallery-img-wrapper" onclick="window.quranApp.openLightbox(${item.id})" title="Klik untuk memperbesar gambar">
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+          <div class="gallery-img-overlay"></div>
+          <div class="gallery-num-badge">
+            <span>${item.icon}</span>
+            <span>Potret #${item.id}</span>
+          </div>
+          <div class="gallery-zoom-badge">
+            <span>🔍</span>
+            <span>Perbesar</span>
+          </div>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-category-tag">
+            <span>${item.icon}</span>
+            <span>${item.category}</span>
+          </div>
+          <h3 class="gallery-card-title">${item.title}</h3>
+          <div class="gallery-card-era">📍 ${item.era}</div>
+          <p class="gallery-card-desc">${item.desc}</p>
+          <div class="gallery-card-actions">
+            <button type="button" class="gallery-btn-action btn-subtle" onclick="window.quranApp.openLightbox(${item.id})">
+              <span>🔍</span> Detail Gambar
+            </button>
+            <button type="button" class="gallery-btn-action btn-primary" onclick="window.quranApp.playGalleryNarration(${item.id})" id="btnNarration-${item.id}">
+              <span>🔊</span> Putar Narasi
+            </button>
+          </div>
+        </div>
+      `;
+      this.visualGalleryGrid.appendChild(card);
+    });
+  }
+
+  openLightbox(id) {
+    const item = (window.APP_DATA.gallery || []).find(g => g.id === id);
+    if (!item) return;
+
+    this.activeLightboxItem = item;
+    const modal = document.getElementById("galleryLightboxModal");
+    const img = document.getElementById("lightboxImg");
+    const title = document.getElementById("lightboxTitle");
+    const era = document.getElementById("lightboxEra");
+    const desc = document.getElementById("lightboxDesc");
+    const badge = document.getElementById("lightboxBadge");
+
+    if (img) img.src = item.image;
+    if (title) title.textContent = item.title;
+    if (era) era.textContent = `📍 ${item.era} • ${item.category}`;
+    if (desc) desc.textContent = item.desc;
+    if (badge) badge.textContent = `Potret #${item.id} • ${item.category}`;
+
+    if (modal) modal.classList.add("active");
+    if (window.audioManager) window.audioManager.playTap();
+  }
+
+  closeLightbox() {
+    const modal = document.getElementById("galleryLightboxModal");
+    if (modal) modal.classList.remove("active");
+  }
+
+  playLightboxAudio() {
+    if (!this.activeLightboxItem) return;
+    this.playGalleryNarration(this.activeLightboxItem.id);
+  }
+
+  playGalleryNarration(id) {
+    const item = (window.APP_DATA.gallery || []).find(g => g.id === id);
+    if (!item) return;
+
+    if (window.audioManager) {
+      window.audioManager.playHistoryNarration(item.desc, {
+        title: item.title,
+        subtitle: item.era
+      });
+      this.showToast(`🔊 Memutar Narasi Potret #${item.id}: ${item.title}`, "gold");
     }
   }
 
