@@ -636,7 +636,7 @@ class QuranApp {
 
     // Refresh tab-specific states
     if (tabId === "tajwid") {
-      this.renderTajwidTopics();
+      this.renderVisualGallery();
     } else if (tabId === "tahfidz") {
       this.startSpeedMatchGame();
       this.setupPuzzle();
