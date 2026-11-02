@@ -104,11 +104,71 @@
            TAB 0: SCREEN 1 - HOME DASHBOARD
            ==================================================================== -->
       <section id="tab-beranda" class="tab-pane active">
-        <!-- Top Row: Banner Puncak Masa Keemasan Islam & 3D Showcase -->
-        <div class="responsive-two-col-grid home-content-grid" style="margin-bottom: 1.25rem;">
+        <!-- Top Row: Alur Belajar (Left) & Puncak Masa Keemasan Islam (Right) -->
+        <div class="responsive-two-col-grid home-content-grid" style="margin-bottom: 1.5rem;">
           <div class="grid-col-left">
+            <!-- ALUR BELAJAR (LEARNING FLOW SECTION) -->
+            <div class="learning-flow-section" style="margin-top: 0; margin-bottom: 0;">
+              <div class="learning-flow-header">
+                <h3 class="learning-flow-title">Alur Belajar</h3>
+                <p class="learning-flow-subtitle">Ikuti urutannya. Tekan langkah untuk menandai selesai.</p>
+              </div>
+
+              <div class="learning-flow-card">
+                <div class="learning-steps-grid" id="learningStepsContainer">
+                  <!-- Step 1 -->
+                  <button type="button" class="learning-step-btn completed" data-step="1" onclick="window.quranApp.toggleLearningStep(1)">
+                    <span class="step-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <span class="step-text">Tonton video</span>
+                  </button>
+
+                  <!-- Step 2 -->
+                  <button type="button" class="learning-step-btn" data-step="2" onclick="window.quranApp.toggleLearningStep(2)">
+                    <span class="step-badge">2</span>
+                    <span class="step-text">Jelajahi galeri</span>
+                  </button>
+
+                  <!-- Step 3 -->
+                  <button type="button" class="learning-step-btn" data-step="3" onclick="window.quranApp.toggleLearningStep(3)">
+                    <span class="step-badge">3</span>
+                    <span class="step-text">Pelajari linimasa</span>
+                  </button>
+
+                  <!-- Step 4 -->
+                  <button type="button" class="learning-step-btn" data-step="4" onclick="window.quranApp.toggleLearningStep(4)">
+                    <span class="step-badge">4</span>
+                    <span class="step-text">Arena sejarah</span>
+                  </button>
+
+                  <!-- Step 5 -->
+                  <button type="button" class="learning-step-btn" data-step="5" onclick="window.quranApp.toggleLearningStep(5)">
+                    <span class="step-badge">5</span>
+                    <span class="step-text">Rekap nilai</span>
+                  </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="learning-progress-track">
+                  <div class="learning-progress-fill" id="learningProgressFill" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-col-right" style="display: flex; flex-direction: column;">
+            <div class="learning-flow-header">
+              <h3 class="learning-flow-title" style="display: flex; align-items: center; gap: 0.4rem;">
+                <span>🌟</span> Sorotan Era Keemasan
+              </h3>
+              <p class="learning-flow-subtitle">Eksplorasi puncak kemakmuran peradaban Islam</p>
+            </div>
+
             <!-- "Featured Card" Featured Emerald Wave Card -->
-            <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')" style="height: 100%; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center;">
+            <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')" style="flex: 1; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center; min-height: 180px;">
               <!-- Decorative Waves -->
               <svg class="last-read-wave-svg" viewBox="0 0 160 120" fill="none">
                 <path d="M0 60 C40 20, 100 90, 160 40 L160 120 L0 120 Z" fill="rgba(255,255,255,0.18)"></path>
@@ -127,13 +187,6 @@
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="grid-col-right" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 3D Historical Showcase Card -->
-            <div class="quran-3d-showcase" style="padding: 0;">
-              <img src="images/quran_rehal_3d.jpg" alt="Masa Kejayaan Dinasti Abbasiyah" class="quran-3d-image" onclick="window.quranApp.switchTab('tajwid')" title="Klik untuk mulai belajar">
             </div>
           </div>
         </div>
@@ -176,57 +229,6 @@
             <div class="tile-info">
               <h4>Simulator AI</h4>
               <div class="tile-link">Dilema HOTS &gt;</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ALUR BELAJAR (LEARNING FLOW SECTION) -->
-        <div class="learning-flow-section">
-          <div class="learning-flow-header">
-            <h3 class="learning-flow-title">Alur Belajar</h3>
-            <p class="learning-flow-subtitle">Ikuti urutannya. Tekan langkah untuk menandai selesai.</p>
-          </div>
-
-          <div class="learning-flow-card">
-            <div class="learning-steps-grid" id="learningStepsContainer">
-              <!-- Step 1 -->
-              <button type="button" class="learning-step-btn completed" data-step="1" onclick="window.quranApp.toggleLearningStep(1)">
-                <span class="step-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <span class="step-text">Tonton video</span>
-              </button>
-
-              <!-- Step 2 -->
-              <button type="button" class="learning-step-btn" data-step="2" onclick="window.quranApp.toggleLearningStep(2)">
-                <span class="step-badge">2</span>
-                <span class="step-text">Jelajahi galeri</span>
-              </button>
-
-              <!-- Step 3 -->
-              <button type="button" class="learning-step-btn" data-step="3" onclick="window.quranApp.toggleLearningStep(3)">
-                <span class="step-badge">3</span>
-                <span class="step-text">Pelajari linimasa</span>
-              </button>
-
-              <!-- Step 4 -->
-              <button type="button" class="learning-step-btn" data-step="4" onclick="window.quranApp.toggleLearningStep(4)">
-                <span class="step-badge">4</span>
-                <span class="step-text">Arena sejarah</span>
-              </button>
-
-              <!-- Step 5 -->
-              <button type="button" class="learning-step-btn" data-step="5" onclick="window.quranApp.toggleLearningStep(5)">
-                <span class="step-badge">5</span>
-                <span class="step-text">Rekap nilai</span>
-              </button>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="learning-progress-track">
-              <div class="learning-progress-fill" id="learningProgressFill" style="width: 20%;"></div>
             </div>
           </div>
         </div>

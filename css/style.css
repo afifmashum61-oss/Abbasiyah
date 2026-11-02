@@ -2417,6 +2417,31 @@ body {
 /* ==========================================================================
    ALUR BELAJAR (LEARNING FLOW)
    ========================================================================== */
+.home-content-grid {
+  align-items: stretch;
+}
+
+.home-content-grid .grid-col-left,
+.home-content-grid .grid-col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content-grid .learning-flow-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-content-grid .learning-flow-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .learning-flow-section {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
