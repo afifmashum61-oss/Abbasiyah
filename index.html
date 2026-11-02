@@ -179,6 +179,57 @@
             </div>
           </div>
         </div>
+
+        <!-- ALUR BELAJAR (LEARNING FLOW SECTION) -->
+        <div class="learning-flow-section">
+          <div class="learning-flow-header">
+            <h3 class="learning-flow-title">Alur Belajar</h3>
+            <p class="learning-flow-subtitle">Ikuti urutannya. Tekan langkah untuk menandai selesai.</p>
+          </div>
+
+          <div class="learning-flow-card">
+            <div class="learning-steps-grid" id="learningStepsContainer">
+              <!-- Step 1 -->
+              <button type="button" class="learning-step-btn completed" data-step="1" onclick="window.quranApp.toggleLearningStep(1)">
+                <span class="step-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="step-text">Tonton video</span>
+              </button>
+
+              <!-- Step 2 -->
+              <button type="button" class="learning-step-btn" data-step="2" onclick="window.quranApp.toggleLearningStep(2)">
+                <span class="step-badge">2</span>
+                <span class="step-text">Jelajahi galeri</span>
+              </button>
+
+              <!-- Step 3 -->
+              <button type="button" class="learning-step-btn" data-step="3" onclick="window.quranApp.toggleLearningStep(3)">
+                <span class="step-badge">3</span>
+                <span class="step-text">Pelajari linimasa</span>
+              </button>
+
+              <!-- Step 4 -->
+              <button type="button" class="learning-step-btn" data-step="4" onclick="window.quranApp.toggleLearningStep(4)">
+                <span class="step-badge">4</span>
+                <span class="step-text">Arena sejarah</span>
+              </button>
+
+              <!-- Step 5 -->
+              <button type="button" class="learning-step-btn" data-step="5" onclick="window.quranApp.toggleLearningStep(5)">
+                <span class="step-badge">5</span>
+                <span class="step-text">Rekap nilai</span>
+              </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="learning-progress-track">
+              <div class="learning-progress-fill" id="learningProgressFill" style="width: 20%;"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
 

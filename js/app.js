@@ -404,6 +404,7 @@ class QuranApp {
         const key = this.apiKeyInput.value.trim();
         localStorage.setItem("gemini_api_key", key);
         this.updateApiStatus();
+    this.initLearningFlow();
         this.showToast("API Key berhasil disimpan di peramban!", "success");
       });
     }
@@ -1638,6 +1639,63 @@ Berikan evaluasi dalam format JSON murni tanpa markdown blok kode tambahan denga
   }
 
   // Play audio from Focus Topic list on Home
+
+  // Alur Belajar (Learning Flow) Interactive Handler
+  initLearningFlow() {
+    try {
+      this.learningSteps = JSON.parse(localStorage.getItem("mySKI_learning_steps") || "[true, false, false, false, false]");
+    } catch (e) {
+      this.learningSteps = [true, false, false, false, false];
+    }
+    this.updateLearningFlowUI();
+  }
+
+  toggleLearningStep(stepNum) {
+    if (!this.learningSteps) this.learningSteps = [true, false, false, false, false];
+    const index = stepNum - 1;
+    this.learningSteps[index] = !this.learningSteps[index];
+    localStorage.setItem("mySKI_learning_steps", JSON.stringify(this.learningSteps));
+    this.updateLearningFlowUI();
+
+    if (this.audioManager) {
+      if (this.learningSteps[index]) {
+        this.audioManager.playTone(660, "sine", 0.12);
+        this.showToast(`Langkah ${stepNum} ditandai selesai! ✓`, "success");
+      } else {
+        this.audioManager.playTone(440, "sine", 0.08);
+      }
+    }
+  }
+
+  updateLearningFlowUI() {
+    if (!this.learningSteps) return;
+    const btns = document.querySelectorAll(".learning-step-btn");
+    let completedCount = 0;
+
+    btns.forEach((btn, idx) => {
+      const isDone = !!this.learningSteps[idx];
+      const badge = btn.querySelector(".step-badge");
+      if (isDone) {
+        completedCount++;
+        btn.classList.add("completed");
+        if (badge) {
+          badge.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+        }
+      } else {
+        btn.classList.remove("completed");
+        if (badge) {
+          badge.textContent = (idx + 1).toString();
+        }
+      }
+    });
+
+    const fill = document.getElementById("learningProgressFill");
+    if (fill && btns.length > 0) {
+      const percent = Math.round((completedCount / btns.length) * 100);
+      fill.style.width = `${percent}%`;
+    }
+  }
+
   playSurahAudio(surahId) {
     const list = window.APP_DATA.surahList || [];
     const found = list.find(s => s.id === surahId);
