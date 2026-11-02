@@ -150,7 +150,7 @@
         <div class="responsive-two-col-grid home-content-grid">
           <div class="grid-col-left">
             <!-- "Featured Card" Featured Emerald Wave Card -->
-            <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')">
+            <div class="last-read-card" onclick="window.quranApp.switchTab('tajwid')" style="height: 100%; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center;">
               <!-- Decorative Waves -->
               <svg class="last-read-wave-svg" viewBox="0 0 160 120" fill="none">
                 <path d="M0 60 C40 20, 100 90, 160 40 L160 120 L0 120 Z" fill="rgba(255,255,255,0.18)"></path>
@@ -162,22 +162,24 @@
                   <div class="last-read-tag">
                     <span>🏛️</span> Puncak Masa Keemasan Islam
                   </div>
-                  <h3 class="last-read-title">Harun Ar-Rasyid & Al-Ma'mun</h3>
-                  <p class="last-read-verse">Kota Baghdad, Bayt al-Hikmah & Diplomasi Global (786–833 M)</p>
+                  <h3 class="last-read-title" style="font-size: 1.35rem; margin: 0.35rem 0;">Harun Ar-Rasyid & Al-Ma'mun</h3>
+                  <p class="last-read-verse" style="margin-bottom: 0.85rem;">Kota Baghdad, Bayt al-Hikmah & Diplomasi Global (786–833 M)</p>
                   <button class="btn-last-read-play" id="btnPlayLastRead" title="Putar Narasi Sejarah">
                     <span>▶</span> Putar Narasi Sejarah
                   </button>
                 </div>
               </div>
             </div>
+          </div>
 
+          <div class="grid-col-right">
             <!-- 3D Historical Showcase Card -->
-            <div class="quran-3d-showcase">
+            <div class="quran-3d-showcase" style="padding: 0 0 0.85rem;">
               <img src="images/quran_rehal_3d.jpg" alt="Masa Kejayaan Dinasti Abbasiyah" class="quran-3d-image" onclick="window.quranApp.switchTab('tajwid')" title="Klik untuk mulai belajar">
             </div>
 
             <!-- Student Score Quick Info -->
-            <div class="student-home-bar">
+            <div class="student-home-bar" style="margin-bottom: 0;">
               <div style="display: flex; align-items: center; gap: 0.65rem;">
                 <span style="font-size: 1.35rem;">⭐</span>
                 <div>
@@ -190,100 +192,6 @@
               <button class="btn btn-subtle btn-sm" onclick="window.quranApp.switchTab('guru')" style="font-size: 0.72rem;">
                 Rekap Nilai →
               </button>
-            </div>
-          </div>
-
-          <div class="grid-col-right">
-            <!-- Focus Materials List (KMA 183 SKI Kelas 8) -->
-            <div class="section-header" style="margin-top: 0; margin-bottom: 0.75rem;">
-              <h4 class="section-title"><span>📜</span> Fokus Materi Dinasti Abbasiyah KMA 183</h4>
-              <span style="font-size: 0.75rem; color: var(--primary-emerald); font-weight: 700; cursor: pointer;" onclick="window.quranApp.openCurriculumModal()">Lihat KI/KD</span>
-            </div>
-
-            <div class="surah-list-container">
-              <!-- Item 1 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid')">
-                <div class="surah-left-box">
-                  <div class="rub-star-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                      <path d="M12 2l2.6 3.8 4.6-.3 1.4 4.4 3.9 2.6-1.4 4.4 1.4 4.4-3.9 2.6-1.4 4.4-4.6-.3L12 22l-2.6-3.7-4.6.3-1.4-4.4-3.9-2.6 1.4-4.4-1.4-4.4 3.9-2.6 1.4-4.4 4.6.3L12 2z"></path>
-                      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="0.8"></circle>
-                    </svg>
-                    <span class="rub-star-num">1</span>
-                  </div>
-                  <div class="surah-info-text">
-                    <h5>Berdirinya Dinasti Abbasiyah</h5>
-                    <p>132 H / 750 M • Abu Abbas As-Saffah & Abu Ja'far</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">تأسيس الدولة</div>
-                  <button class="btn-surah-play" data-surah-key="fatihah" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fatihah');">▶</button>
-                </div>
-              </div>
-
-              <!-- Item 2 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid')">
-                <div class="surah-left-box">
-                  <div class="rub-star-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                      <path d="M12 2l2.6 3.8 4.6-.3 1.4 4.4 3.9 2.6-1.4 4.4 1.4 4.4-3.9 2.6-1.4 4.4-4.6-.3L12 22l-2.6-3.7-4.6.3-1.4-4.4-3.9-2.6 1.4-4.4-1.4-4.4 3.9-2.6 1.4-4.4 4.6.3L12 2z"></path>
-                      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="0.8"></circle>
-                    </svg>
-                    <span class="rub-star-num">2</span>
-                  </div>
-                  <div class="surah-info-text">
-                    <h5>Kemakmuran Harun Ar-Rasyid</h5>
-                    <p>786–809 M • Puncak Ekonomi, Bimaristan & Jam Charlemagne</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">هارون الرشيد</div>
-                  <button class="btn-surah-play" data-surah-key="baqarah" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_baqarah');">▶</button>
-                </div>
-              </div>
-
-              <!-- Item 3 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tajwid'); window.quranApp.switchTajwidSub('gharib');">
-                <div class="surah-left-box">
-                  <div class="rub-star-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                      <path d="M12 2l2.6 3.8 4.6-.3 1.4 4.4 3.9 2.6-1.4 4.4 1.4 4.4-3.9 2.6-1.4 4.4-4.6-.3L12 22l-2.6-3.7-4.6.3-1.4-4.4-3.9-2.6 1.4-4.4-1.4-4.4 3.9-2.6 1.4-4.4 4.6.3L12 2z"></path>
-                      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="0.8"></circle>
-                    </svg>
-                    <span class="rub-star-num">3</span>
-                  </div>
-                  <div class="surah-info-text">
-                    <h5>Bayt al-Hikmah & Al-Ma'mun</h5>
-                    <p>813–833 M • Gerakan Penerjemahan Emas & Observatorium</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">بيت الحكمة</div>
-                  <button class="btn-surah-play" data-surah-key="fajr" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_fajr');">▶</button>
-                </div>
-              </div>
-
-              <!-- Item 4 -->
-              <div class="surah-item-card" onclick="window.quranApp.switchTab('tahfidz')">
-                <div class="surah-left-box">
-                  <div class="rub-star-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                      <path d="M12 2l2.6 3.8 4.6-.3 1.4 4.4 3.9 2.6-1.4 4.4 1.4 4.4-3.9 2.6-1.4 4.4-4.6-.3L12 22l-2.6-3.7-4.6.3-1.4-4.4-3.9-2.6 1.4-4.4-1.4-4.4 3.9-2.6 1.4-4.4 4.6.3L12 2z"></path>
-                      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="0.8"></circle>
-                    </svg>
-                    <span class="rub-star-num">4</span>
-                  </div>
-                  <div class="surah-info-text">
-                    <h5>Mahakarya Cendekiawan Muslim</h5>
-                    <p>Sains Dunia • Ibnu Sina, Al-Khawarizmi, Bukhari-Muslim</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div class="surah-arabic-title">علماء الإسلام</div>
-                  <button class="btn-surah-play" data-surah-key="naba" title="Putar Narasi Sejarah" onclick="event.stopPropagation(); window.quranApp.playSurahAudio('surah_naba');">▶</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
